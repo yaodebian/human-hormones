@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Following is the development pattern to be followed
+
+- The requirements document is [requirements.md](mdc:doc/requirements.md)
+- Update [finish-status.md](mdc:doc/finish-status.md) after each iteration
+- For content, please refer to the article I wrote [example.md](mdc:doc/example.md)

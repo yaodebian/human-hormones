@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# A Nextjs project
+
+- use pnpm to manage packages
+- use shadcn as the UI Component Frame

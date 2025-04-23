@@ -1,0 +1,391 @@
+/* 全局样式 */
+:root {
+  --primary-color: #3a86ff;  /* 主色调：蓝色 */
+  --secondary-color: #8d99ae; /* 辅助色：灰蓝色 */
+  --dark-color: #2b2d42;      /* 深色 */
+  --light-color: #f8f9fa;     /* 浅灰色背景 */
+  --text-color: #333333;      /* 文本颜色 */
+  --text-light: #666666;      /* 浅色文本 */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --border-radius: 4px;
+  --transition: all 0.2s ease;
+  
+  /* 激素特定颜色 - 更柔和的色调 */
+  --dopamine-color: #90be6d;   /* 绿色 - 奖励 */
+  --endorphin-color: #f9c74f;  /* 黄色 - 活力 */
+  --serotonin-color: #43aa8b;  /* 青绿色 - 快乐 */
+  --oxytocin-color: #f8961e;   /* 橙色 - 亲密 */
+  --cortisol-color: #577590;   /* 蓝灰色 - 压力 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 导航栏样式 - 简化 */
+header {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.language-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.language-selector select {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* 英雄区域样式 - 简化 */
+.hero {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+}
+
+/* 卡片样式 - 简化 */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 1.2rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  font-weight: 500;
+}
+
+.card-text {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background-color: #2a75e6;
+}
+
+/* 网格布局 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* 部分和章节 - 简化 */
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+
+/* 激素特定样式 - 简化 */
+.hormone-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.dopamine .hormone-icon {
+  background-color: var(--dopamine-color);
+}
+
+.endorphin .hormone-icon {
+  background-color: var(--endorphin-color);
+}
+
+.serotonin .hormone-icon {
+  background-color: var(--serotonin-color);
+}
+
+.oxytocin .hormone-icon {
+  background-color: var(--oxytocin-color);
+}
+
+.cortisol .hormone-icon {
+  background-color: var(--cortisol-color);
+}
+
+/* 详情页样式 - 简化 */
+.detail-header {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.detail-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.detail-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.detail-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h3 {
+  margin-bottom: 0.8rem;
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.detail-section p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.info-box {
+  background-color: #f8f9fa;
+  border-left: 3px solid var(--primary-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.info-box h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* 页脚样式 - 简化 */
+footer {
+  background-color: var(--dark-color);
+  color: #eee;
+  padding: 2rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* 响应式设计 - 简化 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .detail-title {
+    font-size: 1.7rem;
+  }
+}
+
+/* 工具类 - 保留必要的 */
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+} 
