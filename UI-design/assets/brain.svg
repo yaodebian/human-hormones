@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+  <path d="M200 320C273.588 320 333 260.588 333 187C333 113.412 273.588 54 200 54C126.412 54 67 113.412 67 187C67 260.588 126.412 320 200 320Z" fill="#e2e8f0" opacity="0.5"/>
+  
+  <!-- Left hemisphere -->
+  <path d="M140 120C120 125 110 140 105 160C100 180 105 200 115 210C105 215 100 225 100 240C100 255 110 270 125 275C120 280 115 290 120 305C125 320 140 330 155 325" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <path d="M155 325C165 320 170 310 170 300C180 305 190 300 195 290C200 280 195 270 190 265C200 260 210 250 210 235C210 220 200 210 190 205" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <path d="M190 205C180 200 170 205 165 210C170 195 165 180 155 170C145 160 130 155 115 165C100 175 95 195 105 210" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Right hemisphere -->
+  <path d="M260 120C280 125 290 140 295 160C300 180 295 200 285 210C295 215 300 225 300 240C300 255 290 270 275 275C280 280 285 290 280 305C275 320 260 330 245 325" stroke="#ec4899" stroke-width="4" stroke-linecap="round"/>
+  <path d="M245 325C235 320 230 310 230 300C220 305 210 300 205 290C200 280 205 270 210 265C200 260 190 250 190 235C190 220 200 210 210 205" stroke="#ec4899" stroke-width="4" stroke-linecap="round"/>
+  <path d="M210 205C220 200 230 205 235 210C230 195 235 180 245 170C255 160 270 155 285 165C300 175 305 195 295 210" stroke="#ec4899" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Connecting lines -->
+  <path d="M200 205L200 265" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M170 210C175 225 180 240 190 250" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+  <path d="M230 210C225 225 220 240 210 250" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Hormones locations -->
+  <circle cx="130" cy="190" r="10" fill="#ec4899" opacity="0.7"/>
+  <circle cx="155" cy="250" r="10" fill="#8b5cf6" opacity="0.7"/>
+  <circle cx="245" cy="250" r="10" fill="#f97316" opacity="0.7"/>
+  <circle cx="270" cy="190" r="10" fill="#10b981" opacity="0.7"/>
+  <circle cx="200" cy="160" r="10" fill="#fbbf24" opacity="0.7"/>
+  
+  <!-- Labels -->
+  <text x="115" y="190" fill="#ec4899" font-family="sans-serif" font-size="12" font-weight="bold">多巴胺</text>
+  <text x="155" y="270" fill="#8b5cf6" font-family="sans-serif" font-size="12" font-weight="bold">内啡肽</text>
+  <text x="245" y="270" fill="#f97316" font-family="sans-serif" font-size="12" font-weight="bold">催产素</text>
+  <text x="270" y="190" fill="#10b981" font-family="sans-serif" font-size="12" font-weight="bold">皮质醇</text>
+  <text x="195" y="150" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="bold">血清素</text>
+</svg> 

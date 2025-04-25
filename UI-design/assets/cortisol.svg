@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="32" fill="#10b981" opacity="0.1"/>
+  <path d="M60 40C60 51.0457 51.0457 60 40 60C28.9543 60 20 51.0457 20 40C20 28.9543 28.9543 20 40 20C51.0457 20 60 28.9543 60 40Z" stroke="#10b981" stroke-width="2"/>
+  <path d="M40 20V14" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 66V60" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M60 40H66" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M14 40H20" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M54.1 25.9L58.3 21.7" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M21.7 58.3L25.9 54.1" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M54.1 54.1L58.3 58.3" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M21.7 21.7L25.9 25.9" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 30V40" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 40L47 47" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="40" r="4" fill="#10b981"/>
+</svg> 

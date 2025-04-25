@@ -1,761 +1,427 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="催产素详解 - 了解这种'爱的激素'如何影响社交联系、亲密关系和信任">
-    <title>催产素 - 人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .oxytocin-header {
-            background: linear-gradient(120deg, #ec4899 0%, #db2777 100%);
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-            color: white;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dopamine-btn {
-            background: linear-gradient(to right, #10b981, #047857);
-        }
-        
-        .dopamine-btn:hover {
-            background: linear-gradient(to right, #059669, #065f46);
-        }
-        
-        .endorphin-btn {
-            background: linear-gradient(to right, #f59e0b, #d97706);
-        }
-        
-        .endorphin-btn:hover {
-            background: linear-gradient(to right, #d97706, #b45309);
-        }
-        
-        .serotonin-btn {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-        }
-        
-        .serotonin-btn:hover {
-            background: linear-gradient(to right, #0891b2, #0e7490);
-        }
-        
-        .oxytocin-btn {
-            background: linear-gradient(to right, #ec4899, #db2777);
-        }
-        
-        .oxytocin-btn:hover {
-            background: linear-gradient(to right, #db2777, #be185d);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-        
-        .info-box {
-            background: linear-gradient(to right, rgba(236, 72, 153, 0.05), rgba(219, 39, 119, 0.1));
-            border-left: 4px solid #ec4899;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>催产素 - 情感连接与信任的激素 | 人体激素科普</title>
+  <meta name="description" content="深入了解催产素如何影响亲密关系、社交联系和信任感，以及如何通过日常互动自然提升催产素水平。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 催产素页面特定样式 */
+    .hormone-detail-header {
+      background-color: rgba(14, 165, 233, 0.1);
+    }
+
+    .hormone-title {
+      color: var(--oxytocin);
+    }
+
+    .hormone-accent {
+      color: var(--oxytocin);
+    }
+
+    .custom-icon-bg {
+      background-color: rgba(14, 165, 233, 0.1);
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .detail-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .highlight-box {
+      background-color: rgba(14, 165, 233, 0.05);
+      border-left: 4px solid var(--oxytocin);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tips-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--oxytocin);
+      font-weight: bold;
+    }
+
+    .interaction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .interaction-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .interaction-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">首页</a>
-                    <a href="index.html#hormone-section" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">激素知识</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">关于</a>
-                </nav>
-                
-                <div class="flex items-center">
-                    <div class="relative">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- 详情页标题 -->
-    <section class="oxytocin-header text-white py-16 md:py-20" style="padding-bottom: 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hormone-icon oxytocin-icon bg-white mx-auto" style="color: #ec4899;">
-                <i class="fas fa-heart"></i>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">催产素</h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">"爱的激素" - 促进社交联系、亲密关系和信任的纽带</p>
-        </div>
-        
-        <!-- 波浪分隔符 -->
-        <div class="w-full mt-8" style="margin-bottom: -1px; display: block;" style="padding-top: 5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50" style="display: block;">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- 主要内容 -->
-    <section class="py-12 md:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 定义与作用机制 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-info-circle text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">科学定义与作用机制</h2>
-                    </div>
-                    
-                    <p class="text-gray-700">催产素是一种由下丘脑合成并在脑垂体后叶储存和释放的神经肽激素。它不仅在生育过程中起着至关重要的作用，还在社交行为、亲密关系形成和情感连接方面发挥着核心功能。</p>
-                    
-                    <p class="text-gray-700 mt-4">催产素通过以下机制发挥作用：</p>
-                    <ul class="mt-2 mb-4 space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-pink-500 mt-1 mr-2"></i>
-                            <span>作为神经递质在大脑特定区域发挥作用</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-pink-500 mt-1 mr-2"></i>
-                            <span>作为激素通过血液循环影响全身多个器官</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-pink-500 mt-1 mr-2"></i>
-                            <span>调节社交相关的大脑区域活动，包括杏仁核和前额叶皮质</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-pink-500 mt-1 mr-2"></i>
-                            <span>促进子宫收缩和乳腺泌乳（生理功能）</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-pink-500 mt-1 mr-2"></i>
-                            <span>影响与奖励和安抚相关的神经回路</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="info-box">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center">
-                                    <i class="fas fa-lightbulb text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">科学小知识</h4>
-                                <p class="text-gray-700">催产素的名称来源于希腊语，意为"快速分娩"，反映了它促进分娩的作用。它在1953年被美国生化学家文森特·杜维涅德首次合成，这项工作后来获得了诺贝尔化学奖。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 分泌时机和条件 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-clock text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">分泌时机和条件</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">催产素在以下情况下会被释放：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-hand-holding-heart text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">肢体接触</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">拥抱、按摩、抚摸和性行为等</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-baby text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">分娩过程</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">帮助子宫收缩，促进生产</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-baby-carriage text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">哺乳过程</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">促进乳汁分泌和射乳反射</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-users text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">积极社交互动</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">与亲人朋友的温暖交流</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-eye text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">目光接触</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">特别是与亲密关系中的人或婴儿</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-utensils text-pink-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">分享食物和经历</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">共同进餐或协作活动</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-pink-50 border-l-4 border-pink-500 p-4 rounded-r-lg">
-                        <p class="text-gray-700">有趣的是，不仅真实互动会释放催产素，通过社交媒体、电话或视频互动也会在一定程度上促进催产素释放，尽管效果不如面对面交流强烈。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 对身体和心理的影响 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-brain text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">对身体和心理的影响</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">催产素对我们的社交行为和心理健康有深远影响：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                        <div>
-                            <h3 class="text-xl font-semibold text-pink-600 mb-4 flex items-center">
-                                <i class="fas fa-heart mr-2"></i> 社交和情感影响
-                            </h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增强群体内信任感和合作倾向</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">促进亲密关系形成和维持</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增强情感连接和共情能力</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">加强亲子联结（尤其是母婴关系）</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">减轻社交焦虑感</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">提升面部表情识别和社交线索感知能力</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-pink-600 mb-4 flex items-center">
-                                <i class="fas fa-heartbeat mr-2"></i> 生理影响
-                            </h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">降低血压和心率</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">减少压力激素（如皮质醇）水平</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增强免疫系统功能</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">加速伤口愈合</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">改善消化吸收</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增强身体疼痛阈值</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box mt-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
-                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">催产素与社会行为的双面性</h4>
-                                <p class="text-gray-700">虽然催产素常被简单称为"爱的激素"，但研究表明它的作用更为复杂。它既可以促进群体内的信任和合作，也可能增强对外群体的防御和排斥。这种"群内偏爱，群外排斥"的效应表明催产素在人类社会行为中扮演着微妙而复杂的角色。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 提升催产素的方法 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-hands-helping text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">提升催产素水平的方法</h2>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-semibold text-pink-600 mb-4 flex items-center">
-                                <i class="fas fa-users mr-2"></i> 社交和情感活动
-                            </h3>
-                            
-                            <div class="space-y-3">
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-hands text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">经常拥抱亲人和朋友（理想时长至少20秒）</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-hand-holding text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">与亲密伴侣保持身体接触</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-paw text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">养宠物并与之互动（尤其是抚摸和玩耍）</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-users text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">参与团队活动和社区服务</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-comments text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">与他人分享情感体验</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-hand-holding-heart text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">提供帮助和关怀他人</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-handshake text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">参与合作性而非竞争性的社交活动</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-pink-600 mb-4 flex items-center">
-                                <i class="fas fa-spa mr-2"></i> 身心活动
-                            </h3>
-                            
-                            <div class="space-y-3">
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-spa text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">按摩和温暖的身体接触</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-om text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">瑜伽和其他团体运动</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-music text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">唱歌，特别是合唱</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-walking text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">共舞，尤其是与伴侣或朋友</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-pray text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">冥想（特别是慈悲冥想）</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-headphones text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">听柔和而喜悦的音乐</span>
-                                </div>
-                                <div class="bg-pink-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-utensils text-pink-500 mr-2"></i>
-                                    <span class="text-gray-700">共同进餐和食物分享</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 相关科学研究 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-flask text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">相关科学研究</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6">关于催产素的研究揭示了这种激素在社交和情感领域的多种功能：</p>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">信任与催产素</h3>
-                            <p class="text-gray-700">经典研究表明，鼻内给予催产素可增加人们在经济信任游戏中的信任行为，这一发现为理解人类信任的神经生物学基础提供了重要线索</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">亲子联结</h3>
-                            <p class="text-gray-700">催产素水平与母婴依恋强度呈正相关，这种联系对健康发展至关重要。研究发现，产后母亲催产素水平与母婴依恋质量直接相关</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">自闭症与催产素</h3>
-                            <p class="text-gray-700">一些研究探索了催产素水平与自闭症谱系障碍的潜在关联，以及催产素作为可能治疗手段的前景，初步研究显示积极结果但仍需更多临床验证</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">社交压力缓解</h3>
-                            <p class="text-gray-700">催产素已被证明可减轻社交压力，改善社交焦虑症状，这为理解和治疗社交焦虑障碍提供了新思路</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 实用建议 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                                <i class="fas fa-lightbulb text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">健康利用催产素的建议</h2>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-pink-600 mb-4">平衡社交关系的方法</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">重视社交联系</h4>
-                            <p class="text-gray-600">定期与亲友见面和互动，培养深度社交关系</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">优先考虑线下交流</h4>
-                            <p class="text-gray-600">虽然线上交流也有价值，但面对面互动更能有效促进催产素释放</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">融入社区</h4>
-                            <p class="text-gray-600">加入社区团体或志愿服务，扩大社交网络</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">培养有意义的关系</h4>
-                            <p class="text-gray-600">质量胜于数量，重点发展几段深度关系比维持多段浅层关系更有益</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">肢体接触的力量</h4>
-                            <p class="text-gray-600">在适当的关系中增加积极的肢体接触（拥抱、握手、轻拍等）</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">同步活动</h4>
-                            <p class="text-gray-600">参与团队运动、合唱、舞蹈等同步活动，能增强群体凝聚力</p>
-                        </div>
-                        
-                        <div class="bg-pink-50 border-l-4 border-pink-500 rounded-r p-4 md:col-span-2">
-                            <h4 class="font-semibold text-gray-900 mb-1">分享喜悦</h4>
-                            <p class="text-gray-600">与他人分享好消息和积极体验（称为"资本化"），比独自体验更能提升幸福感</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box mt-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                                    <i class="fas fa-balance-scale text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">平衡视角</h4>
-                                <p class="text-gray-700">虽然催产素对建立亲密关系至关重要，但健康的社交生活涉及多种神经递质和激素的平衡作用。避免将所有社交行为简化为单一激素的作用，而应全面理解和培养健康的社交技能和行为模式。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 相关激素链接 -->
-    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
-        <div class="p-6 md:p-8">
-            <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">探索其他激素</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="p-4 text-center">
-                        <div class="hormone-icon dopamine-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">多巴胺</h3>
-                        <a href="dopamine.html" class="btn-more dopamine-btn text-sm">
-                            了解更多
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="p-4 text-center">
-                        <div class="hormone-icon endorphin-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">内啡肽</h3>
-                        <a href="endorphin.html" class="btn-more endorphin-btn text-sm">
-                            了解更多
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="p-4 text-center">
-                        <div class="hormone-icon serotonin-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                            <i class="fas fa-smile"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">血清素</h3>
-                        <a href="serotonin.html" class="btn-more serotonin-btn text-sm">
-                            了解更多
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="p-4 text-center">
-                        <div class="hormone-icon cortisol-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">皮质醇</h3>
-                        <a href="cortisol.html" class="btn-more cortisol-btn text-sm">
-                            了解更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html" class="active">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
     </div>
+  </header>
 
-    <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">激素科普</h3>
-                    <p class="text-gray-400">让科学知识改变生活</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                        <li><a href="dopamine.html" class="text-gray-400 hover:text-white transition-colors">多巴胺</a></li>
-                        <li><a href="endorphin.html" class="text-gray-400 hover:text-white transition-colors">内啡肽</a></li>
-                        <li><a href="serotonin.html" class="text-gray-400 hover:text-white transition-colors">血清素</a></li>
-                        <li><a href="oxytocin.html" class="text-gray-400 hover:text-white transition-colors">催产素</a></li>
-                        <li><a href="cortisol.html" class="text-gray-400 hover:text-white transition-colors">皮质醇</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">参考资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">相关书籍</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">研究论文</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习资源</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">&copy; 2023 人体激素科普网站 · 公益科普项目 · 欢迎分享传播</p>
-            </div>
+  <!-- Hormone Detail Header -->
+  <section class="hormone-detail-header">
+    <div class="container">
+      <div class="custom-icon-bg">
+        <img src="assets/oxytocin.svg" alt="催产素" class="detail-icon">
+      </div>
+      <h1 class="hormone-title">催产素：情感连接与信任的纽带</h1>
+      <p class="hormone-description">催产素是一种由下丘脑产生并由垂体释放的肽类激素，常被称为"拥抱激素"或"爱情激素"。它在建立亲密关系、社交联系和信任感方面发挥着关键作用，同时也参与生育和哺乳过程。了解如何自然提升催产素水平，可以帮助你改善人际关系和情感健康。</p>
+    </div>
+  </section>
+
+  <!-- Definition and Mechanism Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>什么是催产素？</h2>
+      <div class="detail-grid">
+        <div>
+          <p>催产素是一种由人体自然产生的神经肽激素，主要由下丘脑合成并在垂体后叶储存和释放。作为一种神经递质和激素，催产素在多个生理和心理过程中发挥重要作用：</p>
+          <ul>
+            <li>促进分娩和哺乳过程</li>
+            <li>建立母婴情感联系</li>
+            <li>增强亲密关系和伴侣依恋</li>
+            <li>促进社交联系和信任感</li>
+            <li>减轻压力和焦虑</li>
+            <li>参与情感记忆形成</li>
+          </ul>
+          <p>催产素最初因其在分娩和哺乳中的作用而被发现（希腊语"oxytocin"意为"快速分娩"），但现代研究揭示了它在<span class="hormone-accent">社交行为和情感联系</span>中的广泛影响，使其被称为"拥抱激素"。</p>
         </div>
-    </footer>
+        <div class="detail-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" viewBox="0 0 500 300" fill="none">
+            <!-- Brain outline -->
+            <path d="M250 120C350 120 420 150 420 190C420 230 350 260 250 260C150 260 80 230 80 190C80 150 150 120 250 120Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            
+            <!-- Hypothalamus -->
+            <ellipse cx="250" cy="170" rx="20" ry="10" fill="#0ea5e9" opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="250" y="174" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">下丘脑</text>
+            
+            <!-- Pituitary -->
+            <circle cx="250" cy="190" r="15" fill="#0ea5e9" opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="250" y="194" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">垂体</text>
+            
+            <!-- Oxytocin pathways -->
+            <path d="M260 175C280 165 300 160 320 170" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M240 175C220 165 200 160 180 170" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M250 205C260 230 280 250 300 255" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M250 205C240 230 220 250 200 255" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Heart symbol -->
+            <path d="M250 300C255 290 270 280 280 290C290 300 270 310 250 320C230 310 210 300 220 290C230 280 245 290 250 300Z" fill="#0ea5e9" opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+            
+            <!-- Connection lines -->
+            <path d="M250 205L250 280" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Oxytocin molecule simplified -->
+            <rect x="370" y="50" width="80" height="30" rx="5" fill="#0ea5e9" opacity="0.1" stroke="#0ea5e9" stroke-width="2"/>
+            <text x="410" y="70" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="12">催产素</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300 hover:bg-pink-700">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- When Released Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>催产素何时分泌？</h2>
+      <p>催产素在多种情境下被释放，特别是在社交互动和亲密行为中：</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>身体接触</h3>
+          <p><span class="hormone-accent">拥抱、抚摸和性接触</span>是催产素释放的强烈触发因素。这些行为激活了皮肤上的感觉神经，通过神经信号刺激大脑释放催产素。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>分娩和哺乳</h3>
+          <p>在分娩过程中，<span class="hormone-accent">子宫颈扩张</span>触发催产素的脉冲式释放，促进子宫收缩。在哺乳时，<span class="hormone-accent">婴儿吸吮</span>刺激催产素释放，引起"泌乳反射"。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>社交互动</h3>
+          <p>积极的社交体验，如<span class="hormone-accent">与朋友共进晚餐、团队协作和深度对话</span>等，能增加催产素水平，这可能是社交联系带来幸福感的部分原因。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>情感刺激</h3>
+          <p>参与<span class="hormone-accent">信任行为、表达同理心、给予支持</span>或者仅仅是观看感人的电影或聆听煽情的音乐，都能刺激催产素释放。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>催产素与性别差异</h3>
+        <p>研究表明，催产素在女性和男性体内都存在，但其影响可能存在微妙差异。在女性中，催产素与<span class="hormone-accent">分娩、哺乳和母婴联系</span>密切相关，而在男性中，它可能更多地与<span class="hormone-accent">伴侣依恋和父职行为</span>相关。</p>
+        <p>然而，不论性别，催产素都参与建立信任、增强同理心和减轻社交焦虑，对健康的人际关系和情感健康至关重要。</p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
+  <!-- Effects Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>催产素对身体和心理的影响</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>积极影响</h3>
+          <ul class="tips-list">
+            <li><strong>增强社交联系</strong> - 催产素促进亲社会行为，增强归属感和社交联系。</li>
+            <li><strong>建立信任感</strong> - 它能增加人与人之间的信任倾向，是健康人际关系的基础。</li>
+            <li><strong>减轻压力和焦虑</strong> - 催产素能降低皮质醇水平，减轻压力反应，产生平静感。</li>
+            <li><strong>促进情感联系</strong> - 它加强伴侣之间的情感纽带，增强亲密感和依恋行为。</li>
+            <li><strong>增强同理心</strong> - 催产素能提高识别他人情绪和理解他人观点的能力。</li>
+            <li><strong>辅助生育过程</strong> - 在分娩、哺乳和早期母婴联系中发挥关键作用。</li>
+            <li><strong>促进伤口愈合</strong> - 研究表明，催产素可能具有抗炎作用，加速伤口愈合过程。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>催产素失衡的影响</h3>
+          <ul class="tips-list">
+            <li><strong>社交困难</strong> - 催产素系统功能不全可能与社交互动困难和社交焦虑相关。</li>
+            <li><strong>亲密关系问题</strong> - 催产素水平或受体功能异常可能影响建立健康亲密关系的能力。</li>
+            <li><strong>情绪调节困难</strong> - 催产素参与情绪调节，系统失衡可能影响情绪稳定性。</li>
+            <li><strong>分娩和哺乳困难</strong> - 在女性中，催产素不足可能影响分娩进程和哺乳成功率。</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <h3>催产素与自闭症研究</h3>
+            <p>科学研究正在探索催产素与自闭症谱系障碍(ASD)之间的潜在联系。一些研究表明，ASD患者可能存在催产素系统功能异常，这可能与社交认知和互动中的困难有关。临床试验正在评估催产素替代疗法在改善ASD患者社交功能方面的潜力，尽管结果尚不确定。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactions Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>促进催产素自然释放的互动</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>亲密行为</h3>
+          
+          <div class="interaction-grid">
+            <div class="interaction-item">
+              <div class="interaction-icon">🤗</div>
+              <p>拥抱和抚摸</p>
+            </div>
+            <div class="interaction-item">
+              <div class="interaction-icon">👫</div>
+              <p>牵手</p>
+            </div>
+            <div class="interaction-item">
+              <div class="interaction-icon">💏</div>
+              <p>亲吻</p>
+            </div>
+            <div class="interaction-item">
+              <div class="interaction-icon">💆</div>
+              <p>按摩</p>
+            </div>
+            <div class="interaction-item">
+              <div class="interaction-icon">🛌</div>
+              <p>性亲密</p>
+            </div>
+            <div class="interaction-item">
+              <div class="interaction-icon">🐶</div>
+              <p>与宠物互动</p>
+            </div>
+          </div>
+          
+          <h3 class="mt-4">社交活动</h3>
+          <ul class="tips-list">
+            <li><strong>共享饭菜</strong> - 与朋友和家人共进晚餐是社交联系和催产素释放的强大方式。</li>
+            <li><strong>团队运动</strong> - 参与团队活动能增强团体凝聚力，刺激催产素释放。</li>
+            <li><strong>志愿服务</strong> - 帮助他人产生的积极情感能增加催产素水平。</li>
+            <li><strong>音乐和舞蹈</strong> - 共同唱歌、演奏音乐或跳舞能增强社交联系，刺激催产素释放。</li>
+          </ul>
+        </div>
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-            }
-        });
+        <div>
+          <h3>情感活动</h3>
+          <ul class="tips-list">
+            <li><strong>表达感激</strong> - 表达和接收感谢能增加催产素水平，增强社交纽带。</li>
+            <li><strong>表达同理心</strong> - 积极倾听他人并表达理解能刺激催产素释放。</li>
+            <li><strong>给予支持</strong> - 在他人需要时提供情感或实际支持能增加两者的催产素水平。</li>
+            <li><strong>情感自我表达</strong> - 通过艺术、写作或与信任的人交谈来表达情感可能增加催产素水平。</li>
+            <li><strong>回忆美好时光</strong> - 回忆与爱人、朋友或家人共度的美好时光能触发催产素释放。</li>
+            <li><strong>观看感人内容</strong> - 感人的电影、书籍或故事能通过情感共鸣刺激催产素产生。</li>
+          </ul>
+          
+          <div class="highlight-box mt-4">
+            <h3>每日催产素实践</h3>
+            <p>在日常生活中增加催产素的简单方法：</p>
+            <ul class="tips-list">
+              <li>每天至少给予和接收20秒的拥抱（长拥抱更有效）</li>
+              <li>与亲人互发积极短信或表达欣赏</li>
+              <li>与朋友或家人共进一餐（无手机干扰）</li>
+              <li>与宠物进行身体接触和互动</li>
+              <li>定期参与团队活动或团体爱好</li>
+              <li>在社交互动中保持真实的眼神接触</li>
+              <li>表达并接收身体接触或言语的肯定</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research and Applications Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>相关研究与应用</h2>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>催产素与关系健康</h3>
+          <p>研究表明，健康的催产素水平与更稳定的伴侣关系、更高的关系满意度和更好的冲突解决能力相关。对于长期关系，定期身体接触和积极情感表达等增加催产素的活动可能有助于维持情感联系。</p>
+        </div>
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <div class="fact-card">
+          <h3>催产素与心理健康</h3>
+          <p>由于其减轻压力和增强社交联系的作用，催产素系统正成为焦虑、抑郁和PTSD等心理健康障碍研究的焦点。初步研究表明，通过增强社会支持和亲密互动来提高自然催产素水平可能成为传统心理健康治疗的辅助手段。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>催产素与整体健康</h3>
+        <p>催产素不仅影响我们的情感和社交健康，还可能对整体身体健康产生广泛影响：</p>
+        <ul class="tips-list">
+          <li><strong>压力管理</strong> - 催产素能降低皮质醇水平，减轻慢性压力的负面健康影响。</li>
+          <li><strong>心血管健康</strong> - 一些研究表明，催产素可能对心血管系统有保护作用，降低血压和减轻炎症。</li>
+          <li><strong>免疫功能</strong> - 健康的催产素水平与更强的免疫功能相关，可能通过减轻压力反应实现。</li>
+          <li><strong>伤口愈合</strong> - 动物和人类研究表明，催产素可能加速伤口愈合过程。</li>
+          <li><strong>疼痛感知</strong> - 催产素可能具有天然的镇痛特性，尤其是在社交支持存在的情况下。</li>
+        </ul>
+        <p>这些发现强调了健康社交关系对不仅心理健康而且身体健康的重要性。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Hormones Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>催产素与其他激素的关系</h2>
+      
+      <div class="grid grid-2">
+        <a href="cortisol.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">催产素与皮质醇</h3>
+            <p>这两种激素形成平衡关系：催产素能降低皮质醇（压力激素）水平，帮助身体从压力反应中恢复。这解释了为什么社交支持和亲密关系能帮助我们应对压力。</p>
+          </div>
+        </a>
+        
+        <a href="dopamine.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">催产素与多巴胺</h3>
+            <p>在亲密行为和社交互动中，催产素和多巴胺经常共同释放。催产素创造联系和依恋感，而多巴胺增加动力和奖励感，共同强化社交联系带来的积极体验。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

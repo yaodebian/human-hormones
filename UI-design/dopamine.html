@@ -1,742 +1,409 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="多巴胺详解 - 了解这种'奖励激素'如何影响动力、愉悦感和成就感">
-    <title>多巴胺 - 人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .dopamine-header {
-            background: linear-gradient(120deg, #10b981 0%, #047857 100%);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-            color: white;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dopamine-btn {
-            background: linear-gradient(to right, #10b981, #047857);
-        }
-        
-        .dopamine-btn:hover {
-            background: linear-gradient(to right, #059669, #065f46);
-        }
-        
-        .endorphin-btn {
-            background: linear-gradient(to right, #f59e0b, #d97706);
-        }
-        
-        .endorphin-btn:hover {
-            background: linear-gradient(to right, #d97706, #b45309);
-        }
-        
-        .serotonin-btn {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-        }
-        
-        .serotonin-btn:hover {
-            background: linear-gradient(to right, #0891b2, #0e7490);
-        }
-        
-        .oxytocin-btn {
-            background: linear-gradient(to right, #ec4899, #db2777);
-        }
-        
-        .oxytocin-btn:hover {
-            background: linear-gradient(to right, #db2777, #be185d);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-        
-        .info-box {
-            background: linear-gradient(to right, rgba(16, 185, 129, 0.05), rgba(4, 120, 87, 0.1));
-            border-left: 4px solid #10b981;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多巴胺 - 奖励激素的科学与平衡 | 人体激素科普</title>
+  <meta name="description" content="深入了解多巴胺如何影响动机、专注力和成瘾，以及如何通过日常习惯健康地优化多巴胺水平。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 多巴胺页面特定样式 */
+    .hormone-detail-header {
+      background-color: rgba(236, 72, 153, 0.1);
+    }
+
+    .hormone-title {
+      color: var(--dopamine);
+    }
+
+    .hormone-accent {
+      color: var(--dopamine);
+    }
+
+    .custom-icon-bg {
+      background-color: rgba(236, 72, 153, 0.1);
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .detail-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .highlight-box {
+      background-color: rgba(236, 72, 153, 0.05);
+      border-left: 4px solid var(--dopamine);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tips-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--dopamine);
+      font-weight: bold;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .food-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .food-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">首页</a>
-                    <a href="index.html#hormone-section" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">激素知识</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">关于</a>
-                </nav>
-                
-                <div class="flex items-center">
-                    <div class="relative">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html" class="active">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
-    <!-- 详情页标题 -->
-    <section class="dopamine-header text-white py-16 md:py-20" style="padding-bottom: 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hormone-icon dopamine-icon bg-white mx-auto" style="color: #10b981;">
-                <i class="fas fa-star"></i>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">多巴胺</h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">"奖励激素" - 驱动我们的动力与愉悦感</p>
+  <!-- Hormone Detail Header -->
+  <section class="hormone-detail-header">
+    <div class="container">
+      <div class="custom-icon-bg">
+        <img src="assets/dopamine.svg" alt="多巴胺" class="detail-icon">
+      </div>
+      <h1 class="hormone-title">多巴胺：驱动与奖励的化学信使</h1>
+      <p class="hormone-description">多巴胺是大脑中的一种神经递质，被称为"奖励激素"，在动机、快乐感和专注力方面起着关键作用。了解如何平衡多巴胺水平，可以帮助你提高工作效率，增强生活满足感，并避免成瘾行为。</p>
+    </div>
+  </section>
+
+  <!-- Definition and Mechanism Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>什么是多巴胺？</h2>
+      <div class="detail-grid">
+        <div>
+          <p>多巴胺是一种在中枢神经系统中发挥重要作用的神经递质和激素。它由大脑中的特定神经元产生，特别是在中脑的黑质和腹侧被盖区。</p>
+          <p>作为神经递质，多巴胺在神经元之间传递信息，影响大脑的多个功能区域，包括：</p>
+          <ul>
+            <li>奖励和动机系统</li>
+            <li>运动控制</li>
+            <li>情绪调节</li>
+            <li>执行功能和决策</li>
+            <li>注意力和专注力</li>
+          </ul>
+          <p>多巴胺最著名的是其在<span class="hormone-accent">"奖励通路"</span>中的作用，这一系统让我们对食物、社交互动和其他自然奖励感到愉悦，从而激励我们重复这些有益行为。</p>
+        </div>
+        <div class="detail-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" viewBox="0 0 500 300" fill="none">
+            <!-- Brain outline -->
+            <path d="M250 270C350 270 420 210 420 150C420 90 350 30 250 30C150 30 80 90 80 150C80 210 150 270 250 270Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            
+            <!-- Dopamine pathways -->
+            <path d="M200 130C190 120 185 105 190 90C195 75 210 65 225 70" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M225 70C240 75 250 90 245 105C240 120 225 130 210 125" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M210 125C195 120 185 105 190 90" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            
+            <path d="M270 160C280 150 295 145 310 150C325 155 335 170 330 185" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M330 185C325 200 310 210 295 205C280 200 270 185 275 170" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M275 170C280 155 295 145 310 150" stroke="#ec4899" stroke-width="3" stroke-dasharray="5,5"/>
+            
+            <!-- Reward center -->
+            <circle cx="225" cy="90" r="15" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="2"/>
+            <text x="225" y="94" text-anchor="middle" fill="#ec4899" font-family="sans-serif" font-size="10">腹侧被盖区</text>
+            
+            <!-- Nucleus accumbens -->
+            <circle cx="310" cy="170" r="15" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="2"/>
+            <text x="310" y="174" text-anchor="middle" fill="#ec4899" font-family="sans-serif" font-size="10">伏隔核</text>
+            
+            <!-- Prefrontal cortex -->
+            <path d="M250 80C280 70 320 75 340 100C360 125 360 155 340 170" stroke="#1e293b" stroke-width="2" fill="none"/>
+            <text x="300" y="120" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="12">前额叶皮质</text>
+            
+            <!-- Substantia nigra -->
+            <ellipse cx="190" cy="200" rx="20" ry="10" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="2"/>
+            <text x="190" y="204" text-anchor="middle" fill="#ec4899" font-family="sans-serif" font-size="10">黑质</text>
+            
+            <!-- Dopamine molecule simplified -->
+            <circle cx="400" cy="60" r="30" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="2"/>
+            <text x="400" y="64" text-anchor="middle" fill="#ec4899" font-family="sans-serif" font-size="12">多巴胺</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When Released Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>多巴胺何时分泌？</h2>
+      <p>多巴胺在多种情况下被释放，主要与预期奖励、实际奖励和新奇体验相关：</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>预期奖励</h3>
+          <p>多巴胺不仅在获得奖励时释放，更重要的是在<span class="hormone-accent">预期</span>奖励时释放。实际上，对奖励的期待往往比获得奖励本身产生更强的多巴胺反应。这就是为什么追求目标的过程常常比达成目标更令人兴奋。</p>
         </div>
         
-        <!-- 波浪分隔符 -->
-        <div class="w-full mt-8" style="margin-bottom: -1px; display: block;" style="padding-top: 5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50" style="display: block;">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
+        <div class="fact-card">
+          <h3>新奇体验</h3>
+          <p>接触<span class="hormone-accent">新的、意外的或不同寻常的刺激</span>会引发多巴胺释放。这种机制鼓励我们探索环境，学习新技能，尝试新事物。</p>
         </div>
-    </section>
-
-    <!-- 主要内容 -->
-    <section class="py-12 md:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 定义与作用机制 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-info-circle text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">科学定义与作用机制</h2>
-                    </div>
-                    
-                    <p class="text-gray-700">多巴胺是一种在中枢神经系统中起重要作用的神经递质和激素。它主要在大脑的黑质和腹侧被盖区产生，作为"奖励系统"的关键化学物质，参与调控运动、认知、情绪和内分泌等多种功能。</p>
-                    
-                    <p class="text-gray-700 mt-4">在神经系统中，多巴胺通过以下途径发挥作用：</p>
-                    <ul class="mt-2 mb-4 space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-green-500 mt-1 mr-2"></i>
-                            <span>中脑边缘多巴胺通路：连接腹侧被盖区和伏隔核，与奖励、动机和愉悦感相关</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-green-500 mt-1 mr-2"></i>
-                            <span>中脑皮质多巴胺通路：连接腹侧被盖区和前额叶皮质，与认知功能相关</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-green-500 mt-1 mr-2"></i>
-                            <span>黑质纹状体多巴胺通路：连接黑质和纹状体，与运动控制相关</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-green-500 mt-1 mr-2"></i>
-                            <span>结节漏斗多巴胺通路：从下丘脑到垂体，调节激素分泌</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="info-box">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
-                                    <i class="fas fa-lightbulb text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">科学小知识</h4>
-                                <p class="text-gray-700">多巴胺是由德国药理学家Arvid Carlsson于1950年代发现的。他因这一发现在2000年获得了诺贝尔生理学或医学奖。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 分泌时机和条件 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-clock text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">分泌时机和条件</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">多巴胺在以下情况下会被释放：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-gift text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">预期奖励时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">当期待获得奖励（食物、社交认可、成就等）时</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-flag-checkered text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">实现目标时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">完成任务或达成目标时</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-sparkles text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">新奇体验时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">面对新事物或新环境时</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-utensils text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">进食美味食物时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">特别是高糖、高脂肪食物时</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-users text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">社交互动和认可时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">收到点赞、赞美或认可时</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-trophy text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">成功经历时</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">赢得比赛、通过考试等成功体验</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                        <p class="text-gray-700">值得注意的是，多巴胺的释放更多与"期待"和"追求"相关，而非仅仅是"获得"。这就是为什么追求目标的过程常常比实现目标本身更令人兴奋。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 对身体和心理的影响 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-brain text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">对身体和心理的影响</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">多巴胺对我们的身体和心理产生广泛影响：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-600 mb-4 flex items-center">
-                                <i class="fas fa-plus-circle mr-2"></i> 积极影响
-                            </h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增强动力和积极性</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">提高专注力和注意力</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">促进学习和记忆形成</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">提供愉悦感和满足感</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">帮助控制精细运动</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">促进决策和目标导向行为</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-amber-600 mb-4 flex items-center">
-                                <i class="fas fa-exclamation-circle mr-2"></i> 失衡风险
-                            </h3>
-                            <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                                <h4 class="font-semibold text-gray-900 mb-2">水平过低</h4>
-                                <p class="text-gray-700">可能导致动力不足、抑郁、疲劳、注意力不集中</p>
-                            </div>
-                            <div class="bg-gray-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-gray-900 mb-2">水平过高</h4>
-                                <p class="text-gray-700">可能与成瘾行为、强迫症、多动症相关</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box mt-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
-                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">多巴胺与成瘾</h4>
-                                <p class="text-gray-700">多巴胺系统在成瘾机制中扮演关键角色。药物滥用、赌博、过度使用社交媒体等行为会导致多巴胺大量释放，随着时间推移，大脑需要更强的刺激才能获得相同的愉悦感，形成成瘾循环。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 含有该激素的食物/活动 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-utensils text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">提升多巴胺水平的食物和活动</h2>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-600 mb-4 flex items-center">
-                                <i class="fas fa-apple-alt mr-2"></i> 富含酪氨酸的食物（多巴胺前体）
-                            </h3>
-                            
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">香蕉</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">杏仁和其他坚果</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">鸡蛋</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">绿叶蔬菜</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">豆类</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">瘦肉和家禽</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">鲑鱼</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">全麦食品</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-600 mb-4 flex items-center">
-                                <i class="fas fa-running mr-2"></i> 增加多巴胺水平的活动
-                            </h3>
-                            
-                            <div class="space-y-3">
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-dumbbell text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">规律的体育锻炼</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-om text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">冥想和正念练习</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-tasks text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">设定并实现小目标</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-music text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">聆听喜爱的音乐</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-palette text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">创造性活动（绘画、写作）</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-bed text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">充足的睡眠</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-sun text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">阳光照射</span>
-                                </div>
-                                <div class="bg-green-50 rounded-lg p-3 flex items-center">
-                                    <i class="fas fa-book text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">学习新技能</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 相关科学研究 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-flask text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">相关科学研究</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6">多巴胺是神经科学领域研究最广泛的神经递质之一，以下是一些重要研究发现：</p>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">奖励预测错误理论</h3>
-                            <p class="text-gray-700">Schultz等人(1997)的研究表明，多巴胺神经元不仅在获得奖励时激活，更在预期与实际奖励不符时产生特定反应</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">多巴胺与注意力</h3>
-                            <p class="text-gray-700">多项研究证实了多巴胺系统与注意力调节的密切关系，多巴胺不足与注意力缺陷多动障碍有关</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-5">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">社交媒体与多巴胺</h3>
-                            <p class="text-gray-700">最新研究发现，社交媒体互动会触发多巴胺释放，这解释了为什么人们对社交媒体会形成依赖行为</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 实用建议 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                                <i class="fas fa-lightbulb text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">平衡多巴胺的实用建议</h2>
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-green-600 mb-4">健康提升多巴胺的方法</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">采用"小胜利"策略</h4>
-                            <p class="text-gray-600">将大目标分解为小步骤，每完成一步就给自己一个小奖励</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">建立健康的奖励系统</h4>
-                            <p class="text-gray-600">用健康活动替代不健康的多巴胺来源</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">培养新爱好</h4>
-                            <p class="text-gray-600">学习新技能或培养新爱好可以刺激多巴胺释放</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">制定清晰目标</h4>
-                            <p class="text-gray-600">有明确的目标和计划有助于多巴胺系统健康运作</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">享受过程</h4>
-                            <p class="text-gray-600">专注于活动过程的乐趣，而非仅仅关注结果</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4">
-                            <h4 class="font-semibold text-gray-900 mb-1">限制数字设备使用</h4>
-                            <p class="text-gray-600">减少对手机和社交媒体的依赖</p>
-                        </div>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 rounded-r p-4 md:col-span-2">
-                            <h4 class="font-semibold text-gray-900 mb-1">健康饮食</h4>
-                            <p class="text-gray-600">摄入富含酪氨酸的食物，避免过度依赖高糖食品</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box mt-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                                    <i class="fas fa-recycle text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">多巴胺排毒</h4>
-                                <p class="text-gray-700">"多巴胺排毒"是指暂时远离会导致多巴胺激增的刺激物（如社交媒体、游戏、高糖食品等）。这种做法可以帮助重置多巴胺系统的敏感性，使日常活动重新变得有趣和有满足感。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 相关激素链接 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
-                <div class="p-6 md:p-8">
-                    <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">探索其他激素</h2>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                            <div class="p-4 text-center">
-                                <div class="hormone-icon endorphin-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                    <i class="fas fa-running"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">内啡肽</h3>
-                                <a href="endorphin.html" class="btn-more endorphin-btn text-sm">
-                                    了解更多
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                            <div class="p-4 text-center">
-                                <div class="hormone-icon serotonin-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                    <i class="fas fa-smile"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">血清素</h3>
-                                <a href="serotonin.html" class="btn-more serotonin-btn text-sm">
-                                    了解更多
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                            <div class="p-4 text-center">
-                                <div class="hormone-icon oxytocin-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">催产素</h3>
-                                <a href="oxytocin.html" class="btn-more oxytocin-btn text-sm">
-                                    了解更多
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="hormone-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                            <div class="p-4 text-center">
-                                <div class="hormone-icon cortisol-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">皮质醇</h3>
-                                <a href="cortisol.html" class="btn-more cortisol-btn text-sm">
-                                    了解更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">激素科普</h3>
-                    <p class="text-gray-400">让科学知识改变生活</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                        <li><a href="dopamine.html" class="text-gray-400 hover:text-white transition-colors">多巴胺</a></li>
-                        <li><a href="endorphin.html" class="text-gray-400 hover:text-white transition-colors">内啡肽</a></li>
-                        <li><a href="serotonin.html" class="text-gray-400 hover:text-white transition-colors">血清素</a></li>
-                        <li><a href="oxytocin.html" class="text-gray-400 hover:text-white transition-colors">催产素</a></li>
-                        <li><a href="cortisol.html" class="text-gray-400 hover:text-white transition-colors">皮质醇</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">参考资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">相关书籍</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">研究论文</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习资源</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">&copy; 2023 人体激素科普网站 · 公益科普项目 · 欢迎分享传播</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300 hover:bg-green-700">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-            }
-        });
+        <div class="fact-card">
+          <h3>成就感</h3>
+          <p>完成任务、克服挑战或实现目标时，多巴胺系统会<span class="hormone-accent">奖励</span>我们。这种"成就高峰"感觉使我们有动力继续进步和成长。</p>
+        </div>
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <div class="fact-card">
+          <h3>愉悦活动</h3>
+          <p>许多自然愉悦体验会激活多巴胺通路，包括<span class="hormone-accent">美食、性、社交互动</span>和某些形式的运动。这些活动触发多巴胺释放是有进化意义的，因为它们促进生存和繁衍。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>多巴胺与成瘾的关系</h3>
+        <p>各种成瘾物质（如酒精、尼古丁、可卡因）和行为（赌博、社交媒体）之所以具有成瘾性，是因为它们能直接或间接地过度刺激大脑的多巴胺系统。这些物质或行为能比自然奖励释放更多的多巴胺，更快速、更强烈地激活奖励通路。</p>
+        <p>随着时间推移，重复接触这些强烈刺激会导致多巴胺系统适应性改变，包括受体敏感性下降和奖励阈值上升。这就是为什么成瘾者需要越来越多的刺激才能体验到相同水平的愉悦感，同时对自然奖励的反应减弱。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Effects Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>多巴胺对身体和心理的影响</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>积极影响</h3>
+          <ul class="tips-list">
+            <li><strong>提高动机和驱动力</strong> - 多巴胺水平充足时，我们更有动力追求目标，克服挑战。</li>
+            <li><strong>增强专注力和学习能力</strong> - 适量的多巴胺有助于维持注意力，促进学习和记忆过程。</li>
+            <li><strong>提升情绪和幸福感</strong> - 多巴胺与积极情绪紧密相关，是我们体验快乐和满足的关键。</li>
+            <li><strong>改善运动控制</strong> - 多巴胺对于平滑、协调的运动至关重要。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>多巴胺失衡的影响</h3>
+          <ul class="tips-list">
+            <li><strong>多巴胺过低</strong> - 可能导致动力不足、情绪低落、注意力问题和厌倦感。帕金森病是一种由多巴胺产生细胞逐渐死亡导致的疾病。</li>
+            <li><strong>多巴胺过高或功能失调</strong> - 与精神分裂症、双相情感障碍和成瘾行为相关。</li>
+            <li><strong>多巴胺敏感性下降</strong> - 长期接触强烈刺激(如某些药物或过度使用社交媒体)可降低多巴胺受体敏感性，导致"快感阈值"提高，使人难以从日常活动中获得满足感。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food and Activities Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>促进多巴胺健康平衡的食物和活动</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>有助于多巴胺产生的食物</h3>
+          <p>某些食物含有多巴胺前体物质酪氨酸或直接支持多巴胺系统：</p>
+          
+          <div class="food-grid">
+            <div class="food-item">
+              <div class="food-icon">🥚</div>
+              <p>蛋类</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🧀</div>
+              <p>奶酪</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🍌</div>
+              <p>香蕉</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🥬</div>
+              <p>绿叶蔬菜</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🥜</div>
+              <p>坚果和种子</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🐟</div>
+              <p>富含蛋白质的鱼类</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🍫</div>
+              <p>黑巧克力</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🍎</div>
+              <p>苹果</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3>健康促进多巴胺的活动</h3>
+          <ul class="tips-list">
+            <li><strong>制定和实现小目标</strong> - 将大目标分解为小目标，定期体验完成任务的满足感。</li>
+            <li><strong>规律运动</strong> - 特别是有氧运动，已被证明可以增强多巴胺信号传导。</li>
+            <li><strong>冥想和正念练习</strong> - 研究表明这些做法可以增加多巴胺受体密度，提高系统效率。</li>
+            <li><strong>听喜爱的音乐</strong> - 能激活大脑奖励中心，增加多巴胺释放。</li>
+            <li><strong>创造性活动</strong> - 如绘画、写作、音乐和舞蹈等能刺激多巴胺释放。</li>
+            <li><strong>新体验</strong> - 尝试新食物、访问新地方或学习新技能。</li>
+            <li><strong>高质量睡眠</strong> - 对维持健康的多巴胺信号传导至关重要。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research and Balance Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>相关研究与多巴胺平衡</h2>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>多巴胺与预期奖励研究</h3>
+          <p>神经科学家沃尔科夫·舒尔茨(Wolfram Schultz)的研究发现，多巴胺神经元在预期奖励时比实际获得奖励时活动更强烈。这项发现改变了我们对多巴胺作用的理解，表明它更多地与"渴望"而非"享受"相关。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>数字技术与多巴胺</h3>
+          <p>多项研究表明，社交媒体、电子游戏和智能手机的设计利用了多巴胺系统的机制。随机奖励、社交验证和即时反馈等元素刺激多巴胺释放，可能导致使用这些技术的强烈渴望。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>实现多巴胺的健康平衡</h3>
+        <p>多巴胺系统的健康不是关于最大化多巴胺释放，而是建立一个能够对生活中真正重要的事情做出适当反应的系统。以下策略有助于维持多巴胺平衡：</p>
+        <ul class="tips-list">
+          <li><strong>实践间歇性愉悦</strong> - 避免持续暴露于强烈刺激，而是给予系统恢复的时间。例如，通过"数字排毒"或限制社交媒体使用。</li>
+          <li><strong>培养延迟满足的能力</strong> - 这可以训练大脑的奖励系统，减少对即时满足的依赖。</li>
+          <li><strong>增加自然奖励的价值</strong> - 通过正念和感恩练习，提高对简单愉悦(如一顿美食、一次深谈、大自然中的漫步)的欣赏能力。</li>
+          <li><strong>保持健康习惯</strong> - 足够的睡眠、定期锻炼和均衡饮食对多巴胺系统的健康至关重要。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Hormones Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>多巴胺与其他激素的关系</h2>
+      
+      <div class="grid grid-2">
+        <a href="endorphin.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">多巴胺与内啡肽</h3>
+            <p>这两种物质常一起工作，特别是在运动时。内啡肽提供"跑步者高潮"的镇痛效果，而多巴胺提供动力和满足感。</p>
+          </div>
+        </a>
+        
+        <a href="serotonin.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">多巴胺与血清素</h3>
+            <p>这两种神经递质在情绪调节中相互平衡。多巴胺与动机和愉悦相关，而血清素则与情绪稳定和满足感相关。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

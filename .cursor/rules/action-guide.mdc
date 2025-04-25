@@ -9,3 +9,5 @@ alwaysApply: true
 - The requirements document is [requirements.md](mdc:doc/requirements.md)
 - Update [finish-status.md](mdc:doc/finish-status.md) after each iteration
 - For website content, please refer to the article I wrote [example.md](mdc:doc/example.md)
+- The UI design is in the folder "UI-design"
+- Implement what is not implemented

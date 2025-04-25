@@ -1,463 +1,227 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="人体激素科普 - 了解多巴胺、内啡肽、血清素、催产素、皮质醇如何影响身体和情绪">
-    <title>人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(120deg, #4f46e5 0%, #8b5cf6 100%);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 9999px;
-            color: white;
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .hormone-card a.btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .dopamine-btn {
-            background: linear-gradient(to right, #10b981, #047857);
-        }
-        
-        .dopamine-btn:hover {
-            background: linear-gradient(to right, #059669, #065f46);
-        }
-        
-        .endorphin-btn {
-            background: linear-gradient(to right, #f59e0b, #d97706);
-        }
-        
-        .endorphin-btn:hover {
-            background: linear-gradient(to right, #d97706, #b45309);
-        }
-        
-        .serotonin-btn {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-        }
-        
-        .serotonin-btn:hover {
-            background: linear-gradient(to right, #0891b2, #0e7490);
-        }
-        
-        .oxytocin-btn {
-            background: linear-gradient(to right, #ec4899, #db2777);
-        }
-        
-        .oxytocin-btn:hover {
-            background: linear-gradient(to right, #db2777, #be185d);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人体激素科普 - 了解多巴胺、内啡肽、血清素、催产素、皮质醇</title>
+  <meta name="description" content="探索人体激素如何影响身体和心理健康，了解多巴胺、内啡肽、血清素、催产素、皮质醇的作用机制及如何优化激素平衡。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">首页</a>
-                    <a href="#hormone-section" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">激素知识</a>
-                    <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">关于</a>
-                </nav>
-                
-                <div class="flex items-center">
-                    <div class="relative">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
-    <!-- 英雄区域 -->
-    <section class="gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">探索影响我们身心的激素奥秘</h1>
-                <p class="text-lg md:text-xl opacity-90 mb-8">了解多巴胺、内啡肽、血清素、催产素和皮质醇如何塑造情绪、行为和健康状态</p>
-                <a href="#hormone-section" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-gray-50 transition-colors shadow-md">
-                    开始探索
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">了解激素如何影响你的身心健康</h1>
+        <p class="hero-description">探索五种关键激素如何影响我们的情绪、行为和生理过程，以及如何通过日常生活习惯优化激素水平。</p>
+        <div class="hero-buttons">
+          <a href="#hormone-cards" class="btn btn-primary">探索激素</a>
+          <a href="resources.html" class="btn btn-outline">学习资源</a>
+        </div>
+      </div>
+      <img src="assets/brain.svg" alt="大脑与激素图解" class="hero-image">
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section" id="introduction">
+    <div class="container">
+      <h2 class="section-title">为什么了解激素很重要？</h2>
+      <p class="section-description">激素是体内的化学信使，调节着我们的情绪、能量水平、应激反应、社交行为等多种生理功能。了解它们的作用机制可以帮助我们优化生活习惯，提升健康与幸福感。</p>
+      
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">激素与日常生活</h3>
+            <p>你是否曾感到莫名的疲惫、焦虑或情绪低落？这些感受往往与体内激素水平有直接关系。通过了解激素的作用，你可以更好地理解自己的身体信号，并做出有利于健康的选择。</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">科学与通俗的结合</h3>
+            <p>本网站以通俗易懂的方式解释复杂的生理过程，帮助非专业人士理解激素如何影响我们的身体和心理。我们提供的建议基于科学研究，但表述方式确保普通读者也能轻松理解。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hormone Cards Section -->
+  <section class="section" id="hormone-cards">
+    <div class="container">
+      <h2 class="section-title">五种关键激素</h2>
+      <p class="section-description">这些激素在我们的日常情绪和身体功能中扮演着核心角色，了解它们可以帮助你优化生活习惯，改善健康状况。</p>
+      
+      <div class="grid grid-3">
+        <!-- Dopamine Card -->
+        <div class="card hormone-card dopamine-border">
+          <div class="card-content">
+            <img src="assets/dopamine.svg" alt="多巴胺" class="hormone-icon">
+            <h3 class="card-title">多巴胺</h3>
+            <p>"奖励激素"多巴胺在动机、愉悦感和专注力方面起着关键作用。了解如何健康地刺激多巴胺分泌，避免成瘾风险。</p>
+            <a href="dopamine.html" class="btn btn-outline">了解更多</a>
+          </div>
         </div>
         
-        <!-- 波浪分隔符 -->
-        <div class="w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
+        <!-- Endorphin Card -->
+        <div class="card hormone-card endorphin-border">
+          <div class="card-content">
+            <img src="assets/endorphin.svg" alt="内啡肽" class="hormone-icon">
+            <h3 class="card-title">内啡肽</h3>
+            <p>"天然镇痛剂"内啡肽能缓解疼痛并带来愉悦感。探索如何通过运动和其他活动自然地提升内啡肽水平。</p>
+            <a href="endorphin.html" class="btn btn-outline">了解更多</a>
+          </div>
         </div>
-    </section>
-
-    <!-- 简介部分 -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">理解人体激素的重要性</h2>
-                <p class="text-lg text-gray-600">激素是体内的化学信使，控制着从情绪到新陈代谢的众多功能。了解它们如何工作，可以帮助我们优化生活方式，改善身心健康。</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <div class="feature-icon bg-gradient-to-r from-green-500 to-green-600 mb-5">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">影响日常生活</h3>
-                    <p class="text-gray-600">激素平衡直接影响情绪、精力、食欲和睡眠质量，塑造我们的日常体验。</p>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <div class="feature-icon bg-gradient-to-r from-blue-500 to-blue-600 mb-5">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">基于科学的观点</h3>
-                    <p class="text-gray-600">所有信息都基于科学研究，以帮助做出更明智的生活方式选择。</p>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <div class="feature-icon bg-gradient-to-r from-purple-500 to-purple-600 mb-5">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">实用生活指导</h3>
-                    <p class="text-gray-600">了解如何通过饮食、运动和习惯来优化激素水平，提升整体健康。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 激素展示部分 -->
-    <section id="hormone-section" class="py-16 md:py-24 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">认识五种关键激素</h2>
-                <p class="text-lg text-gray-600">这些激素在调节情绪、动力和社交行为方面扮演着关键角色</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 多巴胺 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon dopamine-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">多巴胺</h3>
-                        <p class="text-gray-600 mb-6">"奖励激素" - 控制动力、愉悦感和成就感，驱动追求目标</p>
-                        <a href="dopamine.html" class="btn-more dopamine-btn">
-                            了解更多
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 内啡肽 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon endorphin-icon">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">内啡肽</h3>
-                        <p class="text-gray-600 mb-6">"天然镇痛剂" - 减轻疼痛，产生欣快感，运动时释放</p>
-                        <a href="endorphin.html" class="btn-more endorphin-btn">
-                            了解更多
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 血清素 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon serotonin-icon">
-                            <i class="fas fa-smile"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">血清素</h3>
-                        <p class="text-gray-600 mb-6">"快乐激素" - 调节情绪、食欲和睡眠，对抗抑郁和焦虑</p>
-                        <a href="serotonin.html" class="btn-more serotonin-btn">
-                            了解更多
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 催产素 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon oxytocin-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">催产素</h3>
-                        <p class="text-gray-600 mb-6">"爱的激素" - 增强亲密感和社交联系，促进信任和依恋</p>
-                        <a href="oxytocin.html" class="btn-more oxytocin-btn">
-                            了解更多
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 皮质醇 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon cortisol-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">皮质醇</h3>
-                        <p class="text-gray-600 mb-6">"压力激素" - 在压力状态下释放，控制警觉性和应对能力</p>
-                        <a href="cortisol.html" class="btn-more cortisol-btn">
-                            了解更多
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 信息卡片 -->
-                <div class="hormone-card bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="p-6 text-center">
-                        <div class="hormone-icon info-icon">
-                            <i class="fas fa-info"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">更多内容</h3>
-                        <p class="text-gray-600 mb-6">深入了解各种激素的相互作用和平衡对健康的影响</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 大脑图解部分 -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">激素在大脑中的作用</h2>
-                <p class="text-lg text-gray-600">了解这些关键激素如何在大脑和身体中发挥作用</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
-                <!-- 大脑图解示意图 -->
-                <div class="bg-gradient-to-r from-gray-50 to-gray-100 h-80 flex items-center justify-center">
-                    <p class="text-gray-500 text-lg">大脑激素作用图解（示意图）</p>
-                </div>
-            </div>
-            
-            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mr-4">
-                        <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
-                            <i class="fas fa-lightbulb text-white"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">科普小知识</h4>
-                        <p class="text-gray-700">激素不仅是化学物质，它们是复杂信号系统的一部分，影响我们的思想、感受和行为。了解这些激素，有助于更好地掌控情绪和健康。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于部分 -->
-    <section id="about" class="py-16 md:py-24 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">关于本站</h2>
-                <p class="text-lg text-gray-600">这是一个纯粹出于个人兴趣的科普项目，希望以通俗易懂的方式分享人体激素知识</p>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
-                <p class="text-gray-700 mb-4">本网站基于科学研究和专业知识整理而成，旨在帮助大众了解人体激素的奥秘。内容力求准确易懂，方便应用到日常生活中，优化激素平衡，提升健康状态。</p>
-                <p class="text-gray-700">这是一个公益性质的科普项目，源于对科学传播的热爱。希望这些知识能够帮助每个关注健康的朋友。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">激素科普</h3>
-                    <p class="text-gray-400">让科学知识改变生活</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                        <li><a href="dopamine.html" class="text-gray-400 hover:text-white transition-colors">多巴胺</a></li>
-                        <li><a href="endorphin.html" class="text-gray-400 hover:text-white transition-colors">内啡肽</a></li>
-                        <li><a href="serotonin.html" class="text-gray-400 hover:text-white transition-colors">血清素</a></li>
-                        <li><a href="oxytocin.html" class="text-gray-400 hover:text-white transition-colors">催产素</a></li>
-                        <li><a href="cortisol.html" class="text-gray-400 hover:text-white transition-colors">皮质醇</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">参考资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">相关书籍</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">研究论文</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习资源</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">&copy; 2023 人体激素科普网站 · 公益科普项目 · 欢迎分享传播</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300 hover:bg-indigo-700">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-            }
-        });
+        <!-- Serotonin Card -->
+        <div class="card hormone-card serotonin-border">
+          <div class="card-content">
+            <img src="assets/serotonin.svg" alt="血清素" class="hormone-icon">
+            <h3 class="card-title">血清素</h3>
+            <p>"情绪稳定剂"血清素对心情、睡眠和消化有重要影响。发现如何通过饮食、光照和活动提高血清素水平。</p>
+            <a href="serotonin.html" class="btn btn-outline">了解更多</a>
+          </div>
+        </div>
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <!-- Oxytocin Card -->
+        <div class="card hormone-card oxytocin-border">
+          <div class="card-content">
+            <img src="assets/oxytocin.svg" alt="催产素" class="hormone-icon">
+            <h3 class="card-title">催产素</h3>
+            <p>"爱与信任激素"催产素促进社交联系和亲密感。学习如何通过积极的社交互动和身体接触增加催产素分泌。</p>
+            <a href="oxytocin.html" class="btn btn-outline">了解更多</a>
+          </div>
+        </div>
+        
+        <!-- Cortisol Card -->
+        <div class="card hormone-card cortisol-border">
+          <div class="card-content">
+            <img src="assets/cortisol.svg" alt="皮质醇" class="hormone-icon">
+            <h3 class="card-title">皮质醇</h3>
+            <p>"压力激素"皮质醇在应对紧急情况时非常重要，但长期高水平可能有害。发现如何管理压力，保持健康的皮质醇水平。</p>
+            <a href="cortisol.html" class="btn btn-outline">了解更多</a>
+          </div>
+        </div>
+        
+        <!-- Resources Card -->
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">延伸阅读</h3>
+            <p>探索我们精心挑选的书籍、文章和研究资源，深入了解激素科学及其对健康的影响。</p>
+            <a href="resources.html" class="btn btn-primary">浏览资源库</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Facts Section -->
+  <section class="section" id="key-facts">
+    <div class="container">
+      <h2 class="section-title">激素平衡的关键事实</h2>
+      <p class="section-description">了解这些基本原则，帮助你优化激素平衡，改善整体健康。</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>激素相互作用</h3>
+          <p>人体内的激素系统是相互关联的——一种激素的变化可能影响其他多种激素。例如，长期压力导致的皮质醇升高可能抑制血清素和催产素的产生。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>昼夜节律的重要性</h3>
+          <p>许多激素遵循自然的昼夜节律分泌模式。保持规律的睡眠-觉醒周期有助于维持健康的激素平衡，包括褪黑素、皮质醇和生长激素。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>运动与激素</h3>
+          <p>定期运动能积极调节多种激素，包括增加内啡肽和血清素的释放，同时帮助调节皮质醇水平，改善总体激素平衡。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>社交联系的影响</h3>
+          <p>积极的社交互动可以增加催产素释放，减少皮质醇水平，甚至可能影响多巴胺和血清素系统，对健康有全面益处。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资源库 - 激素科学的精选资源 | 人体激素科普</title>
+  <meta name="description" content="探索我们精心筛选的文章、视频和参考资料，深入了解人体激素如何影响健康、情绪和行为。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 资源库页面特定样式 */
+    .resources-header {
+      background-color: rgba(30, 41, 59, 0.05);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .resources-title {
+      margin-bottom: 1rem;
+      color: var(--neutral-900);
+    }
+    
+    .resources-description {
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--neutral-700);
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+    
+    .resources-tabs {
+      display: flex;
+      justify-content: center;
+      margin: 3rem 0 2rem;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    
+    .tab-button {
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-button.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .tab-button:hover {
+      color: var(--primary-dark);
+    }
+    
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .resource-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resource-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: var(--neutral-100);
+    }
+    
+    .resource-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .resource-category {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .resource-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 0.75rem;
+    }
+    
+    .resource-description {
+      color: var(--neutral-600);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .resource-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--neutral-500);
+    }
+    
+    .load-more {
+      display: block;
+      width: 200px;
+      margin: 2rem auto;
+      padding: 0.75rem 0;
+      text-align: center;
+      background-color: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .load-more:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .resources-filter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .filter-group {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .filter-select {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--neutral-300);
+      border-radius: 0.25rem;
+      background-color: white;
+      color: var(--neutral-700);
+      font-size: 0.875rem;
+    }
+    
+    .search-input {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--neutral-300);
+      border-radius: 0.25rem;
+      min-width: 250px;
+      font-size: 0.875rem;
+    }
+    
+    .video-duration {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+    }
+    
+    .video-thumbnail-container {
+      position: relative;
+    }
+    
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .play-icon::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 20px solid white;
+      margin-left: 5px;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      background-color: var(--neutral-50);
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--neutral-400);
+    }
+    
+    .empty-state-text {
+      font-size: 1.25rem;
+      color: var(--neutral-600);
+      margin-bottom: 1rem;
+    }
+    
+    .empty-state-subtext {
+      color: var(--neutral-500);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html" class="active">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Resources Header -->
+  <section class="resources-header">
+    <div class="container">
+      <h1 class="resources-title">激素科学资源库</h1>
+      <p class="resources-description">
+        探索我们精心筛选的文章、视频和参考资料集合，帮助你深入了解人体激素如何影响健康、情绪和日常生活。
+        无论你是激素科学的初学者，还是希望深入了解特定主题的研究者，这里都有适合你的资源。
+      </p>
+    </div>
+  </section>
+
+  <!-- Resources Tabs -->
+  <div class="container">
+    <div class="resources-tabs">
+      <button class="tab-button active" id="articles-tab">文章资源</button>
+      <button class="tab-button" id="videos-tab">视频资源</button>
+    </div>
+  </div>
+
+  <!-- Articles Section -->
+  <section class="resources-section" id="articles-section">
+    <div class="container">
+      <div class="resources-filter">
+        <div class="filter-group">
+          <select class="filter-select" id="article-category">
+            <option value="">全部分类</option>
+            <option value="science">科学研究</option>
+            <option value="health">健康指南</option>
+            <option value="lifestyle">生活方式</option>
+            <option value="psychology">心理学</option>
+          </select>
+          <select class="filter-select" id="article-hormone">
+            <option value="">全部激素</option>
+            <option value="dopamine">多巴胺</option>
+            <option value="endorphin">内啡肽</option>
+            <option value="serotonin">血清素</option>
+            <option value="oxytocin">催产素</option>
+            <option value="cortisol">皮质醇</option>
+          </select>
+        </div>
+        <input type="text" class="search-input" placeholder="搜索文章..." id="article-search">
+      </div>
+
+      <!-- Empty State for Articles -->
+      <div class="empty-state">
+        <div class="empty-state-icon">📚</div>
+        <h3 class="empty-state-text">文章资源即将上线</h3>
+        <p class="empty-state-subtext">
+          我们正在精心筛选高质量的文章资源。请稍后再来查看，或订阅我们的通讯以获取最新更新。
+        </p>
+      </div>
+
+      <!-- Articles Grid (Hidden for now, will be populated later) -->
+      <div class="resources-grid" style="display: none;">
+        <!-- Article Card Template -->
+        <a href="#" class="resource-card">
+          <img src="placeholder-article.jpg" alt="文章标题" class="resource-image">
+          <div class="resource-content">
+            <div class="resource-category">科学研究</div>
+            <h3 class="resource-title">多巴胺与奖励系统：最新研究综述</h3>
+            <p class="resource-description">
+              这篇综述探讨了多巴胺在人脑奖励系统中的作用，以及它如何影响动机、学习和成瘾行为。
+            </p>
+            <div class="resource-meta">
+              <span>阅读时间: 12分钟</span>
+              <span>2023年10月</span>
+            </div>
+          </div>
+        </a>
+        <!-- More article cards would go here -->
+      </div>
+      
+      <button class="load-more" style="display: none;">加载更多</button>
+    </div>
+  </section>
+
+  <!-- Videos Section (Hidden Initially) -->
+  <section class="resources-section" id="videos-section" style="display: none;">
+    <div class="container">
+      <div class="resources-filter">
+        <div class="filter-group">
+          <select class="filter-select" id="video-category">
+            <option value="">全部分类</option>
+            <option value="explainer">科普解说</option>
+            <option value="lecture">专家讲座</option>
+            <option value="interview">专家访谈</option>
+            <option value="documentary">纪录片</option>
+          </select>
+          <select class="filter-select" id="video-duration">
+            <option value="">全部时长</option>
+            <option value="short">短片 (<10分钟)</option>
+            <option value="medium">中长 (10-30分钟)</option>
+            <option value="long">长片 (>30分钟)</option>
+          </select>
+        </div>
+        <input type="text" class="search-input" placeholder="搜索视频..." id="video-search">
+      </div>
+
+      <!-- Empty State for Videos -->
+      <div class="empty-state">
+        <div class="empty-state-icon">🎬</div>
+        <h3 class="empty-state-text">视频资源即将上线</h3>
+        <p class="empty-state-subtext">
+          我们正在制作和收集高质量的激素科学视频内容。请稍后再来查看，或关注我们的社交媒体以获取最新更新。
+        </p>
+      </div>
+
+      <!-- Videos Grid (Hidden for now, will be populated later) -->
+      <div class="resources-grid" style="display: none;">
+        <!-- Video Card Template -->
+        <a href="#" class="resource-card">
+          <div class="video-thumbnail-container">
+            <img src="placeholder-video.jpg" alt="视频标题" class="resource-image">
+            <div class="play-icon"></div>
+            <div class="video-duration">15:42</div>
+          </div>
+          <div class="resource-content">
+            <div class="resource-category">专家讲座</div>
+            <h3 class="resource-title">催产素与人际关系：情感连接的生物学基础</h3>
+            <p class="resource-description">
+              这个视频探讨了催产素如何影响我们的社交行为和情感联系，以及它在建立信任和亲密关系中的关键作用。
+            </p>
+            <div class="resource-meta">
+              <span>播放次数: 2.4万</span>
+              <span>2023年9月</span>
+            </div>
+          </div>
+        </a>
+        <!-- More video cards would go here -->
+      </div>
+      
+      <button class="load-more" style="display: none;">加载更多</button>
+    </div>
+  </section>
+
+  <!-- Coming Soon Banner -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="highlight-box" style="background-color: rgba(79, 70, 229, 0.05); border-left-color: var(--primary);">
+        <h3>内容持续更新中</h3>
+        <p>我们正在不断扩充资源库，提供更多关于人体激素的深入研究、实用建议和科学发现。如果你有好的资源推荐，或希望与我们合作，请通过以下方式联系我们。</p>
+        <div style="margin-top: 1rem;">
+          <a href="#contact" class="button button-primary">联系我们</a>
+          <a href="#subscribe" class="button button-secondary" style="margin-left: 1rem;">订阅更新</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 简单的标签切换逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      const articleTab = document.getElementById('articles-tab');
+      const videosTab = document.getElementById('videos-tab');
+      const articleSection = document.getElementById('articles-section');
+      const videosSection = document.getElementById('videos-section');
+      
+      articleTab.addEventListener('click', function() {
+        articleTab.classList.add('active');
+        videosTab.classList.remove('active');
+        articleSection.style.display = 'block';
+        videosSection.style.display = 'none';
+      });
+      
+      videosTab.addEventListener('click', function() {
+        videosTab.classList.add('active');
+        articleTab.classList.remove('active');
+        videosSection.style.display = 'block';
+        articleSection.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html> 

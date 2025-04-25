@@ -1,978 +1,468 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="血清素详解 - 探索这种'情绪稳定剂'如何调节情绪、睡眠和消化系统健康">
-    <title>血清素 - 人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .serotonin-header {
-            background: linear-gradient(120deg, #06b6d4 0%, #0891b2 100%);
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-            color: white;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dopamine-btn {
-            background: linear-gradient(to right, #10b981, #047857);
-        }
-        
-        .dopamine-btn:hover {
-            background: linear-gradient(to right, #059669, #065f46);
-        }
-        
-        .endorphin-btn {
-            background: linear-gradient(to right, #f59e0b, #d97706);
-        }
-        
-        .endorphin-btn:hover {
-            background: linear-gradient(to right, #d97706, #b45309);
-        }
-        
-        .serotonin-btn {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-        }
-        
-        .serotonin-btn:hover {
-            background: linear-gradient(to right, #0891b2, #0e7490);
-        }
-        
-        .oxytocin-btn {
-            background: linear-gradient(to right, #ec4899, #db2777);
-        }
-        
-        .oxytocin-btn:hover {
-            background: linear-gradient(to right, #db2777, #be185d);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-        
-        .info-box {
-            background: linear-gradient(to right, rgba(6, 182, 212, 0.05), rgba(8, 145, 178, 0.1));
-            border-left: 4px solid #06b6d4;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>血清素 - 情绪稳定剂的科学与平衡 | 人体激素科普</title>
+  <meta name="description" content="深入了解血清素如何影响情绪、睡眠和消化，以及如何通过饮食、光照和活动自然调节血清素水平。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 血清素页面特定样式 */
+    .hormone-detail-header {
+      background-color: rgba(251, 191, 36, 0.1);
+    }
+
+    .hormone-title {
+      color: var(--serotonin);
+    }
+
+    .hormone-accent {
+      color: var(--serotonin);
+    }
+
+    .custom-icon-bg {
+      background-color: rgba(251, 191, 36, 0.1);
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .detail-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .highlight-box {
+      background-color: rgba(251, 191, 36, 0.05);
+      border-left: 4px solid var(--serotonin);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tips-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--serotonin);
+      font-weight: bold;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .food-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .food-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mood-slider {
+      width: 100%;
+      height: 80px;
+      margin: 2rem 0;
+      position: relative;
+      background: linear-gradient(to right, #ef4444, #fbbf24, #10b981);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .mood-slider:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      transition: all 0.5s ease;
+    }
+    
+    .mood-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+    
+    .mood-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 2px solid var(--neutral-800);
+      border-radius: 50%;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2 group">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
-                            <i class="fas fa-flask text-white"></i>
-                        </div>
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-2">
-                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center space-x-1">
-                        <i class="fas fa-home text-sm"></i>
-                        <span>首页</span>
-                    </a>
-                    <a href="index.html#hormone-section" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center space-x-1">
-                        <i class="fas fa-dna text-sm"></i>
-                        <span>激素知识</span>
-                    </a>
-                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center space-x-1">
-                        <i class="fas fa-info-circle text-sm"></i>
-                        <span>关于我们</span>
-                    </a>
-                    <a href="#" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 shadow-sm hover:shadow flex items-center space-x-1">
-                        <i class="fas fa-download text-sm"></i>
-                        <span>资源下载</span>
-                    </a>
-                </nav>
-                
-                <div class="flex items-center space-x-4">
-                    <div class="relative group">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200 hover:border-indigo-300">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500 group-hover:text-indigo-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 搜索按钮 -->
-                    <button type="button" class="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-indigo-100 text-gray-600 hover:text-indigo-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-                        <i class="fas fa-search text-sm"></i>
-                    </button>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-indigo-100 text-gray-600 hover:text-indigo-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- 移动端菜单 - 默认隐藏 -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-b-lg shadow-md">
-                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 flex items-center">
-                        <i class="fas fa-home w-6"></i>
-                        <span>首页</span>
-                    </a>
-                    <a href="index.html#hormone-section" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 flex items-center">
-                        <i class="fas fa-dna w-6"></i>
-                        <span>激素知识</span>
-                    </a>
-                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 flex items-center">
-                        <i class="fas fa-info-circle w-6"></i>
-                        <span>关于我们</span>
-                    </a>
-                    <a href="#" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 flex items-center">
-                        <i class="fas fa-download w-6"></i>
-                        <span>资源下载</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- 详情页标题 -->
-    <section class="serotonin-header text-white py-16 md:py-20" style="padding-bottom: 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hormone-icon serotonin-icon bg-white mx-auto" style="color: #06b6d4;">
-                <i class="fas fa-smile"></i>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">血清素</h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">"情绪稳定剂" - 维持心理平衡与身体健康的关键神经递质</p>
-        </div>
-        
-        <!-- 波浪分隔符 -->
-        <div class="w-full mt-8" style="margin-bottom: -1px; display: block;" style="padding-top: 5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50" style="display: block;">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- 主要内容 -->
-    <section class="py-12 md:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 定义与作用机制 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center justify-center">
-                                <i class="fas fa-info-circle text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">科学定义与作用机制</h2>
-                    </div>
-                    
-                    <p class="text-gray-700">血清素（5-羟色胺，5-HT）是一种重要的神经递质和激素，主要由肠道（约95%）和中枢神经系统（约5%）产生。它由人体内的必需氨基酸色氨酸合成，在大脑中不同区域通过特定受体发挥作用，影响多种身心功能。</p>
-                    
-                    <p class="text-gray-700 mt-4">血清素的作用机制主要包括：</p>
-                    <ul class="mt-2 mb-4 space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-cyan-500 mt-1 mr-2"></i>
-                            <span>在突触间隙释放并与突触后神经元上的血清素受体结合</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-cyan-500 mt-1 mr-2"></i>
-                            <span>通过激活不同类型的受体（共有7大类，至少14种亚型）产生多样化效应</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-cyan-500 mt-1 mr-2"></i>
-                            <span>影响神经元活动、情绪、食欲、消化、睡眠和体温等多项功能</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-cyan-500 mt-1 mr-2"></i>
-                            <span>与多种神经递质系统（如多巴胺、GABA、谷氨酸）相互作用</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle-check text-cyan-500 mt-1 mr-2"></i>
-                            <span>受到基因、环境、饮食和生活方式等多重因素的调节</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="info-box">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center">
-                                    <i class="fas fa-lightbulb text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">科学小知识</h4>
-                                <p class="text-gray-700">血清素最初于1948年被发现，当时科学家在研究血液凝固时分离出了一种能使血管收缩的物质。"血清素"这一名称正来源于"血清"(serum)和"活性"(tonin)的组合。然而，直到1953年才确认它在大脑中存在并作为神经递质发挥作用。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 分泌时机和条件 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center justify-center">
-                                <i class="fas fa-clock text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">分泌时机和条件</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">血清素的释放和水平受多种因素影响：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-sun text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">阳光照射</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">阳光（特别是晨光）会刺激血清素的产生</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-running text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">体力活动</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">适度运动可提高血清素水平</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-utensils text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">食物摄入</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">富含色氨酸的食物为血清素合成提供原料</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-sync-alt text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">循环节律</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">血清素水平会随昼夜节律变化，通常白天较高</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-users text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">社交互动</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">积极的社交活动可增加血清素分泌</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-smile text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900">愉快体验</h3>
-                            </div>
-                            <p class="text-gray-600 mt-2">积极思考与快乐经历会提升血清素水平</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4 rounded-r-lg">
-                        <p class="text-gray-700">季节性情绪障碍（SAD）与冬季光照减少导致的血清素水平下降有关，这也解释了为什么光照疗法对此类症状有效。研究表明，人们在夏季的血清素水平平均比冬季高约30%。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 对身体和心理的影响 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center justify-center">
-                                <i class="fas fa-brain text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">对身体和心理的影响</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-4">血清素在身心健康中扮演多重角色：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-600 mb-4 flex items-center">
-                                <i class="fas fa-brain mr-2"></i> 心理影响
-                            </h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>情绪调节</strong>：维持情绪平衡，预防抑郁和焦虑</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>心理弹性</strong>：增强应对压力的能力</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>认知功能</strong>：支持学习、记忆和注意力</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>自我控制</strong>：调节冲动行为和自制力</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>社交行为</strong>：影响社交互动质量和人际关系</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-600 mb-4 flex items-center">
-                                <i class="fas fa-heartbeat mr-2"></i> 生理影响
-                            </h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>睡眠-觉醒周期</strong>：血清素是褪黑素的前体，参与调节睡眠</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>食欲控制</strong>：影响饱腹感和食物偏好</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>消化系统</strong>：调节肠蠕动和消化液分泌</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>疼痛感知</strong>：参与疼痛信号的调节</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>体温调节</strong>：影响体温维持和热量产生</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700"><strong>心血管功能</strong>：影响血压和心率</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-5 mb-6">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">血清素水平失衡的影响</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-amber-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-amber-800 mb-2">水平过低</h4>
-                                <p class="text-gray-700">可能导致抑郁情绪、焦虑、失眠、食欲改变、注意力不集中和强迫行为</p>
-                            </div>
-                            <div class="bg-amber-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-amber-800 mb-2">水平过高</h4>
-                                <p class="text-gray-700">可能引发血清素综合征，症状包括烦躁、混乱、颤抖、肌肉僵硬和体温升高</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box mt-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
-                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">肠脑轴与血清素</h4>
-                                <p class="text-gray-700">科学家发现肠道与大脑之间存在双向通信系统，称为"肠-脑轴"。由于肠道产生了身体95%的血清素，肠道健康对血清素平衡和心理健康至关重要。肠道微生物群通过影响血清素产生，间接影响情绪状态和认知功能。这解释了为何肠道问题常与焦虑和抑郁等心理症状共存。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 提升血清素的方法 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center justify-center">
-                                <i class="fas fa-arrow-up text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">提升血清素的方法</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6">以下方法可能有助于自然提升血清素水平：</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        <!-- 方法1：饮食调整 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-utensils text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">饮食调整</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">摄入富含色氨酸的食物：鸡蛋、奶酪、豆类、坚果、种子、鱼类</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">增加复合碳水化合物：全谷物、水果和蔬菜</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">补充欧米茄-3脂肪酸：三文鱼、亚麻籽、核桃</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">摄入发酵食品：酸奶、泡菜、康普茶（促进肠道健康）</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 方法2：光照疗法 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-sun text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">光照疗法</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">每天接触自然阳光20-30分钟</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">冬季可考虑使用光疗灯（10,000勒克斯）</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">早晨光照效果最佳</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">保持规律的光照可重置生物钟</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 方法3：运动锻炼 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-running text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">运动锻炼</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">每周至少进行150分钟中等强度有氧运动</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">尝试高强度间歇训练（HIIT）</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">瑜伽和太极等活动也有益</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">户外运动结合阳光效果加倍</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 方法4：社交互动 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-users text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">社交互动</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">培养积极的社交关系</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">参与团体活动和志愿服务</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">与亲友定期交流和互动</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">拥抱和积极身体接触（释放多种神经递质）</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 方法5：减压技巧 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-spa text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">减压技巧</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">练习冥想和正念训练</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">深呼吸练习和进步性肌肉放松</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">保持工作与生活平衡</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">限制接触负面新闻和社交媒体</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 方法6：规律作息 -->
-                        <div class="bg-gradient-to-br from-white to-cyan-50 rounded-lg shadow p-5 hover:shadow-md transition-all">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-3">
-                                    <i class="fas fa-bed text-cyan-600"></i>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">规律作息</h3>
-                            </div>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">每晚保证7-9小时优质睡眠</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">固定睡眠和起床时间</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">创建黑暗、安静、舒适的睡眠环境</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-cyan-500 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">睡前减少蓝光暴露（电子设备）</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-amber-50 rounded-lg p-5">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-3">
-                                <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
-                                    <i class="fas fa-lightbulb text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">重要提示</h3>
-                                <p class="text-gray-700 mb-3">以上自然提升血清素的方法适用于维持正常心理健康状态的人群。如果您正在经历严重的情绪障碍如抑郁症或焦虑症，请寻求专业医疗帮助。医生可能会建议以下临床干预：</p>
-                                <ul class="space-y-1">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-amber-500 text-xs mt-1.5 mr-2"></i>
-                                        <span class="text-gray-700">选择性血清素再摄取抑制剂(SSRIs)等抗抑郁药物</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-amber-500 text-xs mt-1.5 mr-2"></i>
-                                        <span class="text-gray-700">认知行为疗法(CBT)等心理治疗方法</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-amber-500 text-xs mt-1.5 mr-2"></i>
-                                        <span class="text-gray-700">在专业指导下补充特定营养素</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 相关科学研究 -->
-            <div class="detail-section">
-                <h3><i class="fas fa-flask" style="color: var(--serotonin-color);"></i> 相关科学研究</h3>
-                <p>血清素研究是神经科学和精神医学的重要领域：</p>
-                
-                <ul style="list-style-position: inside; padding-left: 1rem;">
-                    <li><strong>抑郁症研究</strong>：血清素系统功能障碍是主要抑郁症的核心机制之一，选择性血清素再摄取抑制剂(SSRIs)是目前最常用的抗抑郁药物</li>
-                    <li><strong>基因多态性研究</strong>：血清素转运体基因(5-HTTLPR)的变异与情绪调节、抑郁症易感性和药物反应性相关</li>
-                    <li><strong>肠-脑轴研究</strong>：肠道微生物组通过影响血清素代谢影响心理健康，这为通过调节肠道健康改善心理状态提供了新思路</li>
-                    <li><strong>营养精神医学</strong>：研究饮食模式（如地中海饮食）对血清素系统和心理健康的影响</li>
-                    <li><strong>光照疗法研究</strong>：光照如何调节血清素分泌，以及光疗在季节性情绪障碍和非季节性抑郁中的应用</li>
-                    <li><strong>运动与血清素</strong>：不同类型和强度运动对血清素合成和释放的影响</li>
-                </ul>
-                
-                <p class="mt-2">2022年一项涉及超过10,000名参与者的长期研究发现，坚持地中海饮食模式的人群抑郁风险降低约33%，这种效应部分归因于该饮食对血清素系统的积极影响。另一项研究显示，每周进行至少150分钟中等强度有氧运动可使抑郁症状显著改善，效果相当于轻中度抑郁药物治疗。</p>
-            </div>
-            
-            <!-- 实用建议 -->
-            <div class="detail-section">
-                <h3><i class="fas fa-lightbulb" style="color: var(--serotonin-color);"></i> 健康管理血清素的建议</h3>
-                
-                <ul style="list-style-position: inside; padding-left: 1rem;">
-                    <li><strong>全面方法</strong>：结合多种自然提升血清素的方法，而非仅依赖单一策略</li>
-                    <li><strong>光照优先</strong>：将获取足够自然光作为日常优先事项，尤其是早晨时段</li>
-                    <li><strong>饮食均衡</strong>：不过分专注于单一"超级食品"，而是采用整体均衡的饮食模式</li>
-                    <li><strong>持续运动</strong>：保持规律性比偶尔高强度锻炼更有益于稳定血清素水平</li>
-                    <li><strong>昼夜节律</strong>：保持稳定的睡眠-觉醒周期，有助于调节血清素和褪黑素平衡</li>
-                    <li><strong>社交平衡</strong>：既要有充分社交互动，也要有适当独处时间</li>
-                    <li><strong>肠道护理</strong>：重视肠道健康，包括摄入益生菌和膳食纤维</li>
-                    <li><strong>季节性调整</strong>：根据季节变化调整生活习惯，冬季可能需要更多光照和维生素D</li>
-                    <li><strong>技术使用</strong>：平衡使用数字设备，减少夜间蓝光暴露</li>
-                </ul>
-                
-                <div class="info-box mt-3">
-                    <h4>寻求专业帮助</h4>
-                    <p>对于可能存在显著血清素失衡的情况（如持续性抑郁、焦虑或睡眠障碍），生活方式调整虽然重要，但不应替代专业医疗建议。血清素系统的复杂性意味着某些状况可能需要药物治疗或心理咨询等专业干预。如果你持续体验情绪低落、睡眠问题或其他可能与血清素相关的症状，请咨询医疗专业人士获取个性化建议。</p>
-                </div>
-            </div>
-
-            <!-- 参考文献 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
-                <div class="p-6 md:p-8">
-                    <div class="flex items-start mb-6">
-                        <div class="flex-shrink-0 mr-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-                                <i class="fas fa-book text-white"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900">参考文献</h2>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Berger M, Gray JA, Roth BL. <span class="italic">The expanded biology of serotonin</span>. Annual Review of Medicine. 2009;60:355-366.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Jenkins TA, Nguyen JC, Polglaze KE, Bertrand PP. <span class="italic">Influence of Tryptophan and Serotonin on Mood and Cognition with a Possible Role of the Gut-Brain Axis</span>. Nutrients. 2016;8(1):56.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Young SN, Leyton M. <span class="italic">The role of serotonin in human mood and social interaction: Insight from altered tryptophan levels</span>. Pharmacology Biochemistry and Behavior. 2002;71(4):857-865.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Heijnen S, Hommel B, Kibele A, Colzato LS. <span class="italic">Neuromodulation of Aerobic Exercise—A Review</span>. Frontiers in Psychology. 2016;6:1890.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Fakhoury M. <span class="italic">Revisiting the Serotonin Hypothesis: Implications for Major Depressive Disorders</span>. Molecular Neurobiology. 2016;53(5):2778-2786.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Meltzer HY, Massey BW. <span class="italic">The role of serotonin receptors in the action of atypical antipsychotic drugs</span>. Current Opinion in Pharmacology. 2011;11(1):59-67.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Strasser B, Gostner JM, Fuchs D. <span class="italic">Mood, food, and cognition: role of tryptophan and serotonin</span>. Current Opinion in Clinical Nutrition and Metabolic Care. 2016;19(1):55-61.</p>
-                        </div>
-                        
-                        <div class="border-l-4 border-indigo-500 pl-4 py-2 hover:bg-indigo-50 transition-colors rounded">
-                            <p class="text-gray-700">Yano JM, Yu K, Donaldson GP, et al. <span class="italic">Indigenous bacteria from the gut microbiota regulate host serotonin biosynthesis</span>. Cell. 2015;161(2):264-276.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 text-sm text-gray-500">
-                        <p>最后更新时间: 2023年12月</p>
-                    </div>
-                </div>
-            </div>
-            
-            <footer class="text-center py-6 text-gray-500 text-sm">
-                <p>© 2023 人体激素知识库 | 本网站仅供教育目的，不构成医疗建议</p>
-                <p class="mt-2">如有健康问题，请咨询专业医疗人员</p>
-            </footer>
-        </div>
-    </section>
-
-    <!-- 相关激素链接 -->
-    <h3 class="text-center mt-3 mb-2">探索其他激素</h3>
-    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
-        <div class="card dopamine">
-            <div class="card-content text-center">
-                <div class="hormone-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                    <i class="fas fa-star"></i>
-                </div>
-                <h3 class="card-title">多巴胺</h3>
-                <a href="dopamine.html" class="btn">了解更多</a>
-            </div>
-        </div>
-        
-        <div class="card endorphin">
-            <div class="card-content text-center">
-                <div class="hormone-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                    <i class="fas fa-running"></i>
-                </div>
-                <h3 class="card-title">内啡肽</h3>
-                <a href="endorphin.html" class="btn">了解更多</a>
-            </div>
-        </div>
-        
-        <div class="card oxytocin">
-            <div class="card-content text-center">
-                <div class="hormone-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3 class="card-title">催产素</h3>
-                <a href="oxytocin.html" class="btn">了解更多</a>
-            </div>
-        </div>
-        
-        <div class="card cortisol">
-            <div class="card-content text-center">
-                <div class="hormone-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3 class="card-title">皮质醇</h3>
-                <a href="cortisol.html" class="btn">了解更多</a>
-            </div>
-        </div>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html" class="active">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
     </div>
+  </header>
 
-    <!-- 页脚 -->
-    <footer class="bg-white mt-16 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-                            <i class="fas fa-flask text-white"></i>
-                        </div>
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </div>
-                    <p class="text-gray-600 text-sm">我们致力于以通俗易懂的方式普及人体激素知识，帮助大家更好地了解自己的身体。</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition-colors duration-200">
-                            <i class="fab fa-weixin text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition-colors duration-200">
-                            <i class="fab fa-weibo text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition-colors duration-200">
-                            <i class="fab fa-bilibili text-lg"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition-colors duration-200">
-                            <i class="fab fa-zhihu text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">激素知识</h3>
-                    <ul class="space-y-2">
-                        <li><a href="serotonin.html" class="text-gray-600 hover:text-indigo-600 text-sm">血清素</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">多巴胺</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">肾上腺素</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">催产素</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">内啡肽</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">实用资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">激素调节指南</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">健康生活方式</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">饮食与激素</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-indigo-600 text-sm">运动健身推荐</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">联系我们</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 text-indigo-500 w-5"></i>
-                            <span class="text-gray-600 text-sm">contact@hormonescience.com</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 text-indigo-500 w-5"></i>
-                            <span class="text-gray-600 text-sm">+86 123 4567 8910</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 text-indigo-500 w-5"></i>
-                            <span class="text-gray-600 text-sm">北京市海淀区中关村科技园</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2023 激素科普网站. 保留所有权利.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm">隐私政策</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm">使用条款</a>
-                    <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm">网站地图</a>
-                </div>
-            </div>
+  <!-- Hormone Detail Header -->
+  <section class="hormone-detail-header">
+    <div class="container">
+      <div class="custom-icon-bg">
+        <img src="assets/serotonin.svg" alt="血清素" class="detail-icon">
+      </div>
+      <h1 class="hormone-title">血清素：情绪稳定的关键调节剂</h1>
+      <p class="hormone-description">血清素是一种重要的神经递质，被誉为"情绪稳定剂"，对心情、睡眠、消化和其他生理功能有广泛影响。了解如何优化血清素水平，可以帮助你改善情绪、睡眠质量和整体健康状况。</p>
+    </div>
+  </section>
+
+  <!-- Definition and Mechanism Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>什么是血清素？</h2>
+      <div class="detail-grid">
+        <div>
+          <p>血清素（5-羟色胺）是一种由人体自然产生的神经递质和激素，主要由肠道中的特殊细胞（约90%）和大脑中的神经元（约10%）合成。</p>
+          <p>作为神经递质，血清素在多个生理和心理过程中起关键作用：</p>
+          <ul>
+            <li>调节情绪和心理状态</li>
+            <li>影响睡眠-觉醒周期</li>
+            <li>控制肠胃蠕动和消化功能</li>
+            <li>参与食欲和饱腹感调节</li>
+            <li>影响认知功能和记忆</li>
+            <li>调节体温</li>
+            <li>参与疼痛感知</li>
+          </ul>
+          <p>血清素不能直接从食物中获取或通过血脑屏障进入大脑，而是由身体使用饮食中的色氨酸（一种必需氨基酸）合成。因此，含有丰富<span class="hormone-accent">色氨酸</span>的食物能间接支持血清素的产生。</p>
         </div>
-    </footer>
-
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script>
-        // 移动端菜单切换
-        const mobileMenuButton = document.querySelector('.md\\:hidden button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-        
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        if (backToTopButton) {
-            // 监听滚动事件
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.replace('opacity-0', 'opacity-100');
-                } else {
-                    backToTopButton.classList.replace('opacity-100', 'opacity-0');
-                }
-            });
+        <div class="detail-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" viewBox="0 0 500 300" fill="none">
+            <!-- Brain outline -->
+            <path d="M250 120C350 120 420 150 420 190C420 230 350 260 250 260C150 260 80 230 80 190C80 150 150 120 250 120Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
             
-            // 点击返回顶部
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
+            <!-- Raphe nuclei -->
+            <path d="M250 170C260 170 270 180 270 190C270 200 260 210 250 210C240 210 230 200 230 190C230 180 240 170 250 170Z" fill="#fbbf24" opacity="0.5" stroke="#fbbf24" stroke-width="2"/>
+            <text x="250" y="190" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">缝核</text>
+            
+            <!-- Serotonin pathways -->
+            <path d="M250 170C260 160 270 150 285 145" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M250 170C240 160 220 155 205 145" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M250 210C260 220 275 230 290 235" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M250 210C240 220 220 230 205 235" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Gut -->
+            <path d="M250 320C310 320 360 310 360 300C360 290 310 280 250 280C190 280 140 290 140 300C140 310 190 320 250 320Z" fill="#fbbf24" opacity="0.1" stroke="#fbbf24" stroke-width="2"/>
+            <text x="250" y="300" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="12">肠道</text>
+            <text x="250" y="315" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">(90% 的血清素在此产生)</text>
+            
+            <!-- Brain-gut connection -->
+            <path d="M250 260L250 280" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Serotonin molecule simplified -->
+            <circle cx="410" cy="70" r="20" fill="#fbbf24" opacity="0.2" stroke="#fbbf24" stroke-width="2"/>
+            <text x="410" y="74" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">血清素</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When Released Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>血清素何时分泌？</h2>
+      <p>血清素的产生和释放受多种因素影响，以下是主要的触发因素：</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>光照暴露</h3>
+          <p><span class="hormone-accent">阳光和明亮光线</span>是血清素产生的关键刺激因素。这就是为什么人们在阳光充足的季节通常心情更好，而一些人在冬季可能经历季节性情感障碍。</p>
+        </div>
         
-        // 页面加载完成后淡入效果
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('animate-fadeIn');
-        });
-    </script>
+        <div class="fact-card">
+          <h3>身体活动</h3>
+          <p>规律的<span class="hormone-accent">体育锻炼</span>能增加血清素水平。有氧活动尤其有效，研究表明30分钟的中等强度运动就能提升血清素水平。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>饮食摄入</h3>
+          <p>摄入富含<span class="hormone-accent">色氨酸</span>的食物（如鸡蛋、奶酪、火鸡、鱼类、豆类和全谷物）为血清素的合成提供了必要的前体物质。碳水化合物也能间接促进血清素的产生。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>积极思考和回忆</h3>
+          <p>参与<span class="hormone-accent">愉快的活动</span>或回忆美好的经历也能刺激血清素释放，这显示了大脑思维活动与神经化学物质之间的复杂联系。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>昼夜节律与血清素</h3>
+        <p>血清素水平遵循<span class="hormone-accent">昼夜节律</span>模式，通常在早晨开始上升，并在白天保持较高水平。血清素还是褪黑素（睡眠激素）的前体，随着夜晚的到来，一部分血清素被转化为褪黑素，帮助调节睡眠-觉醒周期。</p>
+        <p>这种昼夜节律解释了为什么维持规律的作息对稳定情绪和睡眠质量如此重要，以及为什么时差反应和不规律的睡眠模式会干扰情绪状态。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Effects Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>血清素对身体和心理的影响</h2>
+      
+      <div class="mood-slider">
+        <div class="mood-indicator"></div>
+      </div>
+      <div class="mood-labels">
+        <span>低落、抑郁</span>
+        <span>平衡、满足</span>
+        <span>亢奋、紧张</span>
+      </div>
+      
+      <div class="detail-grid" style="margin-top: 2rem;">
+        <div>
+          <h3>积极影响</h3>
+          <ul class="tips-list">
+            <li><strong>情绪稳定</strong> - 适当的血清素水平有助于维持平和的情绪，产生满足感和幸福感。</li>
+            <li><strong>改善睡眠质量</strong> - 血清素是褪黑素的前体，健康的血清素水平支持正常的睡眠-觉醒周期。</li>
+            <li><strong>促进健康消化</strong> - 在肠道中，血清素调节蠕动和消化液分泌，支持正常消化功能。</li>
+            <li><strong>控制食欲</strong> - 血清素在传递饱腹感信号中起关键作用，帮助控制进食。</li>
+            <li><strong>增强社交行为</strong> - 适当的血清素水平与更积极的社交互动和减少敌意相关。</li>
+            <li><strong>认知优化</strong> - 血清素对学习、记忆和集中注意力有积极影响。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>血清素失衡的影响</h3>
+          <ul class="tips-list">
+            <li><strong>血清素不足</strong> - 与抑郁、焦虑、睡眠问题、食欲不振或暴饮暴食、自我价值感低和社交退缩相关。</li>
+            <li><strong>血清素过多</strong> - 可能导致"血清素综合征"，表现为神经系统兴奋过度、高体温、心率加快、血压上升、瞳孔放大、肌肉僵硬和胃肠问题。</li>
+            <li><strong>血清素受体敏感性变化</strong> - 即使血清素水平正常，受体功能问题也可能导致类似血清素水平异常的症状。</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <h3>血清素与抑郁症</h3>
+            <p>虽然血清素与抑郁症的关系曾被简化为"低血清素理论"，但现代科学认为这种关系更为复杂。抑郁症可能涉及血清素、多巴胺和去甲肾上腺素等多种神经递质的失衡，以及大脑特定区域的结构和功能变化。许多抗抑郁药物如选择性血清素再摄取抑制剂(SSRIs)通过增加突触间隙的血清素水平发挥作用。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food and Activities Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>促进血清素健康平衡的食物和活动</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>富含色氨酸的食物</h3>
+          <p>色氨酸是血清素的前体物质，以下食物是良好来源：</p>
+          
+          <div class="food-grid">
+            <div class="food-item">
+              <div class="food-icon">🥚</div>
+              <p>蛋类</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🧀</div>
+              <p>奶酪</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🦃</div>
+              <p>火鸡肉</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🐟</div>
+              <p>鲑鱼和金枪鱼</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🍞</div>
+              <p>全谷物</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🥜</div>
+              <p>坚果和种子</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🌱</div>
+              <p>豆类</p>
+            </div>
+            <div class="food-item">
+              <div class="food-icon">🍌</div>
+              <p>香蕉</p>
+            </div>
+          </div>
+          
+          <div class="highlight-box mt-4">
+            <h3>碳水化合物与血清素</h3>
+            <p>适量的复合碳水化合物可以间接促进血清素合成。碳水化合物触发胰岛素释放，帮助色氨酸进入大脑，从而支持血清素的产生。这解释了为什么许多人在压力大时会渴望碳水化合物丰富的"comfort food"（安慰食品）。</p>
+            <p>然而，选择全谷物和低GI（血糖指数）的碳水化合物比精制糖和白面粉产品更有益于长期的情绪稳定。</p>
+          </div>
+        </div>
+        
+        <div>
+          <h3>提升血清素的活动和生活方式</h3>
+          <ul class="tips-list">
+            <li><strong>阳光暴露</strong> - 每天至少15-30分钟的自然光照（特别是早晨）能显著增加血清素产生。如果生活在光照不足的地区，考虑使用光疗灯。</li>
+            <li><strong>规律运动</strong> - 每周至少150分钟的中等强度有氧运动能有效提升血清素水平。散步、慢跑、游泳和骑自行车都是理想选择。</li>
+            <li><strong>冥想和正念</strong> - 研究表明，定期冥想练习可以增加血清素受体的敏感性，改善情绪调节能力。</li>
+            <li><strong>按摩</strong> - 专业按摩可以降低皮质醇（压力激素）水平，同时提高血清素和多巴胺水平。</li>
+            <li><strong>规律作息</strong> - 维持稳定的睡眠-觉醒周期对保持健康的血清素节律至关重要。</li>
+            <li><strong>社交联系</strong> - 积极的社交互动能刺激多种"感觉良好"的神经化学物质，包括血清素。</li>
+            <li><strong>减少压力</strong> - 长期压力会降低血清素水平，所以压力管理技巧如深呼吸、瑜伽和太极对维持血清素平衡很重要。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research and Health Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>相关研究与健康应用</h2>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>肠-脑轴研究</h3>
+          <p>最新研究强调了肠道健康与心理健康之间的重要联系，被称为"肠-脑轴"。由于大部分血清素在肠道中产生，肠道微生物组的健康对血清素生产和心理健康有重大影响。益生菌和高纤维饮食对支持健康的肠道环境和优化血清素功能可能很重要。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>血清素与慢性疼痛</h3>
+          <p>血清素在大脑的疼痛处理中起重要作用，这解释了为什么某些抗抑郁药物在治疗慢性疼痛状况（如纤维肌痛和偏头痛）中可能有效。通过健康饮食、规律运动和压力管理来自然优化血清素系统，可能有助于管理某些疼痛状况。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>血清素与整体健康</h3>
+        <p>维持健康的血清素平衡对整体健康的多个方面都很重要：</p>
+        <ul class="tips-list">
+          <li><strong>情绪弹性</strong> - 健康的血清素水平帮助我们更有效地应对生活挑战和压力，增强情绪弹性。</li>
+          <li><strong>消化健康</strong> - 血清素调节肠道蠕动和分泌，支持正常消化功能。</li>
+          <li><strong>睡眠质量</strong> - 作为褪黑素的前体，血清素对健康的睡眠-觉醒周期至关重要。</li>
+          <li><strong>认知功能</strong> - 血清素对学习、记忆和注意力有积极影响。</li>
+          <li><strong>食欲调节</strong> - 健康的血清素功能帮助维持适当的食欲和健康的饮食行为。</li>
+        </ul>
+        <p>大多数人可以通过健康的生活方式选择来优化血清素功能，但对于血清素严重失衡的情况，专业医疗建议是必不可少的。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Hormones Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>血清素与其他激素的关系</h2>
+      
+      <div class="grid grid-2">
+        <a href="dopamine.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">血清素与多巴胺</h3>
+            <p>这两种神经递质共同调节情绪和奖励系统。血清素倾向于产生满足和满足感，而多巴胺与渴望和动机相关。它们之间的平衡对健康的心理功能很重要。</p>
+          </div>
+        </a>
+        
+        <a href="cortisol.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">血清素与皮质醇</h3>
+            <p>长期压力和高皮质醇水平会抑制血清素产生和功能，这解释了慢性压力与抑郁之间的联系。健康的血清素系统能帮助缓冲压力反应。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

@@ -1,893 +1,459 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="皮质醇详解 - 探索这种'压力激素'如何影响身体应激反应、免疫功能和能量代谢">
-    <title>皮质醇 - 人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .cortisol-header {
-            background: linear-gradient(120deg, #6366f1 0%, #4f46e5 100%);
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-            color: white;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-        
-        .info-box {
-            background: linear-gradient(to right, rgba(99, 102, 241, 0.05), rgba(79, 70, 229, 0.1));
-            border-left: 4px solid #6366f1;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皮质醇 - 压力激素的科学与平衡 | 人体激素科普</title>
+  <meta name="description" content="深入了解皮质醇如何影响压力反应、免疫系统和代谢，以及如何通过生活方式调整来保持健康的皮质醇水平。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 皮质醇页面特定样式 */
+    .hormone-detail-header {
+      background-color: rgba(244, 63, 94, 0.1);
+    }
+
+    .hormone-title {
+      color: var(--cortisol);
+    }
+
+    .hormone-accent {
+      color: var(--cortisol);
+    }
+
+    .custom-icon-bg {
+      background-color: rgba(244, 63, 94, 0.1);
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .detail-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .highlight-box {
+      background-color: rgba(244, 63, 94, 0.05);
+      border-left: 4px solid var(--cortisol);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tips-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--cortisol);
+      font-weight: bold;
+    }
+
+    .stress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .stress-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .stress-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stress-cycle {
+      width: 100%;
+      max-width: 500px;
+      margin: 2rem auto;
+      position: relative;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">首页</a>
-                    <a href="index.html#hormone-section" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">激素知识</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">关于</a>
-                </nav>
-                
-                <div class="flex items-center">
-                    <div class="relative">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html" class="active">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
-    <!-- 详情页标题 -->
-    <section class="cortisol-header text-white py-16 md:py-20" style="padding-bottom: 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hormone-icon cortisol-icon bg-white mx-auto" style="color: #6366f1;">
-                <i class="fas fa-bolt"></i>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">皮质醇</h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">"压力激素" - 调节身体应对压力和挑战的关键生存机制</p>
+  <!-- Hormone Detail Header -->
+  <section class="hormone-detail-header">
+    <div class="container">
+      <div class="custom-icon-bg">
+        <img src="assets/cortisol.svg" alt="皮质醇" class="detail-icon">
+      </div>
+      <h1 class="hormone-title">皮质醇：应对压力的关键激素</h1>
+      <p class="hormone-description">皮质醇是一种由肾上腺皮质分泌的糖皮质激素，被称为"压力激素"，在应对威胁和压力时发挥至关重要的作用。了解如何管理皮质醇水平，可以帮助你更好地应对压力、改善睡眠质量，并维护整体健康。</p>
+    </div>
+  </section>
+
+  <!-- Definition and Mechanism Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>什么是皮质醇？</h2>
+      <div class="detail-grid">
+        <div>
+          <p>皮质醇是一种类固醇激素，由肾上腺皮质（位于肾脏上方的肾上腺的外层）分泌。作为"压力激素"，皮质醇在身体的压力反应和多种生理过程中发挥关键作用：</p>
+          <ul>
+            <li>调节碳水化合物、蛋白质和脂肪代谢</li>
+            <li>控制炎症反应</li>
+            <li>影响血压和心血管功能</li>
+            <li>调节血糖水平</li>
+            <li>影响免疫系统功能</li>
+            <li>参与记忆形成过程</li>
+            <li>调节睡眠-觉醒周期</li>
+          </ul>
+          <p>皮质醇的分泌遵循<span class="hormone-accent">昼夜节律</span>，通常在早晨达到峰值（帮助我们起床和应对一天的挑战），然后在一天中逐渐下降，在午夜前达到最低点（允许休息和修复）。</p>
+        </div>
+        <div class="detail-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" viewBox="0 0 500 300" fill="none">
+            <!-- Brain and HPA axis -->
+            <ellipse cx="250" cy="50" rx="100" ry="40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            <text x="250" y="55" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="14">大脑</text>
+            
+            <!-- Hypothalamus -->
+            <circle cx="250" cy="80" r="15" fill="#f43f5e" opacity="0.2" stroke="#f43f5e" stroke-width="2"/>
+            <text x="250" y="84" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">下丘脑</text>
+            
+            <!-- Pituitary -->
+            <circle cx="250" cy="120" r="15" fill="#f43f5e" opacity="0.2" stroke="#f43f5e" stroke-width="2"/>
+            <text x="250" y="124" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">垂体</text>
+            
+            <!-- Adrenal glands -->
+            <ellipse cx="200" cy="200" rx="25" ry="15" fill="#f43f5e" opacity="0.2" stroke="#f43f5e" stroke-width="2"/>
+            <text x="200" y="204" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">肾上腺</text>
+            
+            <ellipse cx="300" cy="200" rx="25" ry="15" fill="#f43f5e" opacity="0.2" stroke="#f43f5e" stroke-width="2"/>
+            <text x="300" y="204" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="10">肾上腺</text>
+            
+            <!-- Kidneys (simplified) -->
+            <ellipse cx="200" cy="220" rx="20" ry="30" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            <ellipse cx="300" cy="220" rx="20" ry="30" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            
+            <!-- HPA axis connections -->
+            <path d="M250 95L250 105" stroke="#f43f5e" stroke-width="2"/>
+            <path d="M250 135L225 185" stroke="#f43f5e" stroke-width="2"/>
+            <path d="M250 135L275 185" stroke="#f43f5e" stroke-width="2"/>
+            
+            <!-- Cortisol release -->
+            <path d="M190 210C170 230 150 250 130 260" stroke="#f43f5e" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M310 210C330 230 350 250 370 260" stroke="#f43f5e" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Cortisol molecule simplified -->
+            <rect x="370" y="50" width="80" height="30" rx="5" fill="#f43f5e" opacity="0.1" stroke="#f43f5e" stroke-width="2"/>
+            <text x="410" y="70" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="12">皮质醇</text>
+            
+            <!-- Feedback loop -->
+            <path d="M170 230C130 180 150 100 220 80" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+            <path d="M330 230C370 180 350 100 280 80" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When Released Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>皮质醇何时分泌？</h2>
+      <p>皮质醇的分泌受多种内部和外部因素的影响：</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>压力反应</h3>
+          <p>当面临<span class="hormone-accent">身体或心理压力源</span>时，大脑的下丘脑会触发一系列级联反应（称为"下丘脑-垂体-肾上腺轴"或HPA轴），最终导致肾上腺释放皮质醇。这是人体的"战斗或逃跑"反应的一部分。</p>
         </div>
         
-        <!-- 波浪分隔符 -->
-        <div class="w-full mt-8" style="margin-bottom: -1px; display: block;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50" style="display: block;">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
+        <div class="fact-card">
+          <h3>昼夜节律</h3>
+          <p>皮质醇遵循明显的<span class="hormone-accent">24小时周期</span>，通常在清晨醒来前30-45分钟达到峰值（唤醒皮质醇反应），帮助我们醒来并提供能量。之后水平逐渐下降，到晚上达到最低点。</p>
         </div>
-    </section>
-
-    <!-- 主要内容 -->
-    <main class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- 科学定义与作用机制 -->
-            <section class="mb-20">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                    <div class="px-6 py-8 md:p-10">
-                        <h2 class="text-3xl font-bold mb-6 text-gray-900">什么是皮质醇？</h2>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            皮质醇是一种由肾上腺皮质分泌的类固醇激素，属于糖皮质激素类别。作为人体主要的应激激素，它在代谢、免疫调节和压力反应中发挥着核心作用。皮质醇在体内遵循昼夜节律，通常在清晨达到峰值，帮助我们醒来并为新的一天做好准备。
-                        </p>
-                        
-                        <div class="info-box">
-                            <div class="flex items-start">
-                                <div class="mr-4 mt-1">
-                                    <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 w-10 h-10 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">科学小知识</h3>
-                                    <p class="text-gray-700">
-                                        皮质醇于1935年首次从肾上腺提取，1950年获得诺贝尔生理学或医学奖的科学家爱德华·肯德尔(Edward Kendall)和塔迪乌什·莱希施泰因(Tadeus Reichstein)将其结构确定。皮质醇的名称来源于其分泌器官肾上腺皮质(adrenal cortex)。皮质醇被称为"压力激素"，但实际上它在非压力状态下对维持多种生理功能同样至关重要。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 皮质醇科学图表 -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
-                        <div class="px-6 py-8 flex flex-col h-full">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-900">皮质醇的作用机制</h3>
-                            <p class="text-gray-700 mb-4">
-                                皮质醇的作用机制主要包括通过下丘脑-垂体-肾上腺轴(HPA轴)的级联反应被激活，进入细胞后与特定受体结合，影响基因表达，从而产生各种生理效应。
-                            </p>
-                            <ul class="space-y-2 mb-4">
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-indigo-500 mr-2"></i> 调节葡萄糖、蛋白质和脂肪代谢，提供能量来源
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-indigo-500 mr-2"></i> 影响心血管系统，提高心率和血压
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-indigo-500 mr-2"></i> 调节免疫系统活性，抑制炎症反应
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-indigo-500 mr-2"></i> 影响大脑的认知功能和情绪调节
-                                </li>
-                            </ul>
-                            <div class="mt-auto pt-4 flex justify-center">
-                                <div class="w-full max-w-xs py-3">
-                                    <img src="./images/cortisol-mechanism.jpg" alt="皮质醇的作用机制" class="rounded-lg shadow-sm w-full h-48 object-cover">
-                                    <p class="text-xs text-center text-gray-500 mt-2">皮质醇如何影响人体各系统</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
-                        <div class="px-6 py-8 flex flex-col h-full">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-900">皮质醇分泌时机和条件</h3>
-                            <p class="text-gray-700 mb-4">
-                                皮质醇的分泌遵循明显的昼夜节律，并受多种因素影响：
-                            </p>
-                            <ul class="space-y-2 mb-4">
-                                <li class="flex items-start text-gray-700">
-                                    <i class="fas fa-clock text-indigo-500 mr-2 mt-1"></i> 
-                                    <span><strong>昼夜节律：</strong>通常在早晨6-8点达到峰值，午夜前后降至最低</span>
-                                </li>
-                                <li class="flex items-start text-gray-700">
-                                    <i class="fas fa-exclamation-triangle text-indigo-500 mr-2 mt-1"></i>
-                                    <span><strong>物理压力源：</strong>疼痛、极端温度、剧烈运动、感染和疾病</span>
-                                </li>
-                                <li class="flex items-start text-gray-700">
-                                    <i class="fas fa-brain text-indigo-500 mr-2 mt-1"></i>
-                                    <span><strong>心理压力源：</strong>工作压力、人际冲突、创伤经历、不确定性</span>
-                                </li>
-                                <li class="flex items-start text-gray-700">
-                                    <i class="fas fa-tint text-indigo-500 mr-2 mt-1"></i>
-                                    <span><strong>生理需求：</strong>低血糖状态、睡眠剥夺、咖啡因等刺激物</span>
-                                </li>
-                            </ul>
-                            <div class="mt-auto pt-4 flex justify-center">
-                                <div class="w-full max-w-xs py-3">
-                                    <img src="./images/cortisol-rhythm.jpg" alt="皮质醇昼夜节律" class="rounded-lg shadow-sm w-full h-48 object-cover">
-                                    <p class="text-xs text-center text-gray-500 mt-2">皮质醇的典型昼夜节律曲线</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 定义与作用机制 -->
-            <div class="detail-content">
-                <div class="detail-section">
-                    <h3><i class="fas fa-info-circle" style="color: var(--cortisol-color);"></i> 科学定义与作用机制</h3>
-                    <p>皮质醇是一种由肾上腺皮质分泌的类固醇激素，属于糖皮质激素类别。作为人体主要的应激激素，它在代谢、免疫调节和压力反应中发挥着核心作用。皮质醇在体内遵循昼夜节律，通常在清晨达到峰值，帮助我们醒来并为新的一天做好准备。</p>
-                    
-                    <p class="mt-2">皮质醇的作用机制主要包括：</p>
-                    <ul class="mt-1 mb-2" style="list-style-position: inside; padding-left: 1rem;">
-                        <li>通过下丘脑-垂体-肾上腺轴(HPA轴)的级联反应被激活</li>
-                        <li>进入细胞后与特定受体结合，影响基因表达</li>
-                        <li>调节葡萄糖、蛋白质和脂肪代谢，提供能量来源</li>
-                        <li>影响心血管系统，提高心率和血压</li>
-                        <li>调节免疫系统活性，抑制炎症反应</li>
-                        <li>影响大脑的认知功能和情绪调节</li>
-                    </ul>
-                    
-                    <div class="info-box">
-                        <h4>科学小知识</h4>
-                        <p>皮质醇于1935年首次从肾上腺提取，1950年获得诺贝尔生理学或医学奖的科学家爱德华·肯德尔(Edward Kendall)和塔迪乌什·莱希施泰因(Tadeus Reichstein)将其结构确定。皮质醇的名称来源于其分泌器官肾上腺皮质(adrenal cortex)。皮质醇被称为"压力激素"，但实际上它在非压力状态下对维持多种生理功能同样至关重要。</p>
-                    </div>
-                </div>
-                
-                <!-- 分泌时机和条件 -->
-                <div class="detail-section">
-                    <h3><i class="fas fa-clock" style="color: var(--cortisol-color);"></i> 分泌时机和条件</h3>
-                    <p>皮质醇的分泌受多种因素调控：</p>
-                    <ul style="list-style-position: inside; padding-left: 1rem;">
-                        <li><strong>昼夜节律</strong>：皮质醇遵循明显的昼夜节律，通常在早晨6-8点达到峰值，午夜前后降至最低</li>
-                        <li><strong>物理压力源</strong>：
-                            <ul style="padding-left: 1.5rem;">
-                                <li>疼痛和身体创伤</li>
-                                <li>极端温度（过热或过冷）</li>
-                                <li>剧烈运动和身体过度劳累</li>
-                                <li>感染和疾病</li>
-                            </ul>
-                        </li>
-                        <li><strong>心理压力源</strong>：
-                            <ul style="padding-left: 1.5rem;">
-                                <li>工作或学业压力</li>
-                                <li>人际冲突和社交压力</li>
-                                <li>创伤和恐惧体验</li>
-                                <li>不确定性和缺乏控制感</li>
-                            </ul>
-                        </li>
-                        <li><strong>生理需求</strong>：低血糖状态会触发皮质醇分泌</li>
-                        <li><strong>其他调节因素</strong>：
-                            <ul style="padding-left: 1.5rem;">
-                                <li>睡眠剥夺</li>
-                                <li>咖啡因等刺激物</li>
-                                <li>炎症因子</li>
-                                <li>大脑中枢调节</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <p class="mt-2">皮质醇分泌的"急性应激反应"是一种复杂的生理过程，最初由汉斯·塞利(Hans Selye)描述为"一般适应综合征"，包括警觉期、抵抗期和耗竭期。这种机制在进化上对我们的生存至关重要，使我们能够应对紧急情况并适应不断变化的环境。</p>
-                </div>
-                
-                <!-- 对身体和心理的影响 -->
-                <section class="mb-20">
-                    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">皮质醇对身体和心理的影响</h2>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                        <div class="px-6 py-8 md:p-10">
-                            <p class="text-gray-700 leading-relaxed mb-6">
-                                皮质醇的作用呈现出明显的双面性——短期内它对应对压力和调节生理功能至关重要，但长期过高则可能导致一系列健康问题。
-                            </p>
-                            
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <!-- 短期适应性影响 -->
-                                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6">
-                                    <h3 class="text-xl font-semibold mb-4 text-gray-900">短期适应性影响</h3>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>能量动员</strong> - 增加血糖水平，提供即时能量</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>增强警觉性</strong> - 提高感官敏感度和注意力</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>增强记忆形成</strong> - 有助于记住重要或危险的事件</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>抑制非必要功能</strong> - 暂时抑制消化、生殖和免疫等"非紧急"系统</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>降低疼痛敏感性</strong> - 在紧急情况下减轻疼痛感知</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-indigo-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>抗炎作用</strong> - 短期内控制过度炎症反应</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- 长期过高的潜在危害 -->
-                                <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-lg p-6">
-                                    <h3 class="text-xl font-semibold mb-4 text-gray-900">长期过高的潜在危害</h3>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>代谢问题</strong> - 体重增加（尤其是腹部脂肪）、胰岛素抵抗和糖尿病风险</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>心血管影响</strong> - 高血压、动脉粥样硬化和心脏疾病风险增加</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>免疫抑制</strong> - 降低抵抗力，增加感染风险</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>消化系统问题</strong> - 胃溃疡、肠易激综合征风险增加</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>骨骼健康</strong> - 骨密度下降，骨质疏松风险增加</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>脑功能影响</strong> - 记忆力下降，学习障碍，海马体容积减少</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-red-500 mr-2">●</span>
-                                            <span class="text-gray-700"><strong>心理健康</strong> - 慢性焦虑、抑郁风险增加，情绪调节障碍</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                        <div class="px-6 py-8 md:p-10">
-                            <div class="flex flex-col md:flex-row items-center md:items-start">
-                                <div class="md:w-1/3 flex-shrink-0 mb-6 md:mb-0 md:mr-8">
-                                    <div class="bg-gradient-to-br from-indigo-400 to-indigo-600 p-1 rounded-xl shadow-md">
-                                        <img src="./images/cortisol-brain.jpg" alt="皮质醇对大脑的影响" class="rounded-lg w-full h-auto">
-                                    </div>
-                                </div>
-                                <div class="md:w-2/3">
-                                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">压力与大脑</h3>
-                                    <p class="text-gray-700 leading-relaxed mb-4">
-                                        长期高水平皮质醇对大脑的影响尤为显著。研究表明，慢性压力可导致海马体（负责记忆形成的关键脑区）的神经元萎缩，而杏仁核（与恐惧和焦虑相关的脑区）则可能增大。
-                                    </p>
-                                    <p class="text-gray-700 leading-relaxed mb-4">
-                                        这种结构性变化可能是慢性压力导致认知和情绪问题的神经生物学基础。值得注意的是，这些变化在一定程度上是可逆的，通过有效的压力管理和生活方式调整可以促进大脑的可塑性和恢复。
-                                    </p>
-                                    
-                                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-md">
-                                        <div class="flex">
-                                            <div class="flex-shrink-0">
-                                                <i class="fas fa-brain text-indigo-500 mr-3 text-xl"></i>
-                                            </div>
-                                            <p class="text-indigo-700">
-                                                大脑的神经可塑性给了我们希望，即使长期压力造成了一定损伤，通过正确的干预，我们仍有机会恢复健康的大脑功能。
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 健康调节皮质醇的方法 -->
-                <section class="mb-20">
-                    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">健康调节皮质醇的方法</h2>
-                    
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <!-- 生活方式调整 -->
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                            <div class="px-6 py-8 flex flex-col items-center">
-                                <div class="hormone-icon cortisol-icon mb-6">
-                                    <i class="fas fa-heart-pulse"></i>
-                                </div>
-                                <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">生活方式调整</h3>
-                                <ul class="text-gray-700 space-y-2">
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 规律睡眠（每晚7-9小时）
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 适当运动（避免过度训练）
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 压力管理技术（冥想、深呼吸）
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 维持健康社交关系
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 合理的时间管理
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- 饮食调整 -->
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                            <div class="px-6 py-8 flex flex-col items-center">
-                                <div class="hormone-icon cortisol-icon mb-6">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
-                                <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">饮食调整</h3>
-                                <ul class="text-gray-700 space-y-2">
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 抗炎饮食（地中海饮食）
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 稳定血糖（低血糖指数食物）
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 限制咖啡因、酒精和精制糖
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 增加omega-3、维生素C和B群
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 保持充分水分
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- 环境调整 -->
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                            <div class="px-6 py-8 flex flex-col items-center">
-                                <div class="hormone-icon cortisol-icon mb-6">
-                                    <i class="fas fa-tree"></i>
-                                </div>
-                                <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">环境调整</h3>
-                                <ul class="text-gray-700 space-y-2">
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 减少接触压力源
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 创建平静、舒适的生活空间
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 减少数字过载，限制屏幕时间
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 增加与自然环境的接触
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 早晨接触自然光，晚上减少蓝光
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
-                        <div class="px-6 py-8 md:p-10">
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">运动与皮质醇的复杂关系</h3>
-                            <p class="text-gray-700 leading-relaxed mb-6">
-                                有趣的是，运动与皮质醇的关系是双向的。短期内，尤其是高强度运动会暂时增加皮质醇水平，这是正常的生理反应。然而，长期规律的中等强度运动能改善身体对压力的适应能力，降低基础皮质醇水平，并减少日常压力源触发的皮质醇峰值。
-                            </p>
-                            <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-md mb-6">
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <i class="fas fa-dumbbell text-indigo-500 mr-3 text-xl"></i>
-                                    </div>
-                                    <p class="text-indigo-700">
-                                        关键在于找到适合个人的运动类型和强度，避免过度训练，这反而可能成为身体的额外压力源。
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <h4 class="font-semibold text-gray-900 mb-3">推荐的运动类型：</h4>
-                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 中等强度有氧运动（每周150-300分钟）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 力量训练（每周至少2次）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 瑜伽和太极等身心结合的活动
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 户外活动（如散步、骑行、游泳）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 团队运动（增加社交联系）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2"></i> 舞蹈和其他愉悦的身体活动
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 相关科学研究 -->
-                <section class="mb-20">
-                    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">皮质醇相关科学研究</h2>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                        <div class="px-6 py-8 md:p-10">
-                            <p class="text-gray-700 leading-relaxed mb-6">
-                                皮质醇是应激和健康研究中的关键焦点。以下是近年来皮质醇研究的重要发现：
-                            </p>
-                            
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow h-full">
-                                    <div class="flex items-center mb-4">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                                            <i class="fas fa-flask text-white"></i>
-                                        </div>
-                                        <h3 class="text-xl font-semibold text-gray-900">慢性压力研究</h3>
-                                    </div>
-                                    <p class="text-gray-700 mb-4">
-                                        长期研究表明，持续高水平的皮质醇与多种慢性疾病相关，包括心血管疾病、代谢综合征和认知障碍。研究人员发现这种关联在不同年龄段和不同人群中普遍存在。
-                                    </p>
-                                    <p class="text-gray-700">
-                                        最近的研究还探索了慢性压力如何通过表观遗传机制影响基因表达，这些变化甚至可能代代相传，影响后代对压力的敏感性。
-                                    </p>
-                                </div>
-                                
-                                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow h-full">
-                                    <div class="flex items-center mb-4">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                                            <i class="fas fa-meditation text-white"></i>
-                                        </div>
-                                        <h3 class="text-xl font-semibold text-gray-900">心理社会干预研究</h3>
-                                    </div>
-                                    <p class="text-gray-700 mb-4">
-                                        2021年发表的一项大型元分析研究表明，8周以上的规律冥想练习可显著降低晨间皮质醇水平和压力反应性皮质醇。这一发现为非药物干预管理皮质醇水平提供了科学支持。
-                                    </p>
-                                    <p class="text-gray-700">
-                                        冥想、正念和认知行为疗法等干预已被证明能降低皮质醇水平，改善压力相关指标，成为临床和预防医学中重要的补充方法。
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-8 border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-bacteria text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">肠-脑轴研究</h3>
-                                </div>
-                                <p class="text-gray-700 mb-4">
-                                    一项前沿研究探索了肠-脑轴在压力反应中的作用，发现肠道菌群组成可能影响压力耐受性和皮质醇调节，这为未来通过饮食和益生菌干预管理压力反应开辟了可能性。
-                                </p>
-                                <p class="text-gray-700">
-                                    研究表明，某些益生菌可能帮助降低皮质醇水平，改善压力相关症状。这一领域的研究仍在快速发展，有望为压力管理提供新的干预方式。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 实用建议 -->
-                <section class="mb-20">
-                    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">平衡皮质醇的实用建议</h2>
-                    
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-brain text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">思维调整</h3>
-                                </div>
-                                <ul class="space-y-2 mb-4">
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i> 
-                                        <span>压力反应认知重构：将压力视为挑战而非威胁</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>接受不可控：区分可控与不可控因素，减少不必要的压力</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>培养弹性：增强心理弹性，提高压力适应能力</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>自我觉察：培养对身体压力信号的敏感度，及早干预</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-calendar-alt text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">时间管理</h3>
-                                </div>
-                                <ul class="space-y-2 mb-4">
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i> 
-                                        <span>创建日常例行：稳定的作息有助于维持健康的皮质醇昼夜节律</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>注重恢复：在紧张活动后安排足够的恢复时间</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>微休息：在忙碌的日程中安排简短的放松时刻</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>数字断联：定期远离电子设备，减少"永远在线"的压力</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-users text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">社交联系</h3>
-                                </div>
-                                <ul class="space-y-2 mb-4">
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i> 
-                                        <span>有意义的连接：培养深度社交联系，最强大的抗压力缓冲之一</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>寻求支持：在需要时不要犹豫寻求专业或朋友的帮助</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>志愿服务：帮助他人可以转移注意力，减轻自身压力</span>
-                                    </li>
-                                    <li class="flex items-start text-gray-700">
-                                        <i class="fas fa-check text-indigo-500 mr-2 mt-1"></i>
-                                        <span>社区参与：加入兴趣小组或社区活动增强归属感</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
-                        <div class="px-6 py-8 md:p-10">
-                            <div class="info-box">
-                                <div class="flex items-start">
-                                    <div class="mr-4 mt-1">
-                                        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 w-10 h-10 rounded-full flex items-center justify-center">
-                                            <i class="fas fa-info text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 mb-1">皮质醇的角色转变</h3>
-                                        <p class="text-gray-700">
-                                            重要的是认识到，皮质醇本身不是敌人，而是一种至关重要的调节激素。问题不在于皮质醇的存在，而在于其分泌模式和水平是否健康。我们的目标不应是消除皮质醇或压力（这是不可能也是不健康的），而是优化皮质醇的节律，培养健康的压力反应，并确保充分的恢复。在现代生活中，主动管理皮质醇节律可能是维持整体健康和长寿的关键因素之一。
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            
-            <!-- 相关激素链接 -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">探索其他激素</h2>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon dopamine-icon mb-6">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">多巴胺</h3>
-                            <p class="text-gray-700 text-center mb-6">
-                                "奖励激素" - 驱动动力与愉悦感的关键神经递质
-                            </p>
-                            <a href="dopamine.html" class="btn-more dopamine-btn mt-auto">
-                                了解更多 <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon endorphin-icon mb-6">
-                                <i class="fas fa-running"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">内啡肽</h3>
-                            <p class="text-gray-700 text-center mb-6">
-                                "天然止痛剂" - 掌控疼痛感知与运动快感的关键激素
-                            </p>
-                            <a href="endorphin.html" class="btn-more endorphin-btn mt-auto">
-                                了解更多 <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon serotonin-icon mb-6">
-                                <i class="fas fa-smile"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">血清素</h3>
-                            <p class="text-gray-700 text-center mb-6">
-                                "情绪稳定剂" - 调节情绪、睡眠和社交行为的神经递质
-                            </p>
-                            <a href="serotonin.html" class="btn-more serotonin-btn mt-auto">
-                                了解更多 <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon oxytocin-icon mb-6">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">催产素</h3>
-                            <p class="text-gray-700 text-center mb-6">
-                                "爱情激素" - 促进亲密关系、信任和社交联系的神经肽
-                            </p>
-                            <a href="oxytocin.html" class="btn-more oxytocin-btn mt-auto">
-                                了解更多 <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <h2 class="text-xl font-bold mb-4">人体激素科普</h2>
-                    <p class="text-gray-400 mb-4">致力于以通俗易懂的方式普及人体激素知识，帮助大家更好地了解自己的身体，保持健康的生活方式。</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition">
-                            <i class="fab fa-weixin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition">
-                            <i class="fab fa-weibo text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-indigo-500 transition">
-                            <i class="fab fa-bilibili text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-indigo-500 transition">首页</a></li>
-                        <li><a href="dopamine.html" class="text-gray-400 hover:text-indigo-500 transition">多巴胺</a></li>
-                        <li><a href="endorphin.html" class="text-gray-400 hover:text-indigo-500 transition">内啡肽</a></li>
-                        <li><a href="cortisol.html" class="text-gray-400 hover:text-indigo-500 transition">皮质醇</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-indigo-500 transition">科学文献</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-indigo-500 transition">健康建议</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-indigo-500 transition">常见问题</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-indigo-500 transition">联系我们</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2023 人体激素科普. 保留所有权利。</p>
-                <p class="text-gray-400 text-sm mt-4 md:mt-0">设计与内容仅供教育目的。不构成医疗建议。</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script>
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('opacity-100', 'visible');
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-                backToTopButton.classList.remove('opacity-100', 'visible');
-            }
-        });
+        <div class="fact-card">
+          <h3>血糖水平低</h3>
+          <p>当<span class="hormone-accent">血糖降低</span>时，皮质醇会被释放以帮助提高血糖水平，确保大脑和身体有足够的能量。长期禁食或极低碳水饮食可能导致皮质醇升高。</p>
+        </div>
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <div class="fact-card">
+          <h3>炎症和疾病</h3>
+          <p><span class="hormone-accent">感染和炎症</span>会刺激皮质醇释放，作为免疫系统反应的一部分。皮质醇具有抗炎特性，有助于控制免疫反应。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>急性压力 vs. 慢性压力</h3>
+        <p>皮质醇对<span class="hormone-accent">急性（短期）压力</span>和<span class="hormone-accent">慢性（长期）压力</span>的反应存在重要差异：</p>
+        <ul class="tips-list">
+          <li><strong>急性压力反应</strong> - 面对暂时威胁时，皮质醇快速升高，提供能量和警觉性，帮助应对紧急情况。一旦威胁消除，皮质醇水平恢复正常。</li>
+          <li><strong>慢性压力模式</strong> - 持续的压力导致皮质醇水平长期升高，破坏其正常昼夜节律，最终可能导致压力反应系统功能失调，影响健康。</li>
+        </ul>
+        <p>人体设计为应对短期压力情景，而非持续的高压力状态。管理慢性压力对维持健康的皮质醇水平至关重要。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Effects Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>皮质醇对身体和心理的影响</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>皮质醇的正常功能</h3>
+          <ul class="tips-list">
+            <li><strong>能量调动</strong> - 刺激葡萄糖产生，确保在压力情况下有足够的燃料供重要器官使用。</li>
+            <li><strong>增强警觉性</strong> - 在急性压力下提高认知功能和反应能力。</li>
+            <li><strong>控制炎症</strong> - 调节免疫反应，防止过度炎症。</li>
+            <li><strong>帮助恢复平衡</strong> - 压力事件后参与恢复内稳态。</li>
+            <li><strong>支持昼夜节律</strong> - 协助正常的睡眠-觉醒周期。</li>
+            <li><strong>调节血压</strong> - 帮助维持健康的心血管功能。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>皮质醇失衡的影响</h3>
+          <ul class="tips-list">
+            <li><strong>皮质醇过高</strong> - 慢性高水平皮质醇可能导致：
+              <ul>
+                <li>体重增加（特别是腹部脂肪）</li>
+                <li>免疫功能下降</li>
+                <li>高血压</li>
+                <li>高血糖和胰岛素抵抗</li>
+                <li>骨密度降低</li>
+                <li>睡眠问题</li>
+                <li>认知障碍和记忆问题</li>
+                <li>情绪波动和焦虑</li>
+              </ul>
+            </li>
+            <li><strong>皮质醇过低</strong> - 可能由肾上腺疲劳或疾病引起，症状包括：
+              <ul>
+                <li>极度疲劳</li>
+                <li>体重减轻</li>
+                <li>低血压</li>
+                <li>肌肉无力</li>
+                <li>情绪低落</li>
+              </ul>
+            </li>
+          </ul>
+          
+          <div class="highlight-box">
+            <h3>皮质醇与"文明病"</h3>
+            <p>慢性皮质醇失衡与许多现代健康问题相关，包括代谢综合征、2型糖尿病、心血管疾病和某些心理健康障碍。现代生活的持续压力源（如工作压力、财务担忧、社交媒体压力和生活节奏）可能对健康的皮质醇节律产生负面影响。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategies Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>管理皮质醇水平的策略</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>压力管理技术</h3>
+          
+          <div class="stress-grid">
+            <div class="stress-item">
+              <div class="stress-icon">🧘</div>
+              <p>冥想与正念</p>
+            </div>
+            <div class="stress-item">
+              <div class="stress-icon">🌬️</div>
+              <p>深呼吸练习</p>
+            </div>
+            <div class="stress-item">
+              <div class="stress-icon">🚶</div>
+              <p>步行与自然接触</p>
+            </div>
+            <div class="stress-item">
+              <div class="stress-icon">📝</div>
+              <p>日记与感恩记录</p>
+            </div>
+            <div class="stress-item">
+              <div class="stress-icon">🎨</div>
+              <p>艺术与创意表达</p>
+            </div>
+            <div class="stress-item">
+              <div class="stress-icon">🧠</div>
+              <p>认知重构</p>
+            </div>
+          </div>
+          
+          <h3 class="mt-4">生活方式因素</h3>
+          <ul class="tips-list">
+            <li><strong>规律运动</strong> - 中等强度有氧活动能在短期内提高皮质醇（有益的急性压力反应），但长期降低基线皮质醇水平，改善压力反应。</li>
+            <li><strong>优质睡眠</strong> - 充足的睡眠对维持健康的皮质醇昼夜节律至关重要。建立一致的睡眠时间表和睡前放松习惯。</li>
+            <li><strong>营养饮食</strong> - 避免极端饮食和长时间禁食，这可能触发皮质醇升高。保持规律进餐，摄入均衡的蛋白质、健康脂肪和复合碳水化合物。</li>
+            <li><strong>限制咖啡因</strong> - 尤其是在下午和晚上，因为咖啡因能刺激皮质醇产生。</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3>社交和心理策略</h3>
+          <ul class="tips-list">
+            <li><strong>社会联系</strong> - 培养有意义的关系可以降低皮质醇水平。与朋友和家人共度时光有助于缓冲压力反应。</li>
+            <li><strong>笑声和幽默</strong> - 笑声能降低皮质醇水平，增加内啡肽和其他积极神经化学物质。</li>
+            <li><strong>界限设定</strong> - 学会设定健康的界限，管理时间和精力，减少不必要的压力源。</li>
+            <li><strong>寻求专业支持</strong> - 对于严重的慢性压力、焦虑或抑郁，心理治疗和咨询可以提供有效的管理策略。</li>
+            <li><strong>重新构建压力观念</strong> - 研究表明，将压力视为提升表现的能量源（而非有害威胁）可以改变其在身体中的影响。</li>
+          </ul>
+          
+          <div class="highlight-box mt-4">
+            <h3>制定个人皮质醇管理计划</h3>
+            <p>为了优化皮质醇水平，考虑创建个性化的日常习惯，包括：</p>
+            <ul class="tips-list">
+              <li>早晨起床后阳光暴露，强化健康的昼夜节律</li>
+              <li>工作日安排短暂的正念休息或深呼吸练习</li>
+              <li>创建符合生理节律的日程表（在皮质醇自然高时安排挑战性任务）</li>
+              <li>睡前进行放松活动，避免屏幕和强烈刺激</li>
+              <li>学习识别个人压力触发因素和应对策略</li>
+              <li>定期安排恢复活动，如按摩、泡澡或静坐时间</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research and Applications Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>相关研究与健康应用</h2>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>皮质醇与心理健康</h3>
+          <p>研究表明，皮质醇水平异常与多种心理健康状况相关，包括抑郁症、焦虑障碍和创伤后应激障碍(PTSD)。例如，抑郁症患者通常表现出扁平的皮质醇节律，缺乏正常的早晨皮质醇峰值，而PTSD患者可能显示HPA轴功能异常。理解这些联系有助于开发更有效的心理健康干预措施。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>皮质醇与慢性疾病</h3>
+          <p>慢性高水平皮质醇与多种身体健康问题相关，包括心脏病、高血压、肥胖和免疫功能障碍。新兴研究正在探索压力管理干预如何减轻这些健康风险，表明全面的压力减轻计划可能成为预防和治疗慢性疾病的重要补充方法。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>皮质醇与衰老</h3>
+        <p>研究表明，长期皮质醇失衡可能加速衰老过程，特别是对大脑和免疫系统的影响。持续高水平的皮质醇与认知功能下降、记忆问题和神经元损伤相关。相反，有效的压力管理、规律运动和社会联系可能通过维持健康的皮质醇模式来支持健康衰老。</p>
+        <p>研究压力与衰老之间的联系正在推动医学领域将压力管理整合为健康老龄化策略的关键组成部分。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Hormones Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>皮质醇与其他激素的关系</h2>
+      
+      <div class="grid grid-2">
+        <a href="oxytocin.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">皮质醇与催产素</h3>
+            <p>这两种激素形成对立平衡：催产素可以降低皮质醇水平，减轻压力反应。这解释了为什么社交支持和亲密关系在缓冲压力影响方面如此重要。</p>
+          </div>
+        </a>
+        
+        <a href="serotonin.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">皮质醇与血清素</h3>
+            <p>长期高皮质醇水平可能降低血清素的生产和功能，这解释了慢性压力与情绪障碍之间的部分联系。保持健康的皮质醇水平有助于支持情绪调节。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

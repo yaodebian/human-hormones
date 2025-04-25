@@ -1,757 +1,427 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="内啡肽详解 - 探索这种'天然止痛剂'如何影响运动表现、疼痛感知和愉悦感">
-    <title>内啡肽 - 人体激素科普</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-color: #8d99ae;
-            --dark-color: #111827;
-            --light-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            
-            /* 激素特定颜色 - 更现代的色调 */
-            --dopamine-color: #10b981;
-            --endorphin-color: #f59e0b;
-            --serotonin-color: #06b6d4;
-            --oxytocin-color: #ec4899;
-            --cortisol-color: #6366f1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-        }
-        
-        /* 激素图标样式 */
-        .hormone-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            background: linear-gradient(135deg, var(--icon-start) 0%, var(--icon-end) 100%);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-size: 1.75rem;
-        }
-        
-        .endorphin-header {
-            background: linear-gradient(120deg, #f59e0b 0%, #d97706 100%);
-        }
-        
-        .endorphin-icon {
-            --icon-start: #f59e0b;
-            --icon-end: #d97706;
-            color: white;
-        }
-        
-        .hormone-card:hover .hormone-icon {
-            transform: scale(1.1);
-        }
-        
-        .dopamine-icon {
-            --icon-start: #10b981;
-            --icon-end: #047857;
-        }
-        
-        .serotonin-icon {
-            --icon-start: #06b6d4;
-            --icon-end: #0891b2;
-        }
-        
-        .oxytocin-icon {
-            --icon-start: #ec4899;
-            --icon-end: #db2777;
-        }
-        
-        .cortisol-icon {
-            --icon-start: #6366f1;
-            --icon-end: #4f46e5;
-        }
-        
-        .info-icon {
-            --icon-start: #8b5cf6;
-            --icon-end: #7c3aed;
-        }
-        
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            color: white;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .endorphin-btn {
-            background: linear-gradient(to right, #f59e0b, #d97706);
-        }
-        
-        .endorphin-btn:hover {
-            background: linear-gradient(to right, #d97706, #b45309);
-        }
-        
-        .dopamine-btn {
-            background: linear-gradient(to right, #10b981, #047857);
-        }
-        
-        .dopamine-btn:hover {
-            background: linear-gradient(to right, #059669, #065f46);
-        }
-        
-        .serotonin-btn {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-        }
-        
-        .serotonin-btn:hover {
-            background: linear-gradient(to right, #0891b2, #0e7490);
-        }
-        
-        .oxytocin-btn {
-            background: linear-gradient(to right, #ec4899, #db2777);
-        }
-        
-        .oxytocin-btn:hover {
-            background: linear-gradient(to right, #db2777, #be185d);
-        }
-        
-        .cortisol-btn {
-            background: linear-gradient(to right, #6366f1, #4f46e5);
-        }
-        
-        .cortisol-btn:hover {
-            background: linear-gradient(to right, #4f46e5, #4338ca);
-        }
-        
-        .info-box {
-            background: linear-gradient(to right, rgba(245, 158, 11, 0.05), rgba(217, 119, 6, 0.1));
-            border-left: 4px solid #f59e0b;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内啡肽 - 天然镇痛剂的科学与平衡 | 人体激素科普</title>
+  <meta name="description" content="深入了解内啡肽如何影响疼痛管理、情绪和快感，以及如何通过运动等日常习惯自然提升内啡肽水平。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 内啡肽页面特定样式 */
+    .hormone-detail-header {
+      background-color: rgba(139, 92, 246, 0.1);
+    }
+
+    .hormone-title {
+      color: var(--endorphin);
+    }
+
+    .hormone-accent {
+      color: var(--endorphin);
+    }
+
+    .custom-icon-bg {
+      background-color: rgba(139, 92, 246, 0.1);
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .detail-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .highlight-box {
+      background-color: rgba(139, 92, 246, 0.05);
+      border-left: 4px solid var(--endorphin);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tips-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--endorphin);
+      font-weight: bold;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .activity-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .activity-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <span class="text-xl font-bold text-gray-900">激素<span class="text-indigo-600">科普</span></span>
-                    </a>
-                </div>
-                
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">首页</a>
-                    <a href="index.html#hormone-section" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">激素知识</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">关于</a>
-                </nav>
-                
-                <div class="flex items-center">
-                    <div class="relative">
-                        <select id="language" class="appearance-none bg-white border border-gray-200 rounded-md py-1.5 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            <option value="zh">中文</option>
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="ko">한국어</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 移动端菜单按钮 -->
-                    <button type="button" class="md:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="人体激素科普" class="logo-icon">
+        <span>人体激素科普</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="dopamine.html">多巴胺</a></li>
+          <li><a href="endorphin.html" class="active">内啡肽</a></li>
+          <li><a href="serotonin.html">血清素</a></li>
+          <li><a href="oxytocin.html">催产素</a></li>
+          <li><a href="cortisol.html">皮质醇</a></li>
+          <li><a href="resources.html">资源库</a></li>
+        </ul>
+      </nav>
+      <div class="language-selector">
+        <select name="language" id="language-select">
+          <option value="zh-CN">中文</option>
+          <option value="en-US">English</option>
+          <option value="ja-JP">日本語</option>
+          <option value="ko-KR">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hormone Detail Header -->
+  <section class="hormone-detail-header">
+    <div class="container">
+      <div class="custom-icon-bg">
+        <img src="assets/endorphin.svg" alt="内啡肽" class="detail-icon">
+      </div>
+      <h1 class="hormone-title">内啡肽：身体的天然镇痛剂</h1>
+      <p class="hormone-description">内啡肽是大脑产生的一种神经肽，被称为"天然镇痛剂"，在疼痛管理、压力缓解和愉悦感中发挥重要作用。了解如何提高内啡肽水平，可以帮助你更好地应对压力、提高疼痛耐受力，并增强自然幸福感。</p>
+    </div>
+  </section>
+
+  <!-- Definition and Mechanism Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>什么是内啡肽？</h2>
+      <div class="detail-grid">
+        <div>
+          <p>内啡肽是一类由人体自然产生的神经肽，主要由大脑和垂体释放。这些物质与鸦片类药物（如吗啡）作用于相同的受体，但它们是身体自身产生的天然物质。</p>
+          <p>作为神经递质和调节剂，内啡肽在多个生理过程中发挥作用：</p>
+          <ul>
+            <li>抑制疼痛传导</li>
+            <li>调节情绪和应激反应</li>
+            <li>产生愉悦和幸福感</li>
+            <li>参与免疫系统功能</li>
+            <li>影响进食行为和食欲</li>
+          </ul>
+          <p>内啡肽最著名的是其<span class="hormone-accent">镇痛作用</span>，它能抑制疼痛信号的传递，这就是为什么在高强度运动或压力情况下，我们可能暂时不会感到疼痛。</p>
+        </div>
+        <div class="detail-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="300" viewBox="0 0 500 300" fill="none">
+            <!-- Brain outline -->
+            <path d="M250 270C350 270 420 210 420 150C420 90 350 30 250 30C150 30 80 90 80 150C80 210 150 270 250 270Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+            
+            <!-- Endorphin pathways -->
+            <path d="M160 150C175 130 190 125 210 130C230 135 240 155 235 170" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M235 170C230 185 210 195 190 190C170 185 160 165 165 150" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5"/>
+            
+            <path d="M270 150C285 130 300 125 320 130C340 135 350 155 345 170" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5"/>
+            <path d="M345 170C340 185 320 195 300 190C280 185 270 165 275 150" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5"/>
+            
+            <!-- Pituitary -->
+            <circle cx="250" cy="180" r="15" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="250" y="184" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="10">垂体</text>
+            
+            <!-- Hypothalamus -->
+            <ellipse cx="250" cy="150" rx="20" ry="10" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="250" y="154" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="10">下丘脑</text>
+            
+            <!-- Pain receptors -->
+            <circle cx="180" cy="100" r="10" fill="#8b5cf6" opacity="0.3" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="180" y="104" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="8">疼痛受体</text>
+            
+            <circle cx="320" cy="100" r="10" fill="#8b5cf6" opacity="0.3" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="320" y="104" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="8">疼痛受体</text>
+            
+            <!-- Endorphin simplified -->
+            <rect x="370" y="50" width="80" height="30" rx="5" fill="#8b5cf6" opacity="0.1" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="410" y="70" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="12">内啡肽</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When Released Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>内啡肽何时分泌？</h2>
+      <p>内啡肽在多种情况下被释放，特别是在身体感受到压力、疼痛或特定类型的刺激时：</p>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>运动刺激</h3>
+          <p><span class="hormone-accent">持续性有氧运动</span>（如跑步、游泳和骑自行车）特别能刺激内啡肽释放。大约30分钟的中高强度运动后，许多人体验到的"跑步者高潮"就与内啡肽释放有关。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>疼痛和压力</h3>
+          <p>当身体经历<span class="hormone-accent">急性疼痛或压力</span>时，会释放内啡肽作为自然保护机制。这种释放帮助身体应对威胁或伤害，减轻疼痛感，并促进冷静。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>特定食物</h3>
+          <p>某些食物，特别是<span class="hormone-accent">辛辣食物和巧克力</span>，可能刺激内啡肽释放。辣椒素（辣椒中的活性成分）与疼痛受体相互作用，能触发内啡肽反应。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>社交联系和笑声</h3>
+          <p><span class="hormone-accent">笑声、社交联系和积极的社交互动</span>也能增加内啡肽水平。这解释了为什么社交活动和幽默能有效缓解压力和改善情绪。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>有争议的"跑步者高潮"</h3>
+        <p>尽管"跑步者高潮"是内啡肽最知名的效应之一，但关于它的确切机制仍有一些科学争议。早期研究认为内啡肽是唯一负责这种现象的物质，但较新的研究表明，内源性大麻素系统也可能参与其中。</p>
+        <p>然而，无论具体机制如何，有一点是确定的：定期进行有氧运动确实能提高人体自然产生的"感觉良好"化学物质，包括内啡肽，从而改善情绪和减轻疼痛感。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Effects Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>内啡肽对身体和心理的影响</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>积极影响</h3>
+          <ul class="tips-list">
+            <li><strong>天然镇痛作用</strong> - 内啡肽通过抑制中枢神经系统中的疼痛传导，减轻急性和慢性疼痛。</li>
+            <li><strong>改善情绪状态</strong> - 产生愉悦感和幸福感，有助于缓解焦虑和抑郁症状。</li>
+            <li><strong>应激反应调节</strong> - 在压力情况下释放，帮助身体更好地应对挑战。</li>
+            <li><strong>增强免疫功能</strong> - 研究表明适度的内啡肽水平可增强免疫系统功能。</li>
+            <li><strong>促进社交联系</strong> - 可能增强人际关系和社交联系的正面体验。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>内啡肽失衡的影响</h3>
+          <ul class="tips-list">
+            <li><strong>慢性疼痛</strong> - 内啡肽系统功能不良可能与慢性疼痛状况相关。</li>
+            <li><strong>增加对鸦片类药物的敏感性</strong> - 内啡肽水平较低可能增加对鸦片类药物成瘾的风险。</li>
+            <li><strong>情绪问题</strong> - 内啡肽水平异常可能与抑郁、焦虑和压力相关疾病有关。</li>
+            <li><strong>食欲调节问题</strong> - 内啡肽参与食欲调节，系统失衡可能影响饮食行为。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>促进内啡肽自然释放的活动</h2>
+      
+      <div class="detail-grid">
+        <div>
+          <h3>有效的身体活动</h3>
+          
+          <div class="activity-grid">
+            <div class="activity-item">
+              <div class="activity-icon">🏃‍♀️</div>
+              <p>持续性有氧运动</p>
             </div>
-        </div>
-    </header>
-
-    <!-- 详情页标题 -->
-    <section class="endorphin-header text-white py-16 md:py-20" style="padding-bottom: 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hormone-icon endorphin-icon bg-white mx-auto" style="color: #f59e0b;">
-                <i class="fas fa-running"></i>
+            <div class="activity-item">
+              <div class="activity-icon">🧘</div>
+              <p>瑜伽和冥想</p>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">内啡肽</h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">"天然止痛剂" - 掌控疼痛感知与运动快感的关键激素</p>
-        </div>
-        
-        <!-- 波浪分隔符 -->
-        <div class="w-full mt-8" style="margin-bottom: -1px; display: block;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="fill-current text-gray-50" style="display: block;">
-                <path d="M0,64L80,53.3C160,43,320,21,480,32C640,43,800,85,960,96C1120,107,1280,85,1360,74.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- 内容部分 -->
-    <main class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- 什么是内啡肽 -->
-            <section class="mb-20">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                    <div class="px-6 py-8 md:p-10">
-                        <h2 class="text-3xl font-bold mb-6 text-gray-900">什么是内啡肽？</h2>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            内啡肽（Endorphins）是大脑中自然产生的化学物质，它们是人体内在的"止痛药"，属于阿片肽类激素。
-                            它们被释放时会与大脑中的阿片受体结合，从而减轻疼痛并产生愉悦感。这些神经递质在运动、压力、疼痛和某些食物消费
-                            （如辛辣食物或巧克力）后会增加。
-                        </p>
-                        
-                        <div class="info-box">
-                            <div class="flex items-start">
-                                <div class="mr-4 mt-1">
-                                    <div class="bg-gradient-to-r from-amber-500 to-amber-600 w-10 h-10 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 mb-1">科学小知识</h3>
-                                    <p class="text-gray-700">
-                                        "内啡肽"这个名字来源于"内源性吗啡"（endogenous morphine），意为身体天然产生的类似吗啡的物质。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 内啡肽科学图表 -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
-                        <div class="px-6 py-8 flex flex-col h-full">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-900">内啡肽的生化结构</h3>
-                            <p class="text-gray-700 mb-4">
-                                内啡肽是一种多肽，由氨基酸链组成。人体内有多种类型的内啡肽，包括α-内啡肽、β-内啡肽、γ-内啡肽和σ-内啡肽等。
-                                它们都是由前体蛋白原阿片黑皮素原（POMC）衍生而来。
-                            </p>
-                            <div class="mt-auto pt-4 flex justify-center">
-                                <div class="w-full max-w-xs py-3">
-                                    <img src="./images/endorphin-structure.jpg" alt="内啡肽分子结构" class="rounded-lg shadow-sm w-full h-48 object-cover">
-                                    <p class="text-xs text-center text-gray-500 mt-2">β-内啡肽的分子结构</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
-                        <div class="px-6 py-8 flex flex-col h-full">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-900">内啡肽在体内的分布</h3>
-                            <p class="text-gray-700 mb-4">
-                                内啡肽主要在中枢神经系统中产生，特别是在下丘脑和垂体中。当身体感受到疼痛或压力时，这些区域会释放内啡肽，
-                                作为身体的自然防御机制。它们也存在于消化系统和免疫系统中。
-                            </p>
-                            <div class="mt-auto pt-4 flex justify-center">
-                                <div class="w-full max-w-xs py-3">
-                                    <img src="./images/endorphin-distribution.jpg" alt="内啡肽在体内的分布" class="rounded-lg shadow-sm w-full h-48 object-cover">
-                                    <p class="text-xs text-center text-gray-500 mt-2">内啡肽在人体神经系统中的分布</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 内啡肽的作用 -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">内啡肽的主要作用</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- 止痛效果 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon endorphin-icon mb-6">
-                                <i class="fas fa-ban"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">天然止痛</h3>
-                            <p class="text-gray-700 text-center">
-                                内啡肽是人体强大的天然止痛剂，能与阿片受体结合，阻断疼痛信号的传递，使人感到舒适和放松。
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- 增强愉悦感 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon endorphin-icon mb-6">
-                                <i class="fas fa-smile-beam"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">愉悦感</h3>
-                            <p class="text-gray-700 text-center">
-                                它们能激活大脑的奖励系统，产生愉悦、欣快和满足感，特别是在进行体育活动或社交互动后。
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- 降低压力 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
-                        <div class="px-6 py-8 flex flex-col items-center">
-                            <div class="hormone-icon endorphin-icon mb-6">
-                                <i class="fas fa-wind"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 text-center">减轻压力</h3>
-                            <p class="text-gray-700 text-center">
-                                内啡肽有助于减轻焦虑和压力，降低压力激素水平，促进放松感和整体心理健康。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="px-6 py-8 md:p-10">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">内啡肽与运动的关系</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            长时间进行有氧运动会刺激内啡肽的释放，这就是所谓的"跑步者高潮"（Runner's High）现象。当运动强度达到中高强度并持续30分钟以上时，大脑开始释放内啡肽，导致疼痛感下降，幸福感上升。
-                        </p>
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-md mb-6">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-running text-amber-500 mr-3 text-xl"></i>
-                                </div>
-                                <p class="text-amber-700">
-                                    研究表明，高强度间歇训练（HIIT）可能比长距离慢跑产生更强的内啡肽释放反应。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h4 class="font-semibold text-gray-900 mb-3">能触发内啡肽释放的运动类型：</h4>
-                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 长跑和跑步
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 骑自行车
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 游泳
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 高强度间歇训练
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 力量训练
-                                </li>
-                                <li class="flex items-center text-gray-700">
-                                    <i class="fas fa-check text-amber-500 mr-2"></i> 舞蹈
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 内啡肽与健康 -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">内啡肽与健康</h2>
-                
-                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
-                    <div class="px-6 py-8 md:p-10">
-                        <div class="flex flex-col md:flex-row items-center md:items-start">
-                            <div class="md:w-1/3 flex-shrink-0 mb-6 md:mb-0 md:mr-8">
-                                <div class="bg-gradient-to-br from-amber-400 to-amber-600 p-1 rounded-xl shadow-md">
-                                    <img src="./images/endorphin-health.jpg" alt="内啡肽对健康的影响" class="rounded-lg w-full h-auto">
-                                </div>
-                            </div>
-                            <div class="md:w-2/3">
-                                <h3 class="text-2xl font-semibold mb-4 text-gray-900">内啡肽水平与健康状况</h3>
-                                <p class="text-gray-700 leading-relaxed mb-4">
-                                    健康的内啡肽水平与多种身心健康益处相关。慢性疼痛、抑郁症和焦虑症患者的内啡肽水平往往较低。而有规律地通过健康方式提高内啡肽，可以改善多种健康问题。
-                                </p>
-                                
-                                <h4 class="font-semibold text-gray-900 mt-6 mb-3">内啡肽对健康的积极影响：</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2">●</span>
-                                        <span class="text-gray-700"><strong>免疫系统增强</strong> - 研究表明内啡肽可能有助于增强免疫功能</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2">●</span>
-                                        <span class="text-gray-700"><strong>改善心理健康</strong> - 帮助缓解抑郁症和焦虑症症状</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2">●</span>
-                                        <span class="text-gray-700"><strong>慢性疼痛管理</strong> - 作为天然止痛剂帮助管理慢性疼痛</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2">●</span>
-                                        <span class="text-gray-700"><strong>压力缓解</strong> - 降低压力激素皮质醇的水平</span>
-                                    </li>
-                                </ul>
-                                
-                                <div class="info-box mt-8">
-                                    <div class="flex items-start">
-                                        <div class="mr-4 mt-1">
-                                            <div class="bg-gradient-to-r from-amber-500 to-amber-600 w-10 h-10 rounded-full flex items-center justify-center">
-                                                <i class="fas fa-info text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-semibold text-gray-900 mb-1">健康警示</h3>
-                                            <p class="text-gray-700">
-                                                虽然内啡肽对健康有益，但过度依赖某些提高内啡肽的方法（如极端运动）可能导致伤害。始终应保持平衡，并在专业医疗指导下改善内啡肽水平。
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 如何自然提高内啡肽 -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">如何自然提高内啡肽水平</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- 左栏 -->
-                    <div class="flex flex-col space-y-8">
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-heartbeat text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">规律运动</h3>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed">
-                                    有氧运动是提高内啡肽水平最有效的方法之一。每周至少进行150分钟中等强度运动，
-                                    或75分钟高强度运动，可以显著增加内啡肽释放。
-                                </p>
-                                <div class="mt-auto pt-4">
-                                    <a href="#" class="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium">
-                                        探索合适的运动计划
-                                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-pepper-hot text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">饮食调整</h3>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed">
-                                    某些食物可以促进内啡肽的释放，包括：
-                                </p>
-                                <ul class="mt-3 space-y-2">
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-amber-500 mr-2"></i> 辣椒和辛辣食物
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-amber-500 mr-2"></i> 深色巧克力（可可含量70%以上）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-amber-500 mr-2"></i> 富含香草醛的食物（如香草）
-                                    </li>
-                                    <li class="flex items-center text-gray-700">
-                                        <i class="fas fa-check text-amber-500 mr-2"></i> 坚果和种子
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 右栏 -->
-                    <div class="flex flex-col space-y-8">
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-sun text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">晒太阳</h3>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed">
-                                    阳光照射可以促进维生素D的产生，而维生素D已被证明与内啡肽释放有关。
-                                    每天晒15-20分钟的太阳（早上或傍晚，避开强烈阳光时段）可以帮助提高内啡肽水平。
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-laugh text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">欢笑与社交</h3>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed mb-4">
-                                    笑声是提高内啡肽水平的自然方式。观看喜剧、与朋友交流或参加欢乐的社交活动都可以增强内啡肽释放。
-                                </p>
-                                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-md border-l-4 border-amber-500 mt-auto">
-                                    <p class="text-gray-700 text-sm">
-                                        <i class="fas fa-quote-left text-amber-400 mr-2"></i>
-                                        研究表明，与朋友一起大笑15分钟可以使内啡肽水平提高10-20%。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex-grow">
-                            <div class="px-6 py-8 h-full flex flex-col">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-spa text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">冥想与深呼吸</h3>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed">
-                                    冥想和深呼吸练习已被证明可以增加内啡肽水平。每天进行15-20分钟的正念冥想，
-                                    可以帮助平衡体内激素水平，提高内啡肽分泌。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 内啡肽与其他激素的关系 -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">内啡肽与其他激素的关系</h2>
-                
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-8">
-                        <p class="text-gray-700 leading-relaxed mb-8">
-                            内啡肽在体内不是孤立运作的，它与其他激素和神经递质密切相关，共同影响我们的情绪、疼痛感知和整体健康。
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <!-- 内啡肽与多巴胺 -->
-                            <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow h-full">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-brain text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">内啡肽与多巴胺</h3>
-                                </div>
-                                <p class="text-gray-700 mb-6">
-                                    内啡肽释放常常会刺激多巴胺的产生，二者共同作用于大脑的奖励系统。这就是为什么运动既能带来止痛效果，
-                                    又能产生愉悦感和满足感。
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="dopamine.html" class="inline-flex items-center endorphin-btn hover:bg-amber-600 text-white py-2 px-4 rounded-md transition duration-200">
-                                        了解多巴胺
-                                        <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- 内啡肽与皮质醇 -->
-                            <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow h-full">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-tachometer-alt text-white"></i>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900">内啡肽与皮质醇</h3>
-                                </div>
-                                <p class="text-gray-700 mb-6">
-                                    内啡肽可以帮助降低压力激素皮质醇的水平。当你感到压力时，皮质醇会上升，但通过增加内啡肽水平
-                                    （如通过运动），可以有效缓解这种压力反应。
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="cortisol.html" class="inline-flex items-center endorphin-btn hover:bg-amber-600 text-white py-2 px-4 rounded-md transition duration-200">
-                                        了解皮质醇
-                                        <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- FAQ部分 -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">常见问题解答</h2>
-                
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="divide-y divide-gray-200">
-                        <!-- 问题1 -->
-                        <div class="px-6 py-6">
-                            <button class="flex justify-between items-center w-full focus:outline-none">
-                                <span class="text-lg font-medium text-gray-900">内啡肽和吗啡有什么区别？</span>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
-                            </button>
-                            <div class="mt-3">
-                                <p class="text-gray-700">
-                                    虽然内啡肽和吗啡都作用于同样的阿片受体，但内啡肽是人体自然产生的物质，而吗啡是外部药物。
-                                    内啡肽比吗啡温和得多，不会产生严重的成瘾性和副作用。此外，内啡肽在体内的分解速度更快，
-                                    因此其效果相对短暂。
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- 问题2 -->
-                        <div class="px-6 py-6">
-                            <button class="flex justify-between items-center w-full focus:outline-none">
-                                <span class="text-lg font-medium text-gray-900">如何知道我的内啡肽水平是否健康？</span>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
-                            </button>
-                            <div class="mt-3">
-                                <p class="text-gray-700">
-                                    目前没有简单的家庭测试可以直接测量内啡肽水平。然而，某些症状可能表明内啡肽水平较低，
-                                    如慢性疼痛难以缓解、情绪低落、对压力敏感或运动后没有通常的"高潮"感。如果你担心自己的内啡肽水平，
-                                    可以咨询医疗专业人士。
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- 问题3 -->
-                        <div class="px-6 py-6">
-                            <button class="flex justify-between items-center w-full focus:outline-none">
-                                <span class="text-lg font-medium text-gray-900">可以通过补充剂提高内啡肽水平吗？</span>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
-                            </button>
-                            <div class="mt-3">
-                                <p class="text-gray-700">
-                                    内啡肽本身不能直接作为补充剂服用，因为它们是蛋白质分子，会在消化过程中被分解。
-                                    然而，某些补充剂和草药，如亚麻籽油（含有Omega-3脂肪酸）和白芷（一种中草药）据说可以提高内啡肽水平或增强其效果。
-                                    不过，这些效果仍需更多科学研究验证，在尝试任何补充剂前应咨询医生。
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- 问题4 -->
-                        <div class="px-6 py-6">
-                            <button class="flex justify-between items-center w-full focus:outline-none">
-                                <span class="text-lg font-medium text-gray-900">内啡肽会导致成瘾吗？</span>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
-                            </button>
-                            <div class="mt-3">
-                                <p class="text-gray-700">
-                                    与外部阿片类药物不同，身体自然产生的内啡肽不会导致成瘾。然而，人们可能会对导致内啡肽释放的活动产生心理依赖，
-                                    例如"运动成瘾"。这种依赖通常远不如药物成瘾严重，但如果影响到日常生活和健康，仍应引起关注。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <h2 class="text-xl font-bold mb-4">人体激素科普</h2>
-                    <p class="text-gray-400 mb-4">致力于以通俗易懂的方式普及人体激素知识，帮助大家更好地了解自己的身体，保持健康的生活方式。</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">
-                            <i class="fab fa-weixin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">
-                            <i class="fab fa-weibo text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">
-                            <i class="fab fa-bilibili text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-amber-500 transition">首页</a></li>
-                        <li><a href="dopamine.html" class="text-gray-400 hover:text-amber-500 transition">多巴胺</a></li>
-                        <li><a href="endorphin.html" class="text-gray-400 hover:text-amber-500 transition">内啡肽</a></li>
-                        <li><a href="cortisol.html" class="text-gray-400 hover:text-amber-500 transition">皮质醇</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">资源</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">科学文献</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">健康建议</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">常见问题</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">联系我们</a></li>
-                    </ul>
-                </div>
+            <div class="activity-item">
+              <div class="activity-icon">🏊‍♂️</div>
+              <p>游泳</p>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2023 人体激素科普. 保留所有权利。</p>
-                <p class="text-gray-400 text-sm mt-4 md:mt-0">设计与内容仅供教育目的。不构成医疗建议。</p>
+            <div class="activity-item">
+              <div class="activity-icon">🚴‍♀️</div>
+              <p>骑自行车</p>
             </div>
+            <div class="activity-item">
+              <div class="activity-icon">💃</div>
+              <p>舞蹈</p>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">🏋️</div>
+              <p>力量训练</p>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">⛰️</div>
+              <p>徒步旅行</p>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">🧠</div>
+              <p>正念练习</p>
+            </div>
+          </div>
+          
+          <h3 class="mt-4">饮食因素</h3>
+          <p>某些食物可能有助于增强内啡肽系统：</p>
+          <ul class="tips-list">
+            <li><strong>辛辣食物</strong> - 辣椒中的辣椒素能刺激内啡肽释放。</li>
+            <li><strong>黑巧克力</strong> - 含有多种化合物，可能影响内啡肽受体。</li>
+            <li><strong>香草</strong> - 香草香气含有与内啡肽受体结合的化合物。</li>
+            <li><strong>坚果和种子</strong> - 富含蛋白质，提供内啡肽合成所需的氨基酸。</li>
+          </ul>
         </div>
-    </footer>
+        
+        <div>
+          <h3>社交和情绪活动</h3>
+          <ul class="tips-list">
+            <li><strong>大笑和幽默</strong> - 笑声是刺激内啡肽释放的强大方式。看喜剧、与朋友分享笑声或参加笑声瑜伽课程都有助于增加内啡肽水平。</li>
+            <li><strong>深度社交联系</strong> - 积极、有意义的社交互动可以增加内啡肽和其他"感觉良好"的神经化学物质的释放。</li>
+            <li><strong>爱好和创造性表达</strong> - 参与艺术、音乐、写作或其他创造性活动能产生"心流"状态，这与内啡肽释放相关。</li>
+            <li><strong>动物互动</strong> - 与宠物互动已被证明能增加内啡肽等正面神经化学物质。</li>
+            <li><strong>志愿服务</strong> - 帮助他人不仅对社会有益，还能通过触发"助人者高潮"来增加你的内啡肽水平。</li>
+            <li><strong>身体接触</strong> - 拥抱、按摩和其他形式的积极身体接触能刺激内啡肽释放。</li>
+          </ul>
+          
+          <div class="highlight-box mt-4">
+            <h3>运动与内啡肽的关系</h3>
+            <p>要通过运动获得最佳内啡肽释放，专家建议：</p>
+            <ul class="tips-list">
+              <li>进行至少30分钟的中等到高强度有氧运动</li>
+              <li>选择你喜欢的活动（增加长期坚持的可能性）</li>
+              <li>逐渐增加强度（而不是一开始就过度锻炼）</li>
+              <li>定期锻炼，而不是偶尔高强度锻炼</li>
+              <li>考虑团体运动，结合社交因素和运动益处</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 返回顶部按钮 -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+  <!-- Research and Applications Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>相关研究与临床应用</h2>
+      
+      <div class="grid grid-2">
+        <div class="fact-card">
+          <h3>内啡肽与慢性疼痛研究</h3>
+          <p>研究表明，提高体内内啡肽水平可能是管理慢性疼痛的有效策略。针灸、经颅磁刺激和某些物理治疗方法可能部分通过增强内啡肽系统的功能来发挥作用。</p>
+        </div>
+        
+        <div class="fact-card">
+          <h3>内啡肽与成瘾行为</h3>
+          <p>科学家正在研究内啡肽系统与成瘾行为之间的联系。内啡肽水平低可能增加对成瘾物质的敏感性，而增强内啡肽系统功能可能有助于减轻戒断症状和预防复发。</p>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>内啡肽与整体健康</h3>
+        <p>内啡肽不仅仅是一种疼痛缓解物质，它在整体健康中扮演着更广泛的角色：</p>
+        <ul class="tips-list">
+          <li><strong>压力管理</strong> - 通过定期释放内啡肽的活动（如运动、冥想）来建立弹性，可以帮助身体更好地应对日常压力。</li>
+          <li><strong>情绪平衡</strong> - 健康的内啡肽系统有助于维持情绪平衡，可能降低抑郁和焦虑的风险。</li>
+          <li><strong>自然疼痛管理</strong> - 对于轻度疼痛，优化内啡肽系统可能提供一种不依赖药物的缓解途径。</li>
+          <li><strong>免疫功能</strong> - 保持健康的内啡肽水平与增强的免疫功能相关。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-        // 返回顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
+  <!-- Related Hormones Section -->
+  <section class="detail-section">
+    <div class="container">
+      <h2>内啡肽与其他激素的关系</h2>
+      
+      <div class="grid grid-2">
+        <a href="dopamine.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">内啡肽与多巴胺</h3>
+            <p>这两种物质协同工作，特别是在运动和愉悦体验中。内啡肽提供镇痛效果，而多巴胺增加动力和满足感，一起创造"跑步者高潮"的体验。</p>
+          </div>
+        </a>
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('opacity-100', 'visible');
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-                backToTopButton.classList.remove('opacity-100', 'visible');
-            }
-        });
+        <a href="cortisol.html" class="card">
+          <div class="card-content">
+            <h3 class="card-title">内啡肽与皮质醇</h3>
+            <p>内啡肽和皮质醇在压力反应中相互平衡。皮质醇是主要的应激激素，而内啡肽有助于调节压力反应，减轻皮质醇的一些负面影响。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">人体激素科普</h4>
+          <p>我们致力于以通俗易懂的方式传播激素科学知识，帮助大家了解激素对健康的重要影响，并提供实用的生活建议。</p>
+        </div>
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        <div>
+          <h4 class="footer-title">导航</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="resources.html">资源库</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
         
-        // FAQ折叠效果
-        const faqButtons = document.querySelectorAll('button.flex.justify-between');
+        <div>
+          <h4 class="footer-title">激素导航</h4>
+          <ul class="footer-links">
+            <li><a href="dopamine.html">多巴胺</a></li>
+            <li><a href="endorphin.html">内啡肽</a></li>
+            <li><a href="serotonin.html">血清素</a></li>
+            <li><a href="oxytocin.html">催产素</a></li>
+            <li><a href="cortisol.html">皮质醇</a></li>
+          </ul>
+        </div>
         
-        faqButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                // 切换显示/隐藏
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                }
-            });
-        });
-    </script>
+        <div>
+          <h4 class="footer-title">语言</h4>
+          <ul class="footer-links">
+            <li><a href="?lang=zh-CN">中文</a></li>
+            <li><a href="?lang=en-US">English</a></li>
+            <li><a href="?lang=ja-JP">日本語</a></li>
+            <li><a href="?lang=ko-KR">한국어</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 人体激素科普网站 | 本网站内容仅供教育参考，不构成医疗建议</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 
