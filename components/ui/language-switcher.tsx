@@ -1,6 +1,6 @@
 'use client'
 
-import { Locale } from '@/lib/i18n/locales'
+import { Locale } from '@/lib/i18n/locales/home'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { 
   Select,

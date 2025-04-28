@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
-import { Locale, LocaleText, locales } from './locales'
+import { Locale, LocaleText, locales } from './locales/home'
 
 type LanguageContextType = {
   locale: Locale

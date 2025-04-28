@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" fill="none">
+  <!-- Brain outline -->
+  <path d="M250 270C350 270 420 210 420 150C420 90 350 30 250 30C150 30 80 90 80 150C80 210 150 270 250 270Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Dopamine pathways -->
+  <path d="M200 130C190 120 185 105 190 90C195 75 210 65 225 70" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  <path d="M225 70C240 75 250 90 245 105C240 120 225 130 210 125" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  <path d="M210 125C195 120 185 105 190 90" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <path d="M270 160C280 150 295 145 310 150C325 155 335 170 330 185" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  <path d="M330 185C325 200 310 210 295 205C280 200 270 185 275 170" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  <path d="M275 170C280 155 295 145 310 150" stroke="#EC4899" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Reward center -->
+  <circle cx="225" cy="90" r="15" fill="#EC4899" opacity="0.2" stroke="#EC4899" stroke-width="2"/>
+  <text x="225" y="94" text-anchor="middle" fill="#EC4899" font-family="sans-serif" font-size="10">腹侧被盖区</text>
+  
+  <!-- Nucleus accumbens -->
+  <circle cx="310" cy="170" r="15" fill="#EC4899" opacity="0.2" stroke="#EC4899" stroke-width="2"/>
+  <text x="310" y="174" text-anchor="middle" fill="#EC4899" font-family="sans-serif" font-size="10">伏隔核</text>
+  
+  <!-- Prefrontal cortex -->
+  <path d="M250 80C280 70 320 75 340 100C360 125 360 155 340 170" stroke="#1e293b" stroke-width="2" fill="none"/>
+  <text x="300" y="120" text-anchor="middle" fill="#1e293b" font-family="sans-serif" font-size="12">前额叶皮质</text>
+  
+  <!-- Substantia nigra -->
+  <ellipse cx="190" cy="200" rx="20" ry="10" fill="#EC4899" opacity="0.2" stroke="#EC4899" stroke-width="2"/>
+  <text x="190" y="204" text-anchor="middle" fill="#EC4899" font-family="sans-serif" font-size="10">黑质</text>
+  
+  <!-- Dopamine molecule simplified -->
+  <circle cx="400" cy="60" r="30" fill="#EC4899" opacity="0.1" stroke="#EC4899" stroke-width="2"/>
+  <text x="400" y="64" text-anchor="middle" fill="#EC4899" font-family="sans-serif" font-size="12">多巴胺</text>
+</svg> 
