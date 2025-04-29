@@ -15,8 +15,8 @@ export const koKR = {
     contact: '연락처'
   },
   languages: {
-    'zh-CN': '中文',
     'en-US': 'English',
+    'zh-CN': '中文',
     'ja-JP': '日本語',
     'ko-KR': '한국어'
   },
