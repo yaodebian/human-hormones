@@ -10,11 +10,23 @@ import { Menu } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { defaultLocale } from '@/middleware'
 
 export const Header = () => {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
-  const { text } = useLanguage()
+  const { locale, text } = useLanguage()
+  
+  // 从路径中提取语言和当前路由部分
+  const pathParts = pathname.split('/').filter(Boolean)
+  const currentLocale = locale || defaultLocale
+  
+  // 生成带有当前语言的链接
+  const getLocalizedHref = (path: string) => {
+    return currentLocale === defaultLocale 
+      ? path 
+      : `/${currentLocale}${path === '/' ? '' : path}`
+  }
   
   const navLinks = [
     { href: '/', label: text.nav.home },
@@ -29,7 +41,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href={getLocalizedHref('/')} className="flex items-center gap-2">
           <Image 
             src="/logo.svg" 
             alt={text.common.siteTitle} 
@@ -43,19 +55,22 @@ export const Header = () => {
         {/* 桌面端导航 */}
         <nav className="hidden md:flex">
           <ul className="flex items-center gap-6">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const localizedHref = getLocalizedHref(link.href)
+              return (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                    href={localizedHref}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-foreground/80",
-                    pathname === link.href ? "text-foreground" : "text-foreground/60"
+                      pathname === localizedHref ? "text-foreground" : "text-foreground/60"
                   )}
                 >
                   {link.label}
                 </Link>
               </li>
-            ))}
+              )
+            })}
           </ul>
         </nav>
         
@@ -79,20 +94,23 @@ export const Header = () => {
               <div className="mt-6 flex flex-col gap-6">
                 <nav>
                   <ul className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
+                    {navLinks.map((link) => {
+                      const localizedHref = getLocalizedHref(link.href)
+                      return (
                       <li key={link.href}>
                         <Link
-                          href={link.href}
+                            href={localizedHref}
                           className={cn(
                             "text-base font-medium transition-colors hover:text-foreground/80",
-                            pathname === link.href ? "text-foreground" : "text-foreground/60"
+                              pathname === localizedHref ? "text-foreground" : "text-foreground/60"
                           )}
                           onClick={() => setOpen(false)}
                         >
                           {link.label}
                         </Link>
                       </li>
-                    ))}
+                      )
+                    })}
                   </ul>
                 </nav>
                 

@@ -1,7 +1,9 @@
 'use client'
 
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
 import { Locale, LocaleText, locales } from './locales/home'
+import { useRouter } from 'next/navigation'
+import { defaultLocale } from '@/middleware'
 
 type LanguageContextType = {
   locale: Locale
@@ -9,44 +11,58 @@ type LanguageContextType = {
   changeLocale: (locale: Locale) => void
 }
 
-const defaultLocale: Locale = 'zh-CN'
-
 const LanguageContext = createContext<LanguageContextType>({
   locale: defaultLocale,
   text: locales[defaultLocale],
   changeLocale: () => {}
 })
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>(defaultLocale)
-  const [text, setText] = useState<LocaleText>(locales[defaultLocale])
-
-  // 从localStorage中获取保存的语言设置或默认设置
-  useEffect(() => {
-    const savedLocale = localStorage.getItem('locale') as Locale | null
-    if (savedLocale && Object.keys(locales).includes(savedLocale)) {
-      setLocale(savedLocale)
-      setText(locales[savedLocale])
-    } else {
-      // 尝试从浏览器获取语言偏好
-      const browserLocale = navigator.language.split('-')[0] + '-' + navigator.language.split('-')[1]?.toUpperCase()
-      
-      // 检查是否支持浏览器语言，如果支持则使用，否则使用默认语言
-      if (browserLocale in locales) {
-        setLocale(browserLocale as Locale)
-        setText(locales[browserLocale as Locale])
-        localStorage.setItem('locale', browserLocale)
-      }
-    }
-  }, [])
+export const LanguageProvider = ({ 
+  children, 
+  locale: initialLocale 
+}: { 
+  children: ReactNode, 
+  locale?: string 
+}) => {
+  const router = useRouter()
+  const [locale, setLocale] = useState<Locale>(
+    initialLocale && Object.keys(locales).includes(initialLocale) 
+      ? initialLocale as Locale 
+      : defaultLocale
+  )
+  const [text, setText] = useState<LocaleText>(locales[
+    initialLocale && Object.keys(locales).includes(initialLocale) 
+      ? initialLocale as Locale 
+      : defaultLocale
+  ])
 
   const changeLocale = (newLocale: Locale) => {
     if (newLocale in locales) {
+      // 保存语言到 localStorage
+      localStorage.setItem('NEXT_LOCALE', newLocale)
+      
+      // 保存语言到 Cookie，设置 path=/ 使其在所有路径下可用
+      document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000` // 一年有效期
+      
       setLocale(newLocale)
       setText(locales[newLocale])
-      localStorage.setItem('locale', newLocale)
-      // 更新HTML的lang属性
-      document.documentElement.lang = newLocale
+      
+      // 根据新语言重定向到相应的URL
+      if (typeof window !== 'undefined') {
+        const currentPath = window.location.pathname.split('/').filter(Boolean)
+        
+        // 移除URL中的语言部分（如果存在）
+        if (Object.keys(locales).includes(currentPath[0])) {
+          currentPath.shift()
+        }
+        
+        // 构建新的URL
+        const newPath = newLocale === defaultLocale
+          ? `/${currentPath.join('/')}`
+          : `/${newLocale}/${currentPath.join('/')}`
+          
+        router.push(newPath || '/')
+      }
     }
   }
 

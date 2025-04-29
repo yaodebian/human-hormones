@@ -10,6 +10,8 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
+import { usePathname, useRouter } from 'next/navigation'
+import { supportedLocales, defaultLocale } from '@/middleware'
 
 interface LanguageSwitcherProps {
   className?: string
@@ -18,6 +20,7 @@ interface LanguageSwitcherProps {
 
 export function LanguageSwitcher({ className, fullWidth = false }: LanguageSwitcherProps) {
   const { locale, text, changeLocale } = useLanguage()
+  const pathname = usePathname()
   
   const handleChange = (value: string) => {
     changeLocale(value as Locale)
