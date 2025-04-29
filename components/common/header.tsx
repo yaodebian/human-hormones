@@ -91,7 +91,7 @@ export const Header = () => {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[240px] sm:w-[300px]">
-              <div className="mt-6 flex flex-col gap-6">
+              <div className="mt-6 flex flex-col gap-6 px-4">
                 <nav>
                   <ul className="flex flex-col gap-4">
                     {navLinks.map((link) => {
@@ -114,8 +114,9 @@ export const Header = () => {
                   </ul>
                 </nav>
                 
-                <div className="border-t pt-4">
-                  <p className="text-sm text-muted-foreground mb-2">语言</p>
+                {/* 只在小屏幕下显示语言切换器 */}
+                <div className="border-t pt-6 sm:hidden">
+                  <p className="text-sm text-muted-foreground mb-3">语言</p>
                   <LanguageSwitcher fullWidth />
                 </div>
               </div>
