@@ -1,9 +1,9 @@
 'use client'
 
-import { ReactNode, createContext, useContext, useState } from 'react'
+import { ReactNode, createContext, useContext, useEffect } from 'react'
 import { Locale, LocaleText, locales } from './locales/home'
-import { useRouter } from 'next/navigation'
 import { defaultLocale } from '@/middleware'
+import { useLanguageStore, useLanguageSwitcher } from '@/lib/store/language-store'
 
 type LanguageContextType = {
   locale: Locale
@@ -12,8 +12,8 @@ type LanguageContextType = {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  locale: defaultLocale,
-  text: locales[defaultLocale],
+  locale: defaultLocale as Locale,
+  text: locales[defaultLocale as Locale],
   changeLocale: () => {}
 })
 
@@ -24,50 +24,29 @@ export const LanguageProvider = ({
   children: ReactNode, 
   locale?: string 
 }) => {
-  const router = useRouter()
-  const [locale, setLocale] = useState<Locale>(
-    initialLocale && Object.keys(locales).includes(initialLocale) 
-      ? initialLocale as Locale 
-      : defaultLocale
-  )
-  const [text, setText] = useState<LocaleText>(locales[
-    initialLocale && Object.keys(locales).includes(initialLocale) 
-      ? initialLocale as Locale 
-      : defaultLocale
-  ])
-
-  const changeLocale = (newLocale: Locale) => {
-    if (newLocale in locales) {
-      // 保存语言到 localStorage
-      localStorage.setItem('NEXT_LOCALE', newLocale)
-      
-      // 保存语言到 Cookie，设置 path=/ 使其在所有路径下可用
-      document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000` // 一年有效期
-      
-      setLocale(newLocale)
-      setText(locales[newLocale])
-      
-      // 根据新语言重定向到相应的URL
-      if (typeof window !== 'undefined') {
-        const currentPath = window.location.pathname.split('/').filter(Boolean)
-        
-        // 移除URL中的语言部分（如果存在）
-        if (Object.keys(locales).includes(currentPath[0])) {
-          currentPath.shift()
-        }
-        
-        // 构建新的URL
-        const newPath = newLocale === defaultLocale
-          ? `/${currentPath.join('/')}`
-          : `/${newLocale}/${currentPath.join('/')}`
-          
-        router.push(newPath || '/')
-      }
+  const { currentLocale, setLocale } = useLanguageStore()
+  const { handleLocaleChange } = useLanguageSwitcher()
+  
+  // 初始化 store 中的语言
+  useEffect(() => {
+    if (initialLocale && initialLocale !== currentLocale) {
+      setLocale(initialLocale as Locale)
     }
+  }, [initialLocale, currentLocale, setLocale])
+
+  const handleChange = async (newLocale: Locale) => {
+    // 先更新 store 中的状态
+    setLocale(newLocale)
+    // 然后处理路由和 cookie
+    await handleLocaleChange(newLocale)
   }
 
   return (
-    <LanguageContext.Provider value={{ locale, text, changeLocale }}>
+    <LanguageContext.Provider value={{ 
+      locale: currentLocale, 
+      text: locales[currentLocale], 
+      changeLocale: handleChange 
+    }}>
       {children}
     </LanguageContext.Provider>
   )

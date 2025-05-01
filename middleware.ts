@@ -52,18 +52,21 @@ export function middleware(request: NextRequest) {
 
   // 检查当前路径的第一段
   const segments = pathname.split('/').filter(Boolean)
-  console.log('kakaka===000', segments)
   const firstSegment = segments[0] || ''
 
-  // 如果第一段是支持的语言代码
+  // 如果第一段是支持的语言代码，直接通过
   if (supportedLocales.includes(firstSegment)) {
-    // 如果是默认语言代码（en-US），重定向到无前缀版本
-    if (firstSegment === defaultLocale) {
-      const newPath = '/' + segments.slice(1).join('/')
-      return NextResponse.redirect(new URL(newPath, request.url))
+    const response = NextResponse.next()
+    
+    // 确保 cookie 与 URL 中的语言一致
+    if (request.cookies.get('NEXT_LOCALE')?.value !== firstSegment) {
+      response.cookies.set('NEXT_LOCALE', firstSegment, {
+        path: '/',
+        maxAge: 31536000 // 一年有效期
+      })
     }
-    // 如果是其他语言代码，直接通过
-    return NextResponse.next()
+    
+    return response
   }
 
   // 获取用户首选语言
@@ -71,9 +74,11 @@ export function middleware(request: NextRequest) {
   
   // 如果是默认语言（英文），不添加前缀
   if (locale === defaultLocale) {
+    console.log('locale====000')
     return NextResponse.next()
   }
   
+  console.log('locale====111')
   // 为其他语言添加路径前缀
   const newUrl = new URL(`/${locale}${pathname}`, request.url)
   newUrl.search = request.nextUrl.search

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "@/app/globals.css";
 import { LanguageProvider } from "@/lib/i18n/language-context";
 import { supportedLocales } from "@/middleware";
+import { headers } from 'next/headers'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,18 +21,13 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params
   
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <LanguageProvider locale={locale}>{children}</LanguageProvider>
-      </body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

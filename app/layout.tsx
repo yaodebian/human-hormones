@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { LanguageProvider } from "@/lib/i18n/language-context";
-import { supportedLocales } from "@/middleware";
+import { supportedLocales, defaultLocale } from "@/middleware";
+import { headers } from 'next/headers'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,17 +21,21 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params
+  const headersList = await headers()
+  const cookies = headersList.get('cookie')
+  const savedLocale = cookies?.split('; ')
+    .find((row: string) => row.startsWith('NEXT_LOCALE='))?.split('=')[1]
+  
+  // 使用 cookie 中保存的语言或默认语言
+  const currentLocale = (savedLocale && supportedLocales.includes(savedLocale)) ? savedLocale : defaultLocale
   
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={currentLocale} suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <LanguageProvider locale={locale}>{children}</LanguageProvider>
+        <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
       </body>
     </html>
   );
