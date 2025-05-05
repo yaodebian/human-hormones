@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 大脑轮廓 -->
+  <path d="M400 50C250 50 150 150 150 300C150 450 250 550 400 550C550 550 650 450 650 300C650 150 550 50 400 50Z" fill="#F3F4F6"/>
+  
+  <!-- 下丘脑 -->
+  <circle cx="400" cy="200" r="40" fill="#FDE68A"/>
+  <text x="400" y="205" text-anchor="middle" fill="#1F2937" font-size="14">下丘脑</text>
+  
+  <!-- 垂体 -->
+  <circle cx="400" cy="280" r="30" fill="#FCA5A5"/>
+  <text x="400" y="285" text-anchor="middle" fill="#1F2937" font-size="14">垂体</text>
+  
+  <!-- 肾上腺 -->
+  <circle cx="400" cy="400" r="35" fill="#93C5FD"/>
+  <text x="400" y="405" text-anchor="middle" fill="#1F2937" font-size="14">肾上腺</text>
+  
+  <!-- 连接线 -->
+  <line x1="400" y1="240" x2="400" y2="250" stroke="#6B7280" stroke-width="2"/>
+  <line x1="400" y1="310" x2="400" y2="365" stroke="#6B7280" stroke-width="2"/>
+  
+  <!-- 标签 -->
+  <text x="400" y="100" text-anchor="middle" fill="#1F2937" font-size="24" font-weight="bold">皮质醇分泌通路</text>
+  
+  <!-- 说明文本 -->
+  <text x="150" y="480" fill="#4B5563" font-size="14">
+    <tspan x="150" dy="0">1. 下丘脑分泌促肾上腺皮质激素释放激素(CRH)</tspan>
+    <tspan x="150" dy="20">2. 垂体分泌促肾上腺皮质激素(ACTH)</tspan>
+    <tspan x="150" dy="20">3. 肾上腺皮质分泌皮质醇</tspan>
+  </text>
+  
+  <!-- 箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+  <path d="M400 240L400 250" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M400 310L400 365" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg> 
