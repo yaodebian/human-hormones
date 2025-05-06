@@ -16,17 +16,6 @@ const FactCard = ({
   className,
   color,
 }: FactCardProps) => {
-  // 色彩映射表，用于强调文本颜色
-  const colorMap: Record<string, string> = {
-    dopamine: 'text-pink-500',     // 多巴胺 - 粉色
-    endorphin: 'text-purple-500',  // 内啡肽 - 紫色
-    serotonin: 'text-amber-500',   // 血清素 - 黄色
-    oxytocin: 'text-orange-500',   // 催产素 - 橙色
-    cortisol: 'text-emerald-500',  // 皮质醇 - 绿色
-  };
-  
-  const accentColor = color ? colorMap[color] : '';
-
   return (
     <div className={cn('bg-white rounded-lg shadow-md p-6', className)}>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>

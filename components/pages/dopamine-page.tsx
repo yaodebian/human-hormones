@@ -11,10 +11,8 @@ import {
   HighlightBox,
   TipsList,
   FoodGrid,
-  ActivityGrid,
   RelatedHormones,
   HormoneImage,
-  HormoneText
 } from '@/components/common';
 import { useLanguage } from '@/lib/i18n/language-context';
 import { locales, LocaleText } from '@/lib/i18n/locales/dopamine';

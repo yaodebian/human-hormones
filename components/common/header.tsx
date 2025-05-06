@@ -17,8 +17,6 @@ export const Header = () => {
   const [open, setOpen] = useState(false)
   const { locale, text } = useLanguage()
   
-  // 从路径中提取语言和当前路由部分
-  const pathParts = pathname.split('/').filter(Boolean)
   const currentLocale = locale || defaultLocale
   
   // 生成带有当前语言的链接

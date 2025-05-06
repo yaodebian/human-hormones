@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 type HormoneHeaderProps = {
   title: string;
@@ -32,7 +33,13 @@ const HormoneHeader = ({
     <section className={cn('py-12', colorClasses.split(' ')[0], className)}>
       <div className="container mx-auto px-4">
         <div className={iconBgClass}>
-          <img src={icon} alt={title} className="w-12 h-12" />
+          <Image 
+            src={icon} 
+            alt={title} 
+            width={48} 
+            height={48}
+            className="w-12 h-12"
+          />
         </div>
         <h1 className={cn('text-3xl md:text-4xl font-bold mb-4', colorClasses.split(' ')[1])}>
           {title}

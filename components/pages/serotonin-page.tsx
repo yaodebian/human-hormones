@@ -10,7 +10,6 @@ import {
   FactCard,
   HighlightBox,
   TipsList,
-  ActivityGrid,
   RelatedHormones,
   HormoneImage,
 } from '@/components/common';
