@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { LanguageProvider } from "@/lib/i18n/language-context";
@@ -36,6 +38,8 @@ export default async function RootLayout({
     <html lang={currentLocale} suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
