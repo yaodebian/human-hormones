@@ -74,11 +74,19 @@ export function middleware(request: NextRequest) {
   
   // 如果是默认语言（英文），不添加前缀
   if (locale === defaultLocale) {
-    console.log('locale====000')
-    return NextResponse.next()
+    const response = NextResponse.next()
+    
+    // 设置默认语言的 cookie，确保客户端一致性
+    if (request.cookies.get('NEXT_LOCALE')?.value !== defaultLocale) {
+      response.cookies.set('NEXT_LOCALE', defaultLocale, {
+        path: '/',
+        maxAge: 31536000 // 一年有效期
+      })
+    }
+    
+    return response
   }
   
-  console.log('locale====111')
   // 为其他语言添加路径前缀
   const newUrl = new URL(`/${locale}${pathname}`, request.url)
   newUrl.search = request.nextUrl.search
