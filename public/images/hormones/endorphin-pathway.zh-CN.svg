@@ -1,32 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
   <rect width="800" height="600" fill="#FAF5FF" />
   
-  <!-- Brain outline -->
+  <!-- 大脑轮廓 -->
   <path d="M400,100 C550,100 650,250 650,400 C650,550 550,700 400,700 C250,700 150,550 150,400 C150,250 250,100 400,100" 
         stroke="#A855F7" stroke-width="2" fill="none" />
   
-  <!-- Neuron 1 -->
+  <!-- 神经元1 -->
   <circle cx="300" cy="250" r="30" fill="#DDD6FE" stroke="#A855F7" stroke-width="2" />
   <circle cx="500" cy="250" r="30" fill="#DDD6FE" stroke="#A855F7" stroke-width="2" />
   
-  <!-- Synaptic connection -->
+  <!-- 突触连接 -->
   <path d="M330,250 C380,250 420,250 470,250" stroke="#A855F7" stroke-width="2" stroke-dasharray="5,5" />
   
-  <!-- Endorphin molecule -->
+  <!-- 内啡肽分子 -->
   <circle cx="400" cy="230" r="10" fill="#A855F7" />
   <circle cx="420" cy="230" r="10" fill="#A855F7" />
   <circle cx="410" cy="250" r="10" fill="#A855F7" />
   
-  <!-- Receptor -->
+  <!-- 受体 -->
   <path d="M470,240 L530,240 L530,260 L470,260 Z" fill="#DDD6FE" stroke="#A855F7" stroke-width="2" />
   
-  <!-- Text labels -->
-  <text x="280" y="200" fill="#A855F7" font-family="Arial" font-size="14">Neuron 1</text>
-  <text x="480" y="200" fill="#A855F7" font-family="Arial" font-size="14">Neuron 2</text>
-  <text x="380" y="200" fill="#A855F7" font-family="Arial" font-size="14">Endorphin</text>
-  <text x="470" y="290" fill="#A855F7" font-family="Arial" font-size="14">Opioid Receptor</text>
+  <!-- 文字标注 -->
+  <text x="280" y="200" fill="#A855F7" font-family="Arial" font-size="14">神经元1</text>
+  <text x="480" y="200" fill="#A855F7" font-family="Arial" font-size="14">神经元2</text>
+  <text x="380" y="200" fill="#A855F7" font-family="Arial" font-size="14">内啡肽</text>
+  <text x="470" y="290" fill="#A855F7" font-family="Arial" font-size="14">阿片受体</text>
   
-  <!-- Arrow indicator -->
+  <!-- 箭头指示 -->
   <path d="M400,270 L400,300" stroke="#A855F7" stroke-width="2" marker-end="url(#arrowhead)" />
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -34,7 +34,7 @@
     </marker>
   </defs>
   
-  <!-- Effect description -->
-  <text x="350" y="330" fill="#A855F7" font-family="Arial" font-size="14">↓ Pain Signal Transmission</text>
-  <text x="350" y="350" fill="#A855F7" font-family="Arial" font-size="14">↑ Pleasure Feeling</text>
+  <!-- 效果说明 -->
+  <text x="350" y="330" fill="#A855F7" font-family="Arial" font-size="14">↓ 疼痛信号传导</text>
+  <text x="350" y="350" fill="#A855F7" font-family="Arial" font-size="14">↑ 愉悦感</text>
 </svg> 

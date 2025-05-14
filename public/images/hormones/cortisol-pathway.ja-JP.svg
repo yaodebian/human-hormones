@@ -5,28 +5,28 @@
   
   <!-- Hypothalamus -->
   <circle cx="400" cy="200" r="40" fill="#FDE68A"/>
-  <text x="400" y="205" text-anchor="middle" fill="#1F2937" font-size="14">Hypothalamus</text>
+  <text x="400" y="205" text-anchor="middle" fill="#1F2937" font-size="14">視床下部</text>
   
   <!-- Pituitary -->
   <circle cx="400" cy="280" r="30" fill="#FCA5A5"/>
-  <text x="400" y="285" text-anchor="middle" fill="#1F2937" font-size="14">Pituitary</text>
+  <text x="400" y="285" text-anchor="middle" fill="#1F2937" font-size="14">下垂体</text>
   
   <!-- Adrenal gland -->
   <circle cx="400" cy="400" r="35" fill="#93C5FD"/>
-  <text x="400" y="405" text-anchor="middle" fill="#1F2937" font-size="14">Adrenal gland</text>
+  <text x="400" y="405" text-anchor="middle" fill="#1F2937" font-size="14">副腎</text>
   
   <!-- Connection lines -->
   <line x1="400" y1="240" x2="400" y2="250" stroke="#6B7280" stroke-width="2"/>
   <line x1="400" y1="310" x2="400" y2="365" stroke="#6B7280" stroke-width="2"/>
   
   <!-- Title -->
-  <text x="400" y="100" text-anchor="middle" fill="#1F2937" font-size="24" font-weight="bold">Cortisol Secretion Pathway</text>
+  <text x="400" y="100" text-anchor="middle" fill="#1F2937" font-size="24" font-weight="bold">コルチゾール分泌経路</text>
   
   <!-- Description text -->
   <text x="150" y="480" fill="#4B5563" font-size="14">
-    <tspan x="150" dy="0">1. Hypothalamus secretes Corticotropin-Releasing Hormone (CRH)</tspan>
-    <tspan x="150" dy="20">2. Pituitary secretes Adrenocorticotropic Hormone (ACTH)</tspan>
-    <tspan x="150" dy="20">3. Adrenal cortex secretes Cortisol</tspan>
+    <tspan x="150" dy="0">1. 視床下部が副腎皮質刺激ホルモン放出ホルモン(CRH)を分泌</tspan>
+    <tspan x="150" dy="20">2. 下垂体が副腎皮質刺激ホルモン(ACTH)を分泌</tspan>
+    <tspan x="150" dy="20">3. 副腎皮質がコルチゾールを分泌</tspan>
   </text>
   
   <!-- Arrows -->

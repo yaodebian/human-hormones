@@ -5,11 +5,11 @@
   
   <!-- Hypothalamus -->
   <circle cx="400" cy="300" r="40" fill="#FDE68A"/>
-  <text x="400" y="305" text-anchor="middle" fill="#1F2937" font-size="14">Hypothalamus</text>
+  <text x="400" y="305" text-anchor="middle" fill="#1F2937" font-size="14">視床下部</text>
   
   <!-- Pituitary -->
   <circle cx="400" cy="380" r="30" fill="#FCA5A5"/>
-  <text x="400" y="385" text-anchor="middle" fill="#1F2937" font-size="14">Pituitary</text>
+  <text x="400" y="385" text-anchor="middle" fill="#1F2937" font-size="14">下垂体</text>
   
   <!-- Circulatory system -->
   <path d="M400 410C400 450 350 470 300 470C250 470 200 450 200 410" stroke="#EF4444" stroke-width="3" fill="none"/>
@@ -20,13 +20,13 @@
   <path d="M400 340C400 340 380 320 400 300" stroke="#6B7280" stroke-width="2" fill="none"/>
   
   <!-- Title -->
-  <text x="400" y="150" text-anchor="middle" fill="#1F2937" font-size="24" font-weight="bold">Oxytocin Pathway</text>
+  <text x="400" y="150" text-anchor="middle" fill="#1F2937" font-size="24" font-weight="bold">オキシトシン経路</text>
   
   <!-- Description text -->
   <text x="200" y="520" fill="#4B5563" font-size="14">
-    <tspan x="200" dy="0">1. Hypothalamus produces oxytocin</tspan>
-    <tspan x="200" dy="20">2. Pituitary stores and releases oxytocin</tspan>
-    <tspan x="200" dy="20">3. Transported throughout the body via the circulatory system</tspan>
+    <tspan x="200" dy="0">1. 視床下部がオキシトシンを生成</tspan>
+    <tspan x="200" dy="20">2. 下垂体がオキシトシンを貯蔵・放出</tspan>
+    <tspan x="200" dy="20">3. 循環系を通じて全身に輸送</tspan>
   </text>
   
   <!-- Arrows -->

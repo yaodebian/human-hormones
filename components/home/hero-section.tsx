@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Container } from '@/components/ui/container'
 import { useLanguage } from '@/lib/i18n/language-context'
+import { LocalizedSvgImage } from '@/components/common'
 
 export const HeroSection = () => {
   const { text } = useLanguage()
@@ -30,11 +30,9 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="relative h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] order-1 md:order-2">
-            <Image
-              src="/brain.svg"
-              alt="brain illustration"
-              fill
-              className="object-contain"
+            <LocalizedSvgImage
+              basePath="/brain.svg"
+              altText="brain illustration"
               priority
             />
           </div>

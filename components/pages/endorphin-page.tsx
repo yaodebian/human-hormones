@@ -11,7 +11,7 @@ import {
   HighlightBox,
   TipsList,
   RelatedHormones,
-  HormoneImage,
+  LocalizedSvgImage,
 } from '@/components/common';
 import { useLanguage } from '@/lib/i18n/language-context';
 import { locales, LocaleText } from '@/lib/i18n/locales/endorphin';
@@ -63,10 +63,13 @@ export function EndorphinsPage() {
               </ul>
               <p className="mb-4">{text.page.sections.definition.content.p3}</p>
             </div>
-            <div>
-              <HormoneImage 
-                src="/images/hormones/endorphin-pathway.svg" 
-                alt={text.page.header.title} 
+            <div className="relative rounded-lg overflow-hidden shadow-md">
+              <LocalizedSvgImage 
+                basePath="/images/hormones/endorphin-pathway.svg" 
+                altText={text.page.header.title}
+                width={500}
+                height={300}
+                className="w-full h-auto object-cover"
               />
             </div>
           </DetailGrid>

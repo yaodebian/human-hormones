@@ -30,11 +30,11 @@
   <circle cx="500" cy="400" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   
   <!-- Text labels -->
-  <text x="280" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Neuron 1</text>
-  <text x="480" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Neuron 2</text>
-  <text x="380" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Serotonin</text>
-  <text x="470" y="290" fill="#3B82F6" font-family="Arial" font-size="14">5-HT Receptor</text>
-  <text x="350" y="350" fill="#3B82F6" font-family="Arial" font-size="14">Gut (95% of serotonin source)</text>
+  <text x="280" y="200" fill="#3B82F6" font-family="Arial" font-size="14">神経細胞1</text>
+  <text x="480" y="200" fill="#3B82F6" font-family="Arial" font-size="14">神経細胞2</text>
+  <text x="380" y="200" fill="#3B82F6" font-family="Arial" font-size="14">セロトニン</text>
+  <text x="470" y="290" fill="#3B82F6" font-family="Arial" font-size="14">5-HT受容体</text>
+  <text x="350" y="350" fill="#3B82F6" font-family="Arial" font-size="14">腸（セロトニンの95%の供給源）</text>
   
   <!-- Arrow indicator -->
   <path d="M400,270 L400,300" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)" />
@@ -45,7 +45,7 @@
   </defs>
   
   <!-- Effect description -->
-  <text x="350" y="480" fill="#3B82F6" font-family="Arial" font-size="14">↑ Mood Regulation</text>
-  <text x="350" y="500" fill="#3B82F6" font-family="Arial" font-size="14">↑ Sleep Quality</text>
-  <text x="350" y="520" fill="#3B82F6" font-family="Arial" font-size="14">↑ Appetite Control</text>
+  <text x="350" y="480" fill="#3B82F6" font-family="Arial" font-size="14">↑ 気分調整</text>
+  <text x="350" y="500" fill="#3B82F6" font-family="Arial" font-size="14">↑ 睡眠の質</text>
+  <text x="350" y="520" fill="#3B82F6" font-family="Arial" font-size="14">↑ 食欲コントロール</text>
 </svg> 

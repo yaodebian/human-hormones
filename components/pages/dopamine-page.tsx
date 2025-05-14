@@ -12,7 +12,7 @@ import {
   TipsList,
   FoodGrid,
   RelatedHormones,
-  HormoneImage,
+  LocalizedSvgImage,
 } from '@/components/common';
 import { useLanguage } from '@/lib/i18n/language-context';
 import { locales, LocaleText } from '@/lib/i18n/locales/dopamine';
@@ -47,10 +47,13 @@ export function DopaminePage() {
               </ul>
               <p className="mb-4">{text.page.sections.definition.content.p3}</p>
             </div>
-            <div>
-              <HormoneImage 
-                src="/images/hormones/dopamine-pathway.svg" 
-                alt={text.page.header.title} 
+            <div className="relative rounded-lg overflow-hidden shadow-md">
+              <LocalizedSvgImage 
+                basePath="/images/hormones/dopamine-pathway.svg" 
+                altText={text.page.header.title}
+                width={500}
+                height={300}
+                className="w-full h-auto object-cover"
               />
             </div>
           </DetailGrid>

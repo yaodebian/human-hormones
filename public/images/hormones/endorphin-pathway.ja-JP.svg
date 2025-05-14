@@ -21,10 +21,10 @@
   <path d="M470,240 L530,240 L530,260 L470,260 Z" fill="#DDD6FE" stroke="#A855F7" stroke-width="2" />
   
   <!-- Text labels -->
-  <text x="280" y="200" fill="#A855F7" font-family="Arial" font-size="14">Neuron 1</text>
-  <text x="480" y="200" fill="#A855F7" font-family="Arial" font-size="14">Neuron 2</text>
-  <text x="380" y="200" fill="#A855F7" font-family="Arial" font-size="14">Endorphin</text>
-  <text x="470" y="290" fill="#A855F7" font-family="Arial" font-size="14">Opioid Receptor</text>
+  <text x="280" y="200" fill="#A855F7" font-family="Arial" font-size="14">神経細胞1</text>
+  <text x="480" y="200" fill="#A855F7" font-family="Arial" font-size="14">神経細胞2</text>
+  <text x="380" y="200" fill="#A855F7" font-family="Arial" font-size="14">エンドルフィン</text>
+  <text x="470" y="290" fill="#A855F7" font-family="Arial" font-size="14">オピオイド受容体</text>
   
   <!-- Arrow indicator -->
   <path d="M400,270 L400,300" stroke="#A855F7" stroke-width="2" marker-end="url(#arrowhead)" />
@@ -35,6 +35,6 @@
   </defs>
   
   <!-- Effect description -->
-  <text x="350" y="330" fill="#A855F7" font-family="Arial" font-size="14">↓ Pain Signal Transmission</text>
-  <text x="350" y="350" fill="#A855F7" font-family="Arial" font-size="14">↑ Pleasure Feeling</text>
+  <text x="350" y="330" fill="#A855F7" font-family="Arial" font-size="14">↓ 痛みの信号伝達</text>
+  <text x="350" y="350" fill="#A855F7" font-family="Arial" font-size="14">↑ 快感</text>
 </svg> 

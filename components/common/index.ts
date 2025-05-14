@@ -9,5 +9,6 @@ export { default as ActivityGrid } from './ActivityGrid';
 export { default as RelatedHormones } from './RelatedHormones';
 export { default as HormoneImage } from './HormoneImage';
 export { default as HormoneText } from './HormoneText';
+export { default as LocalizedSvgImage } from './LocalizedSvgImage';
 
 // 使用指南在 ./usage-guide.md 文件中 

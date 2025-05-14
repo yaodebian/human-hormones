@@ -24,9 +24,9 @@
   <circle cx="200" cy="160" r="10" fill="#fbbf24" opacity="0.7"/>
   
   <!-- Labels -->
-  <text x="115" y="190" fill="#ec4899" font-family="sans-serif" font-size="12" font-weight="bold">Dopamine</text>
-  <text x="155" y="270" fill="#8b5cf6" font-family="sans-serif" font-size="12" font-weight="bold">Endorphin</text>
-  <text x="245" y="270" fill="#f97316" font-family="sans-serif" font-size="12" font-weight="bold">Oxytocin</text>
-  <text x="270" y="190" fill="#10b981" font-family="sans-serif" font-size="12" font-weight="bold">Cortisol</text>
-  <text x="195" y="150" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="bold">Serotonin</text>
+  <text x="105" y="190" fill="#ec4899" font-family="sans-serif" font-size="12" font-weight="bold">ドーパミン</text>
+  <text x="145" y="270" fill="#8b5cf6" font-family="sans-serif" font-size="12" font-weight="bold">エンドルフィン</text>
+  <text x="235" y="270" fill="#f97316" font-family="sans-serif" font-size="12" font-weight="bold">オキシトシン</text>
+  <text x="260" y="190" fill="#10b981" font-family="sans-serif" font-size="12" font-weight="bold">コルチゾール</text>
+  <text x="185" y="150" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="bold">セロトニン</text>
 </svg> 

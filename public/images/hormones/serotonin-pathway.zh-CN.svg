@@ -1,42 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
   <rect width="800" height="600" fill="#EFF6FF" />
   
-  <!-- Brain outline -->
+  <!-- 大脑轮廓 -->
   <path d="M400,100 C550,100 650,250 650,400 C650,550 550,700 400,700 C250,700 150,550 150,400 C150,250 250,100 400,100" 
         stroke="#3B82F6" stroke-width="2" fill="none" />
   
-  <!-- Neuron 1 -->
+  <!-- 神经元1 -->
   <circle cx="300" cy="250" r="30" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   <circle cx="500" cy="250" r="30" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   
-  <!-- Synaptic connection -->
+  <!-- 突触连接 -->
   <path d="M330,250 C380,250 420,250 470,250" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
   
-  <!-- Serotonin molecule -->
+  <!-- 血清素分子 -->
   <circle cx="400" cy="230" r="10" fill="#3B82F6" />
   <circle cx="420" cy="230" r="10" fill="#3B82F6" />
   <circle cx="410" cy="250" r="10" fill="#3B82F6" />
   
-  <!-- Receptor -->
+  <!-- 受体 -->
   <path d="M470,240 L530,240 L530,260 L470,260 Z" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   
-  <!-- Gut illustration -->
+  <!-- 肠道示意图 -->
   <path d="M200,400 Q300,350 400,400 Q500,450 600,400" stroke="#3B82F6" stroke-width="2" fill="none" />
   <path d="M200,420 Q300,370 400,420 Q500,470 600,420" stroke="#3B82F6" stroke-width="2" fill="none" />
   
-  <!-- Gut cells -->
+  <!-- 肠道细胞 -->
   <circle cx="300" cy="400" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   <circle cx="400" cy="400" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   <circle cx="500" cy="400" r="20" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
   
-  <!-- Text labels -->
-  <text x="280" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Neuron 1</text>
-  <text x="480" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Neuron 2</text>
-  <text x="380" y="200" fill="#3B82F6" font-family="Arial" font-size="14">Serotonin</text>
-  <text x="470" y="290" fill="#3B82F6" font-family="Arial" font-size="14">5-HT Receptor</text>
-  <text x="350" y="350" fill="#3B82F6" font-family="Arial" font-size="14">Gut (95% of serotonin source)</text>
+  <!-- 文字标注 -->
+  <text x="280" y="200" fill="#3B82F6" font-family="Arial" font-size="14">神经元1</text>
+  <text x="480" y="200" fill="#3B82F6" font-family="Arial" font-size="14">神经元2</text>
+  <text x="380" y="200" fill="#3B82F6" font-family="Arial" font-size="14">血清素</text>
+  <text x="470" y="290" fill="#3B82F6" font-family="Arial" font-size="14">5-HT受体</text>
+  <text x="350" y="350" fill="#3B82F6" font-family="Arial" font-size="14">肠道(95%血清素的来源)</text>
   
-  <!-- Arrow indicator -->
+  <!-- 箭头指示 -->
   <path d="M400,270 L400,300" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)" />
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -44,8 +44,8 @@
     </marker>
   </defs>
   
-  <!-- Effect description -->
-  <text x="350" y="480" fill="#3B82F6" font-family="Arial" font-size="14">↑ Mood Regulation</text>
-  <text x="350" y="500" fill="#3B82F6" font-family="Arial" font-size="14">↑ Sleep Quality</text>
-  <text x="350" y="520" fill="#3B82F6" font-family="Arial" font-size="14">↑ Appetite Control</text>
+  <!-- 效果说明 -->
+  <text x="350" y="480" fill="#3B82F6" font-family="Arial" font-size="14">↑ 情绪调节</text>
+  <text x="350" y="500" fill="#3B82F6" font-family="Arial" font-size="14">↑ 睡眠质量</text>
+  <text x="350" y="520" fill="#3B82F6" font-family="Arial" font-size="14">↑ 食欲控制</text>
 </svg> 
