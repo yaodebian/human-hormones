@@ -1,8 +1,9 @@
+'use client'
+
 import { create } from 'zustand'
 import { supportedLocales, defaultLocale } from '@/middleware'
 import type { Locale } from '@/lib/i18n/locales/home'
 import { useRouter, usePathname } from 'next/navigation'
-import { persist } from 'zustand/middleware'
 
 interface LanguageState {
   currentLocale: Locale
@@ -34,6 +35,8 @@ export const useLanguageSwitcher = () => {
       
       // 导航到新路径，不需要强制刷新
       await router.push(newPath || '/')
+
+      router.refresh()
     } catch (error) {
       console.error('Failed to change language:', error)
     }
@@ -44,20 +47,12 @@ export const useLanguageSwitcher = () => {
   }
 }
 
-// 创建 Zustand store 并使用 persist 中间件持久化语言设置
-export const useLanguageStore = create<LanguageState>()(
-  persist(
-    (set) => ({
-      currentLocale: defaultLocale as Locale,
-      setLocale: (newLocale) => {
-        if (supportedLocales.includes(newLocale)) {
-          set({ currentLocale: newLocale })
-        }
-      },
-    }),
-    {
-      name: 'language-storage', // localStorage 的键名
-      partialize: (state) => ({ currentLocale: state.currentLocale }),
+// 创建 Zustand store
+export const useLanguageStore = create<LanguageState>((set, get) => ({
+  currentLocale: defaultLocale as Locale,
+  setLocale: (newLocale) => {
+    if (supportedLocales.includes(newLocale) && newLocale !== get().currentLocale) {
+      set({ currentLocale: newLocale })
     }
-  )
-) 
+  },
+}))

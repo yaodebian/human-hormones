@@ -2,7 +2,7 @@
 
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
 import { Locale, LocaleText, locales } from './locales/home'
-import { defaultLocale } from '@/middleware'
+import { defaultLocale, supportedLocales } from '@/middleware'
 import { useLanguageStore, useLanguageSwitcher } from '@/lib/store/language-store'
 
 type LanguageContextType = {
@@ -26,15 +26,33 @@ export const LanguageProvider = ({
 }) => {
   const { currentLocale, setLocale } = useLanguageStore()
   const { handleLocaleChange } = useLanguageSwitcher()
-  const [isInitialized, setIsInitialized] = useState(false)
-  
-  // 初始化 store 中的语言，确保服务端和客户端一致
-  useEffect(() => {
-    if (initialLocale && (initialLocale !== currentLocale || !isInitialized)) {
-      setLocale(initialLocale as Locale)
-      setIsInitialized(true)
-    }
-  }, [initialLocale, currentLocale, setLocale, isInitialized])
+
+  // // 监听路由变化并更新语言状态
+  // const useLanguageRouteSync = () => {
+  //   const pathname = usePathname()
+  //   const { setLocale } = useLanguageStore()
+    
+  //   useEffect(() => {
+  //     // 从URL路径中提取语言代码
+  //     const pathSegments = pathname.split('/').filter(Boolean)
+  //     if (pathSegments.length > 0) {
+  //       const possibleLocale = pathSegments[0] as Locale
+        
+  //       // 检查是否为支持的语言
+  //       if (supportedLocales.includes(possibleLocale)) {  
+  //         setLocale(possibleLocale)
+  //       } else {
+  //         // 如果URL中没有有效的语言代码，则设置为默认语言
+  //         setLocale(defaultLocale as Locale)
+  //       }
+  //     } else {
+  //       // 根路径使用默认语言
+  //       setLocale(defaultLocale as Locale)
+  //     }
+  //   }, [pathname, setLocale])
+  // }
+
+  // useLanguageRouteSync()
 
   const handleChange = async (newLocale: Locale) => {
     // 先更新 store 中的状态
@@ -43,13 +61,17 @@ export const LanguageProvider = ({
     await handleLocaleChange(newLocale)
   }
 
+  
   // 使用服务端传递的初始语言，确保首次渲染就是正确的语言
-  const effectiveLocale = initialLocale as Locale || currentLocale
+  // const effectiveLocale = initialLocale as Locale || currentLocale
+
+
+  console.log('initialLocale', initialLocale)
   
   return (
     <LanguageContext.Provider value={{ 
-      locale: effectiveLocale, 
-      text: locales[effectiveLocale], 
+      locale: initialLocale as Locale, 
+      text: locales[initialLocale as Locale], 
       changeLocale: handleChange 
     }}>
       {children}
