@@ -15,26 +15,24 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-  params?: { locale?: string };
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
   const headersList = await headers()
   const cookies = headersList.get('cookie')
   const cookieLocale = cookies?.split('; ')
     .find((row: string) => row.startsWith('NEXT_LOCALE='))?.split('=')[1]
   
   // 优先使用URL路径中的语言参数，其次是cookie中的语言，最后是默认语言
-  const urlLocale = params?.locale
+  const urlLocale = (await params).locale
   const currentLocale = 
     (urlLocale && supportedLocales.includes(urlLocale)) ? urlLocale : 
     (cookieLocale && supportedLocales.includes(cookieLocale)) ? cookieLocale : 
     defaultLocale
   
   return (
-    <>
-       <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
-    </>
+    <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
   );
 }
