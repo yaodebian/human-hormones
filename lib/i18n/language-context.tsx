@@ -4,6 +4,7 @@ import { ReactNode, createContext, useContext } from 'react'
 import { Locale, LocaleText, locales } from './locales/home'
 import { defaultLocale } from '@/middleware'
 import { useLanguageStore, useLanguageSwitcher } from '@/lib/store/language-store'
+import React from 'react'
 
 type LanguageContextType = {
   locale: Locale
@@ -41,6 +42,13 @@ export const LanguageProvider = ({
 
   console.log('initialLocale', initialLocale)
   
+  // 添加更精确的初始化逻辑
+  React.useEffect(() => {
+    if (initialLocale) {
+      setLocale(initialLocale as Locale)
+    }
+  }, [initialLocale])
+
   return (
     <LanguageContext.Provider value={{ 
       locale: initialLocale as Locale, 
