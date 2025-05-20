@@ -3,7 +3,7 @@
 import { ReactNode, createContext, useContext } from 'react'
 import { Locale, LocaleText, locales } from './locales/home'
 import { defaultLocale } from '@/middleware'
-import { useLanguageStore, useLanguageSwitcher } from '@/lib/store/language-store'
+import { useLanguageSwitcher } from '@/lib/store/language-store'
 import React from 'react'
 
 type LanguageContextType = {
@@ -25,29 +25,12 @@ export const LanguageProvider = ({
   children: ReactNode, 
   locale?: string 
 }) => {
-  const { setLocale } = useLanguageStore()
   const { handleLocaleChange } = useLanguageSwitcher()
 
   const handleChange = async (newLocale: Locale) => {
-    // 先更新 store 中的状态
-    setLocale(newLocale)
     // 然后处理路由和 cookie
     await handleLocaleChange(newLocale)
   }
-
-  
-  // 使用服务端传递的初始语言，确保首次渲染就是正确的语言
-  // const effectiveLocale = initialLocale as Locale || currentLocale
-
-
-  console.log('initialLocale', initialLocale)
-  
-  // 添加更精确的初始化逻辑
-  React.useEffect(() => {
-    if (initialLocale) {
-      setLocale(initialLocale as Locale)
-    }
-  }, [initialLocale])
 
   return (
     <LanguageContext.Provider value={{ 

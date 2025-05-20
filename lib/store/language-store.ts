@@ -1,6 +1,5 @@
 'use client'
 
-import { create } from 'zustand'
 import { supportedLocales, defaultLocale } from '@/middleware'
 import type { Locale } from '@/lib/i18n/locales/home'
 import { useRouter, usePathname } from 'next/navigation'
@@ -46,13 +45,3 @@ export const useLanguageSwitcher = () => {
     handleLocaleChange
   }
 }
-
-// 创建 Zustand store
-export const useLanguageStore = create<LanguageState>((set, get) => ({
-  currentLocale: defaultLocale as Locale,
-  setLocale: (newLocale) => {
-    if (supportedLocales.includes(newLocale) && newLocale !== get().currentLocale) {
-      set({ currentLocale: newLocale })
-    }
-  },
-}))
