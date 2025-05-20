@@ -41,7 +41,7 @@ export default async function RootLayout({
     defaultLocale
   
   return (
-    <html lang={defaultLocale}>
+    <html lang={currentLocale}>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
         <Analytics />
