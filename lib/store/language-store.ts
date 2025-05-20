@@ -4,11 +4,6 @@ import { supportedLocales, defaultLocale } from '@/middleware'
 import type { Locale } from '@/lib/i18n/locales/home'
 import { useRouter, usePathname } from 'next/navigation'
 
-interface LanguageState {
-  currentLocale: Locale
-  setLocale: (locale: Locale) => void
-}
-
 // 创建一个自定义 hook 来处理语言切换和路由
 export const useLanguageSwitcher = () => {
   const router = useRouter()
