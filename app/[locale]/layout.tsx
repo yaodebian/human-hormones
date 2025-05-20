@@ -3,6 +3,14 @@ import "@/app/globals.css";
 import { defaultLocale, supportedLocales } from "@/middleware";
 import { headers } from 'next/headers'
 import { LanguageProvider } from "@/lib/i18n/language-context";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "人体激素科普 | Human Hormones Guide | ヒトホルモンガイド | 인체 호르몬 가이드",
@@ -33,6 +41,12 @@ export default async function RootLayout({
     defaultLocale
   
   return (
-    <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
+    <html lang={defaultLocale}>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+        <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
   );
 }

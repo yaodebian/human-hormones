@@ -74,7 +74,10 @@ export function middleware(request: NextRequest) {
   
   // 如果是默认语言（英文），不添加前缀
   if (locale === defaultLocale) {
-    const response = NextResponse.next()
+    const newUrl = new URL(`/${locale}${pathname}`, request.url)
+    newUrl.search = request.nextUrl.search
+    
+    const response = NextResponse.rewrite(newUrl)
     
     // 设置默认语言的 cookie，确保客户端一致性
     if (request.cookies.get('NEXT_LOCALE')?.value !== defaultLocale) {
@@ -87,7 +90,7 @@ export function middleware(request: NextRequest) {
     return response
   }
   
-  // 为其他语言添加路径前缀
+  // 为其他语言添加路径前缀（对非根路径的请求使用redirect）
   const newUrl = new URL(`/${locale}${pathname}`, request.url)
   newUrl.search = request.nextUrl.search
   return NextResponse.redirect(newUrl)
