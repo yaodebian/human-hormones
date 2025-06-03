@@ -129,19 +129,24 @@ export const jaJP = {
         title: "関連ホルモン",
         hormones: [
           {
-            name: "アドレナリン",
-            description: "ストレス反応でコルチゾールと協働",
-            link: "/adrenaline"
+            name: "ドーパミン",
+            description: "コルチゾールとストレスと報酬システムで相互作用",
+            link: "/dopamine"
           },
           {
-            name: "成長ホルモン",
-            description: "代謝調節でコルチゾールと相互作用",
-            link: "/growth-hormone"
+            name: "セロトニン",
+            description: "コルチゾールと気分調節で協働",
+            link: "/serotonin"
           },
           {
-            name: "メラトニン",
-            description: "コルチゾールの概日リズムに影響",
-            link: "/melatonin"
+            name: "エンドルフィン",
+            description: "コルチゾールとストレス緩和で役割を果たす",
+            link: "/endorphin"
+          },
+          {
+            name: "オキシトシン",
+            description: "オキシトシンはコルチゾールレベルを下げ、ストレス反応を軽減",
+            link: "/oxytocin"
           }
         ]
       }

@@ -129,9 +129,9 @@ export const zhCN = {
         title: "相关激素",
         hormones: [
           {
-            name: "褪黑激素",
-            description: "由血清素转化而来，调节睡眠周期",
-            link: "/melatonin"
+            name: "催产素",
+            description: "与血清素一起调节情绪和社交联结",
+            link: "/oxytocin"
           },
           {
             name: "多巴胺",
@@ -142,6 +142,11 @@ export const zhCN = {
             name: "内啡肽",
             description: "与血清素一起影响心情和幸福感",
             link: "/endorphin"
+          },
+          {
+            name: "皮质醇",
+            description: "与血清素在情绪调节中相互作用，慢性压力会影响血清素水平",
+            link: "/cortisol"
           }
         ]
       }

@@ -141,6 +141,11 @@ export const zhCN = {
             name: "催产素",
             description: "在社交联系和情感纽带形成中与内啡肽协同作用",
             link: "/oxytocin"
+          },
+          {
+            name: "皮质醇",
+            description: "内啡肽可以帮助缓解皮质醇引起的压力反应",
+            link: "/cortisol"
           }
         ]
       }

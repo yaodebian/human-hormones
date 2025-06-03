@@ -189,28 +189,24 @@ export const zhCN = {
         title: "多巴胺与其他激素",
         hormones: [
           {
-            id: "endorphin",
-            name: "多巴胺与内啡肽",
-            relation: "这两种物质常一起工作，特别是在运动时。内啡肽提供\"跑步者高潮\"的镇痛效果，而多巴胺提供动力和满足感。",
-            link: "/hormones/endorphin"
+            name: "内啡肽",
+            description: "这两种物质常一起工作，特别是在运动时。内啡肽提供\"跑步者高潮\"的镇痛效果，而多巴胺提供动力和满足感。",
+            link: "/endorphin"
           },
           {
-            id: "serotonin",
-            name: "多巴胺与血清素",
-            relation: "这两种神经递质在情绪调节中相互平衡。多巴胺与动机和愉悦相关，而血清素则与情绪稳定和满足感相关。",
-            link: "/hormones/serotonin"
+            name: "血清素",
+            description: "这两种神经递质在情绪调节中相互平衡。多巴胺与动机和愉悦相关，而血清素则与情绪稳定和满足感相关。",
+            link: "/serotonin"
           },
           {
-            id: "oxytocin",
-            name: "多巴胺与催产素",
-            relation: "多巴胺和催产素在社交互动和亲密关系中相互作用。催产素促进社交联结，而多巴胺增强这些互动的愉悦感。",
-            link: "/hormones/oxytocin"
+            name: "催产素",
+            description: "多巴胺和催产素在社交互动和亲密关系中相互作用。催产素促进社交联结，而多巴胺增强这些互动的愉悦感。",
+            link: "/oxytocin"
           },
           {
-            id: "cortisol",
-            name: "多巴胺与皮质醇",
-            relation: "多巴胺和皮质醇（压力激素）之间存在复杂关系。适度的压力可能暂时增强多巴胺系统功能，但慢性压力会扰乱多巴胺信号传导。",
-            link: "/hormones/cortisol"
+            name: "皮质醇",
+            description: "多巴胺和皮质醇（压力激素）之间存在复杂关系。适度的压力可能暂时增强多巴胺系统功能，但慢性压力会扰乱多巴胺信号传导。",
+            link: "/cortisol"
           }
         ]
       }

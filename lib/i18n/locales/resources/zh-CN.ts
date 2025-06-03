@@ -60,7 +60,7 @@ export const zhCN = {
       description: '我们正在准备更多优质内容。如果您想第一时间获取更新，欢迎订阅我们的通知。',
       buttons: {
         contact: '联系我们',
-        subscribe: '订阅更新'
+        subscribe: '订阅更新（正在准备中）'
       }
     }
   }

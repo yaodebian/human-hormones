@@ -129,19 +129,24 @@ export const jaJP = {
         title: "関連ホルモン",
         hormones: [
           {
-            name: "メラトニン",
-            description: "セロトニンから変換され、睡眠サイクルを調節",
-            link: "/melatonin"
+            name: "オキシトシン",
+            description: "セロトニンと共に気分と社会的結合を調節",
+            link: "/oxytocin"
           },
           {
             name: "ドーパミン",
-            description: "セロトニンと共に気分と報酬系に関与",
+            description: "セロトニンと共に気分と報酬システムに関与",
             link: "/dopamine"
           },
           {
             name: "エンドルフィン",
             description: "セロトニンと共に気分と幸福感に影響",
             link: "/endorphin"
+          },
+          {
+            name: "コルチゾール",
+            description: "セロトニンと共に気分調節に相互作用、慢性ストレスはセロトニンレベルに影響",
+            link: "/cortisol"
           }
         ]
       }

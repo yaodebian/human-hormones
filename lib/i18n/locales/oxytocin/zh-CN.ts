@@ -142,6 +142,11 @@ export const zhCN = {
             name: "内啡肽",
             description: "与催产素在压力缓解方面合作",
             link: "/endorphin"
+          },
+          {
+            name: "皮质醇",
+            description: "催产素能够帮助降低皮质醇水平，减轻压力反应",
+            link: "/cortisol"
           }
         ]
       }

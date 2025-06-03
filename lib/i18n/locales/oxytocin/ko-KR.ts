@@ -142,6 +142,11 @@ export const koKR = {
             name: "엔도르핀",
             description: "스트레스 해소에서 옥시토신과 협력",
             link: "/endorphin"
+          },
+          {
+            name: "코르티솔",
+            description: "옥시토신은 코르티솔 수준을 낮추고 스트레스 반응을 감소",
+            link: "/cortisol"
           }
         ]
       }

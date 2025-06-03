@@ -139,8 +139,13 @@ export const jaJP = {
           },
           {
             name: "オキシトシン",
-            description: "社会的絆と感情的なつながりの形成においてエンドルフィンと相乗的に作用する",
+            description: "社会的結合と感情的つながりにおいてエンドルフィンと相乗的に作用",
             link: "/oxytocin"
+          },
+          {
+            name: "コルチゾール",
+            description: "エンドルフィンはコルチゾールによるストレス反応を軽減",
+            link: "/cortisol"
           }
         ]
       }

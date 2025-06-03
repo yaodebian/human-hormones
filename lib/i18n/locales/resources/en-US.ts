@@ -60,7 +60,7 @@ export const enUS = {
       description: 'We are preparing more quality content. Subscribe to our notifications to be the first to know about updates.',
       buttons: {
         contact: 'Contact Us',
-        subscribe: 'Subscribe'
+        subscribe: 'Subscribe (In Preparation)'
       }
     }
   }

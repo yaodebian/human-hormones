@@ -129,9 +129,9 @@ export const enUS = {
         title: "Related Hormones",
         hormones: [
           {
-            name: "Melatonin",
-            description: "Converted from serotonin, regulates sleep cycles",
-            link: "/melatonin"
+            name: "Oxytocin",
+            description: "Works with serotonin to regulate mood and social bonding",
+            link: "/oxytocin"
           },
           {
             name: "Dopamine",
@@ -142,6 +142,11 @@ export const enUS = {
             name: "Endorphins",
             description: "Influences mood and well-being alongside serotonin",
             link: "/endorphin"
+          },
+          {
+            name: "Cortisol",
+            description: "Interacts with serotonin in mood regulation, chronic stress can affect serotonin levels",
+            link: "/cortisol"
           }
         ]
       }

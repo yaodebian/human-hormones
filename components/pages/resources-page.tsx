@@ -176,10 +176,18 @@ export function ResourcesPage() {
                 {text.page.comingSoon.description}
               </p>
               <div className="flex flex-col md:flex-row gap-3 md:gap-4">
-                <Button variant="default" className="w-full md:w-auto">
+                <Button 
+                  variant="default" 
+                  className="w-full md:w-auto"
+                  onClick={() => window.open('https://github.com/yaodebian/human-hormones', '_blank')}
+                >
                   {text.page.comingSoon.buttons.contact}
                 </Button>
-                <Button variant="outline" className="w-full md:w-auto">
+                <Button 
+                  variant="outline" 
+                  className="w-full md:w-auto" 
+                  disabled
+                >
                   {text.page.comingSoon.buttons.subscribe}
                 </Button>
               </div>

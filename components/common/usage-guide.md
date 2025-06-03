@@ -160,19 +160,18 @@ import { ActivityGrid } from '@/components/common';
 import { RelatedHormones } from '@/components/common';
 
 <RelatedHormones
-  title="多巴胺与其他激素的关系"
   items={[
     {
       id: "endorphin",
       name: "多巴胺与内啡肽",
       relation: "这两种物质常一起工作，特别是在运动时。内啡肽提供"跑步者高潮"的镇痛效果，而多巴胺提供动力和满足感。",
-      link: "/hormones/endorphin"
+      link: "/endorphin"
     },
     {
       id: "serotonin",
       name: "多巴胺与血清素",
       relation: "这两种神经递质在情绪调节中相互平衡。多巴胺与动机和愉悦相关，而血清素则与情绪稳定和满足感相关。",
-      link: "/hormones/serotonin"
+      link: "/serotonin"
     }
   ]}
 />

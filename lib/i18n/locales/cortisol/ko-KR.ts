@@ -129,19 +129,24 @@ export const koKR = {
         title: "관련 호르몬",
         hormones: [
           {
-            name: "아드레날린",
-            description: "스트레스 반응에서 코티솔과 협력",
-            link: "/adrenaline"
+            name: "도파민",
+            description: "코르티솔과 스트레스 및 보상 시스템에서 상호작용",
+            link: "/dopamine"
           },
           {
-            name: "성장 호르몬",
-            description: "대사 조절에서 코티솔과 상호작용",
-            link: "/growth-hormone"
+            name: "세로토닌",
+            description: "코르티솔과 기분 조절에서 협력",
+            link: "/serotonin"
           },
           {
-            name: "멜라토닌",
-            description: "코티솔의 일주기 리듬에 영향",
-            link: "/melatonin"
+            name: "엔돌핀",
+            description: "코르티솔과 스트레스 완화에서 역할",
+            link: "/endorphin"
+          },
+          {
+            name: "옥시토신",
+            description: "옥시토신은 코르티솔 수준을 낮추고 스트레스 반응을 감소",
+            link: "/oxytocin"
           }
         ]
       }

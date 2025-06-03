@@ -129,9 +129,9 @@ export const koKR = {
         title: "관련 호르몬",
         hormones: [
           {
-            name: "멜라토닌",
-            description: "세로토닌에서 전환되어 수면 주기 조절",
-            link: "/melatonin"
+            name: "옥시토신",
+            description: "세로토닌과 함께 기분과 사회적 유대감을 조절",
+            link: "/oxytocin"
           },
           {
             name: "도파민",
@@ -139,9 +139,14 @@ export const koKR = {
             link: "/dopamine"
           },
           {
-            name: "엔도르핀",
+            name: "엔돌핀",
             description: "세로토닌과 함께 기분과 행복감에 영향",
             link: "/endorphin"
+          },
+          {
+            name: "코르티솔",
+            description: "세로토닌과 함께 기분 조절에 상호작용, 만성 스트레스는 세로토닌 수준에 영향",
+            link: "/cortisol"
           }
         ]
       }

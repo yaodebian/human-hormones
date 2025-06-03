@@ -140,8 +140,13 @@ export const jaJP = {
           },
           {
             name: "エンドルフィン",
-            description: "ストレス解消においてオキシトシンと連携",
+            description: "オキシトシンとストレス緩和で協力",
             link: "/endorphin"
+          },
+          {
+            name: "コルチゾール",
+            description: "オキシトシンはコルチゾールレベルを下げ、ストレス反応を軽減",
+            link: "/cortisol"
           }
         ]
       }

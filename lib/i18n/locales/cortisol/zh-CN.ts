@@ -129,19 +129,24 @@ export const zhCN = {
         title: "相关激素",
         hormones: [
           {
-            name: "肾上腺素",
-            description: "与皮质醇共同参与应激反应",
-            link: "/adrenaline"
+            name: "多巴胺",
+            description: "与皮质醇在压力和奖励系统中相互影响",
+            link: "/dopamine"
           },
           {
-            name: "生长激素",
-            description: "与皮质醇在代谢调节中相互作用",
-            link: "/growth-hormone"
+            name: "血清素",
+            description: "与皮质醇在情绪调节中相互作用",
+            link: "/serotonin"
           },
           {
-            name: "褪黑激素",
-            description: "与皮质醇的昼夜节律相互影响",
-            link: "/melatonin"
+            name: "内啡肽",
+            description: "与皮质醇在压力缓解中发挥作用",
+            link: "/endorphin"
+          },
+          {
+            name: "催产素",
+            description: "催产素可以帮助降低皮质醇水平，减轻压力反应",
+            link: "/oxytocin"
           }
         ]
       }

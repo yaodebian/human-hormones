@@ -189,28 +189,24 @@ export const enUS = {
         title: "Dopamine and Other Hormones",
         hormones: [
           {
-            id: "endorphin",
-            name: "Dopamine and Endorphins",
-            relation: "These two substances often work together, especially during exercise. Endorphins provide the pain-relieving effect of \"runner's high,\" while dopamine provides motivation and satisfaction.",
-            link: "/hormones/endorphin"
+            name: "Endorphins",
+            description: "These two substances often work together, especially during exercise. Endorphins provide the pain-relieving effects of 'runner's high,' while dopamine provides motivation and satisfaction.",
+            link: "/endorphin"
           },
           {
-            id: "serotonin",
-            name: "Dopamine and Serotonin",
-            relation: "These two neurotransmitters balance each other in emotional regulation. Dopamine is associated with motivation and pleasure, while serotonin is associated with emotional stability and satisfaction.",
-            link: "/hormones/serotonin"
+            name: "Serotonin",
+            description: "These two neurotransmitters balance each other in mood regulation. Dopamine is associated with motivation and pleasure, while serotonin relates to emotional stability and contentment.",
+            link: "/serotonin"
           },
           {
-            id: "oxytocin",
-            name: "Dopamine and Oxytocin",
-            relation: "Dopamine and oxytocin interact in social interactions and intimate relationships. Oxytocin promotes social bonding, while dopamine enhances the pleasure of these interactions.",
-            link: "/hormones/oxytocin"
+            name: "Oxytocin",
+            description: "Dopamine and oxytocin interact in social interactions and intimate relationships. Oxytocin promotes social bonding, while dopamine enhances the pleasure of these interactions.",
+            link: "/oxytocin"
           },
           {
-            id: "cortisol",
-            name: "Dopamine and Cortisol",
-            relation: "There is a complex relationship between dopamine and cortisol (the stress hormone). Moderate stress may temporarily enhance dopamine system function, but chronic stress disrupts dopamine signaling.",
-            link: "/hormones/cortisol"
+            name: "Cortisol",
+            description: "There's a complex relationship between dopamine and cortisol (stress hormone). Moderate stress may temporarily enhance dopamine system function, but chronic stress can disrupt dopamine signaling.",
+            link: "/cortisol"
           }
         ]
       }

@@ -129,19 +129,24 @@ export const enUS = {
         title: "Related Hormones",
         hormones: [
           {
-            name: "Adrenaline",
-            description: "Works with cortisol in stress response",
-            link: "/adrenaline"
+            name: "Dopamine",
+            description: "Interacts with cortisol in stress and reward systems",
+            link: "/dopamine"
           },
           {
-            name: "Growth Hormone",
-            description: "Interacts with cortisol in metabolic regulation",
-            link: "/growth-hormone"
+            name: "Serotonin",
+            description: "Works with cortisol in mood regulation",
+            link: "/serotonin"
           },
           {
-            name: "Melatonin",
-            description: "Influences cortisol's circadian rhythm",
-            link: "/melatonin"
+            name: "Endorphins",
+            description: "Plays a role with cortisol in stress relief",
+            link: "/endorphin"
+          },
+          {
+            name: "Oxytocin",
+            description: "Oxytocin can help reduce cortisol levels and stress responses",
+            link: "/oxytocin"
           }
         ]
       }

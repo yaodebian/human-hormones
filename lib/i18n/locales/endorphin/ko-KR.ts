@@ -139,8 +139,13 @@ export const koKR = {
           },
           {
             name: "옥시토신",
-            description: "사회적 유대와 정서적 연결 형성에서 엔도르핀과 시너지 효과를 발휘",
+            description: "사회적 결합과 감정적 연결에서 엔도르핀과 상승적으로 작용",
             link: "/oxytocin"
+          },
+          {
+            name: "코르티솔",
+            description: "엔도르핀은 코르티솔로 인한 스트레스 반응을 상쇄",
+            link: "/cortisol"
           }
         ]
       }

@@ -139,9 +139,14 @@ export const enUS = {
             link: "/serotonin"
           },
           {
-            name: "Endorphin",
-            description: "Partners with oxytocin in stress relief",
+            name: "Endorphins",
+            description: "Works with oxytocin in stress relief",
             link: "/endorphin"
+          },
+          {
+            name: "Cortisol",
+            description: "Oxytocin helps reduce cortisol levels and stress response",
+            link: "/cortisol"
           }
         ]
       }

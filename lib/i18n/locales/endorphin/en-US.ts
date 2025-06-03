@@ -141,6 +141,11 @@ export const enUS = {
             name: "Oxytocin",
             description: "Works synergistically with endorphins in social bonding and emotional connection",
             link: "/oxytocin"
+          },
+          {
+            name: "Cortisol",
+            description: "Endorphins help counteract cortisol-induced stress responses",
+            link: "/cortisol"
           }
         ]
       }

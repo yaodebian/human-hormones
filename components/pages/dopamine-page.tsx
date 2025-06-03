@@ -154,7 +154,6 @@ export function DopaminePage() {
         {/* 相关激素部分 */}
         <DetailSection title={text.page.sections.related.title}>
           <RelatedHormones
-            title={text.page.sections.related.title}
             items={text.page.sections.related.hormones}
           />
         </DetailSection>
