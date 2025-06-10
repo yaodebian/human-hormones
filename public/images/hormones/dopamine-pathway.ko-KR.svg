@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" fill="none">
+  <rect width="500" height="300" fill="#FDF2F8" />
   <!-- Brain outline -->
   <path d="M250 270C350 270 420 210 420 150C420 90 350 30 250 30C150 30 80 90 80 150C80 210 150 270 250 270Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
   

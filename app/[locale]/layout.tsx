@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { defaultLocale, supportedLocales } from "@/middleware";
 import { headers } from 'next/headers'
 import { LanguageProvider } from "@/lib/i18n/language-context";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
@@ -41,9 +42,11 @@ export default async function RootLayout({
     defaultLocale
   
   return (
-    <html lang={currentLocale}>
+    <html lang={currentLocale} suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
-        <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

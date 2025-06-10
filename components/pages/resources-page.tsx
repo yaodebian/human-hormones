@@ -24,12 +24,12 @@ export function ResourcesPage() {
       <Header />
       <main className="flex-1">
         {/* 资源库头部 */}
-        <section className="bg-neutral-50/50 py-8 md:py-12 text-center">
+        <section className="bg-muted/30 py-8 md:py-12 text-center">
           <Container>
-            <h1 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {text.page.header.title}
             </h1>
-            <p className="text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto px-4">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               {text.page.header.subtitle}
             </p>
           </Container>
@@ -37,13 +37,13 @@ export function ResourcesPage() {
 
         {/* 标签切换 */}
         <Container>
-          <div className="flex justify-center mt-8 md:mt-12 mb-6 md:mb-8 border-b border-neutral-200">
+          <div className="flex justify-center mt-8 md:mt-12 mb-6 md:mb-8 border-b border-border">
             <button
               className={cn(
                 "px-4 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold border-b-2 transition-colors",
                 activeTab === 'articles'
                   ? "text-primary border-primary"
-                  : "text-neutral-600 border-transparent hover:text-primary"
+                  : "text-muted-foreground border-transparent hover:text-primary"
               )}
               onClick={() => setActiveTab('articles')}
             >
@@ -54,7 +54,7 @@ export function ResourcesPage() {
                 "px-4 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold border-b-2 transition-colors",
                 activeTab === 'videos'
                   ? "text-primary border-primary"
-                  : "text-neutral-600 border-transparent hover:text-primary"
+                  : "text-muted-foreground border-transparent hover:text-primary"
               )}
               onClick={() => setActiveTab('videos')}
             >
@@ -103,12 +103,12 @@ export function ResourcesPage() {
             </div>
 
             {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-neutral-50 rounded-lg mb-6 md:mb-8 px-4">
+            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
               <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.articles.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
                 {text.page.emptyState.articles.title}
               </h3>
-              <p className="text-neutral-600 max-w-lg mx-auto">
+              <p className="text-muted-foreground max-w-lg mx-auto">
                 {text.page.emptyState.articles.description}
               </p>
             </div>
@@ -153,12 +153,12 @@ export function ResourcesPage() {
             </div>
 
             {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-neutral-50 rounded-lg mb-6 md:mb-8 px-4">
+            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
               <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.videos.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
                 {text.page.emptyState.videos.title}
               </h3>
-              <p className="text-neutral-600 max-w-lg mx-auto">
+              <p className="text-muted-foreground max-w-lg mx-auto">
                 {text.page.emptyState.videos.description}
               </p>
             </div>
@@ -168,11 +168,11 @@ export function ResourcesPage() {
         {/* 即将上线提示 */}
         <section className="py-6 md:py-8">
           <Container>
-            <div className="bg-primary/5 border-l-4 border-primary p-4 md:p-6 rounded-lg">
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+            <div className="bg-primary/5 dark:bg-primary/10 border-l-4 border-primary p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-foreground">
                 {text.page.comingSoon.title}
               </h3>
-              <p className="text-neutral-600 mb-4 md:mb-6">
+              <p className="text-muted-foreground mb-4 md:mb-6">
                 {text.page.comingSoon.description}
               </p>
               <div className="flex flex-col md:flex-row gap-3 md:gap-4">

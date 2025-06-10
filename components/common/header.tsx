@@ -10,6 +10,7 @@ import { Menu } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { ThemeSwitcher } from '@/components/ui/theme-switcher'
 import { defaultLocale } from '@/middleware'
 
 export const Header = () => {
@@ -72,7 +73,10 @@ export const Header = () => {
           </ul>
         </nav>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          {/* 主题切换器 */}
+          <ThemeSwitcher />
+          
           {/* 语言选择 */}
           <div className="hidden sm:block">
             <LanguageSwitcher />
@@ -112,10 +116,18 @@ export const Header = () => {
                   </ul>
                 </nav>
                 
-                {/* 只在小屏幕下显示语言切换器 */}
-                <div className="border-t pt-6 sm:hidden">
-                  <p className="text-sm text-muted-foreground mb-3">语言</p>
-                  <LanguageSwitcher fullWidth />
+                {/* 移动端主题和语言切换器 */}
+                <div className="border-t pt-6 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-muted-foreground">主题</p>
+                    <ThemeSwitcher />
+                  </div>
+                  
+                  {/* 只在小屏幕下显示语言切换器 */}
+                  <div className="sm:hidden">
+                    <p className="text-sm text-muted-foreground mb-3">语言</p>
+                    <LanguageSwitcher fullWidth />
+                  </div>
                 </div>
               </div>
             </SheetContent>

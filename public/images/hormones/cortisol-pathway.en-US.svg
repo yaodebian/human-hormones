@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F0FDF4" />
   <!-- Brain outline -->
   <path d="M400 50C250 50 150 150 150 300C150 450 250 550 400 550C550 550 650 450 650 300C650 150 550 50 400 50Z" fill="#F3F4F6"/>
   
