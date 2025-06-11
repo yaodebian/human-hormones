@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   description: "探索人体激素如何影响身体和心理健康，了解多巴胺、内啡肽、血清素、催产素、皮质醇的作用机制及如何优化激素平衡。",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export function generateStaticParams() {
   return supportedLocales.map(locale => ({ locale }));
 }
@@ -43,6 +50,9 @@ export default async function RootLayout({
   
   return (
     <html lang={currentLocale} suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider locale={currentLocale}>{children}</LanguageProvider>
