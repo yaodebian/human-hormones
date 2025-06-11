@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hormonetips.top/sitemap.xml
+
+# Block crawling of admin areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow crawling of all language versions
+Allow: /en-US/
+Allow: /zh-CN/
+Allow: /ja-JP/
+Allow: /ko-KR/ 

@@ -45,7 +45,10 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/images') ||
     pathname.startsWith('/public') ||
     pathname.includes('/static/') ||
-    pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|webp|css|js)$/)
+    pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|webp|css|js|xml|txt|json)$/) ||
+    pathname === '/favicon.ico' ||
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml'
   ) {
     return NextResponse.next()
   }
@@ -62,7 +65,8 @@ export function middleware(request: NextRequest) {
     if (request.cookies.get('NEXT_LOCALE')?.value !== firstSegment) {
       response.cookies.set('NEXT_LOCALE', firstSegment, {
         path: '/',
-        maxAge: 31536000 // 一年有效期
+        maxAge: 31536000, // 一年有效期
+        sameSite: 'lax'
       })
     }
     
@@ -83,7 +87,8 @@ export function middleware(request: NextRequest) {
     if (request.cookies.get('NEXT_LOCALE')?.value !== defaultLocale) {
       response.cookies.set('NEXT_LOCALE', defaultLocale, {
         path: '/',
-        maxAge: 31536000 // 一年有效期
+        maxAge: 31536000,
+        sameSite: 'lax'
       })
     }
     
@@ -93,13 +98,13 @@ export function middleware(request: NextRequest) {
   // 为其他语言添加路径前缀（对非根路径的请求使用redirect）
   const newUrl = new URL(`/${locale}${pathname}`, request.url)
   newUrl.search = request.nextUrl.search
-  return NextResponse.redirect(newUrl)
+  return NextResponse.redirect(newUrl, 301)
 }
 
-// 更新 matcher 配置，使用更简单的模式
+// 更新 matcher 配置，更精确地排除不需要处理的路径
 export const config = {
   matcher: [
     // 排除所有内部路径和静态文件
-    '/((?!api|_next|images|public|static).*)',
+    '/((?!api|_next|images|public|static|favicon.ico|robots.txt|sitemap.xml).*)',
   ]
 }
