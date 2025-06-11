@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
     ]
   },
   
-  // 重定向配置 - 添加HTTP到HTTPS重定向
+  // 重定向配置 - 只保留HTTP到HTTPS重定向
   async redirects() {
     return [
       // HTTP到HTTPS重定向
@@ -45,19 +45,7 @@ const nextConfig: NextConfig = {
             value: 'http',
           },
         ],
-        destination: 'https://hormonetips.top/:path*',
-        permanent: true,
-      },
-      // 可选：如果有www子域名的话
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.hormonetips.top',
-          },
-        ],
-        destination: 'https://hormonetips.top/:path*',
+        destination: 'https://www.hormonetips.top/:path*', // 使用www版本，与你的域名设置一致
         permanent: true,
       },
     ]

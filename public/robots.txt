@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hormonetips.top/sitemap.xml
+Sitemap: https://www.hormonetips.top/sitemap.xml
 
 # Block crawling of admin areas
 Disallow: /api/

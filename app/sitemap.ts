@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { supportedLocales } from '@/middleware'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hormonetips.top'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.hormonetips.top'
   
   // 基础页面路径
   const routes = [
