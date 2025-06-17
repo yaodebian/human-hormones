@@ -2,28 +2,15 @@ export const zhCN = {
   page: {
     header: {
       title: '资源库',
-      subtitle: '探索关于人体激素的深度文章和视频资源'
+      subtitle: '探索关于人体激素的深度文章、视频、研究报告和书籍资源'
     },
     tabs: {
       articles: '文章',
-      videos: '视频'
+      videos: '视频',
+      research: '研究报告',
+      books: '书籍'
     },
     filters: {
-      category: {
-        all: '所有分类',
-        articles: {
-          science: '科学研究',
-          health: '健康养生',
-          lifestyle: '生活方式',
-          psychology: '心理健康'
-        },
-        videos: {
-          explainer: '科普解说',
-          lecture: '专家讲座',
-          interview: '专家访谈',
-          documentary: '纪录片'
-        }
-      },
       hormone: {
         all: '所有激素',
         dopamine: '多巴胺',
@@ -41,7 +28,9 @@ export const zhCN = {
     },
     search: {
       articles: '搜索文章...',
-      videos: '搜索视频...'
+      videos: '搜索视频...',
+      research: '搜索研究报告...',
+      books: '搜索书籍...'
     },
     emptyState: {
       articles: {
@@ -53,6 +42,16 @@ export const zhCN = {
         icon: '🎥',
         title: '暂无相关视频',
         description: '我们正在制作更多精彩视频，敬请期待！'
+      },
+      research: {
+        icon: '🔬',
+        title: '暂无相关研究报告',
+        description: '我们正在收集和整理权威的科研论文，敬请期待！'
+      },
+      books: {
+        icon: '📖',
+        title: '暂无相关书籍',
+        description: '我们正在筛选优质的激素科学书籍，敬请期待！'
       }
     },
     comingSoon: {

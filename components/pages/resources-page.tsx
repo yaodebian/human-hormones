@@ -14,8 +14,7 @@ import { Container } from '@/components/ui/container';
 export function ResourcesPage() {
   const { locale } = useLanguage();
   const text = locales[locale as keyof typeof locales] || locales['zh-CN'];
-  const [activeTab, setActiveTab] = useState<'articles' | 'videos'>('articles');
-  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState<'articles' | 'videos' | 'research' | 'books'>('articles');
   const [hormoneFilter, setHormoneFilter] = useState('all');
   const [durationFilter, setDurationFilter] = useState('all');
 
@@ -40,7 +39,7 @@ export function ResourcesPage() {
           <div className="flex justify-center mt-8 md:mt-12 mb-6 md:mb-8 border-b border-border">
             <button
               className={cn(
-                "px-4 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold border-b-2 transition-colors",
+                "px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-semibold border-b-2 transition-colors",
                 activeTab === 'articles'
                   ? "text-primary border-primary"
                   : "text-muted-foreground border-transparent hover:text-primary"
@@ -51,7 +50,7 @@ export function ResourcesPage() {
             </button>
             <button
               className={cn(
-                "px-4 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold border-b-2 transition-colors",
+                "px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-semibold border-b-2 transition-colors",
                 activeTab === 'videos'
                   ? "text-primary border-primary"
                   : "text-muted-foreground border-transparent hover:text-primary"
@@ -59,6 +58,28 @@ export function ResourcesPage() {
               onClick={() => setActiveTab('videos')}
             >
               {text.page.tabs.videos}
+            </button>
+            <button
+              className={cn(
+                "px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-semibold border-b-2 transition-colors",
+                activeTab === 'research'
+                  ? "text-primary border-primary"
+                  : "text-muted-foreground border-transparent hover:text-primary"
+              )}
+              onClick={() => setActiveTab('research')}
+            >
+              {text.page.tabs.research}
+            </button>
+            <button
+              className={cn(
+                "px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-semibold border-b-2 transition-colors",
+                activeTab === 'books'
+                  ? "text-primary border-primary"
+                  : "text-muted-foreground border-transparent hover:text-primary"
+              )}
+              onClick={() => setActiveTab('books')}
+            >
+              {text.page.tabs.books}
             </button>
           </div>
         </Container>
@@ -69,18 +90,6 @@ export function ResourcesPage() {
             {/* 筛选器 */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-8">
               <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-                <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                  <SelectTrigger className="w-full md:w-[200px]">
-                    <SelectValue placeholder={text.page.filters.category.all} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{text.page.filters.category.all}</SelectItem>
-                    <SelectItem value="science">{text.page.filters.category.articles.science}</SelectItem>
-                    <SelectItem value="health">{text.page.filters.category.articles.health}</SelectItem>
-                    <SelectItem value="lifestyle">{text.page.filters.category.articles.lifestyle}</SelectItem>
-                    <SelectItem value="psychology">{text.page.filters.category.articles.psychology}</SelectItem>
-                  </SelectContent>
-                </Select>
                 <Select value={hormoneFilter} onValueChange={setHormoneFilter}>
                   <SelectTrigger className="w-full md:w-[200px]">
                     <SelectValue placeholder={text.page.filters.hormone.all} />
@@ -121,16 +130,17 @@ export function ResourcesPage() {
             {/* 筛选器 */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-8">
               <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-                <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+                <Select value={hormoneFilter} onValueChange={setHormoneFilter}>
                   <SelectTrigger className="w-full md:w-[200px]">
-                    <SelectValue placeholder={text.page.filters.category.all} />
+                    <SelectValue placeholder={text.page.filters.hormone.all} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">{text.page.filters.category.all}</SelectItem>
-                    <SelectItem value="explainer">{text.page.filters.category.videos.explainer}</SelectItem>
-                    <SelectItem value="lecture">{text.page.filters.category.videos.lecture}</SelectItem>
-                    <SelectItem value="interview">{text.page.filters.category.videos.interview}</SelectItem>
-                    <SelectItem value="documentary">{text.page.filters.category.videos.documentary}</SelectItem>
+                    <SelectItem value="all">{text.page.filters.hormone.all}</SelectItem>
+                    <SelectItem value="dopamine">{text.page.filters.hormone.dopamine}</SelectItem>
+                    <SelectItem value="endorphin">{text.page.filters.hormone.endorphin}</SelectItem>
+                    <SelectItem value="serotonin">{text.page.filters.hormone.serotonin}</SelectItem>
+                    <SelectItem value="oxytocin">{text.page.filters.hormone.oxytocin}</SelectItem>
+                    <SelectItem value="cortisol">{text.page.filters.hormone.cortisol}</SelectItem>
                   </SelectContent>
                 </Select>
                 <Select value={durationFilter} onValueChange={setDurationFilter}>
@@ -160,6 +170,86 @@ export function ResourcesPage() {
               </h3>
               <p className="text-muted-foreground max-w-lg mx-auto">
                 {text.page.emptyState.videos.description}
+              </p>
+            </div>
+          </Container>
+        </section>
+
+        {/* 研究报告部分 */}
+        <section className={cn("py-6 md:py-8", activeTab === 'research' ? 'block' : 'hidden')}>
+          <Container>
+            {/* 筛选器 */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-8">
+              <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                <Select value={hormoneFilter} onValueChange={setHormoneFilter}>
+                  <SelectTrigger className="w-full md:w-[200px]">
+                    <SelectValue placeholder={text.page.filters.hormone.all} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">{text.page.filters.hormone.all}</SelectItem>
+                    <SelectItem value="dopamine">{text.page.filters.hormone.dopamine}</SelectItem>
+                    <SelectItem value="endorphin">{text.page.filters.hormone.endorphin}</SelectItem>
+                    <SelectItem value="serotonin">{text.page.filters.hormone.serotonin}</SelectItem>
+                    <SelectItem value="oxytocin">{text.page.filters.hormone.oxytocin}</SelectItem>
+                    <SelectItem value="cortisol">{text.page.filters.hormone.cortisol}</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Input
+                type="text"
+                placeholder={text.page.search.research}
+                className="w-full md:w-[300px]"
+              />
+            </div>
+
+            {/* 空状态 */}
+            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.research.icon}</div>
+              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                {text.page.emptyState.research.title}
+              </h3>
+              <p className="text-muted-foreground max-w-lg mx-auto">
+                {text.page.emptyState.research.description}
+              </p>
+            </div>
+          </Container>
+        </section>
+
+        {/* 书籍部分 */}
+        <section className={cn("py-6 md:py-8", activeTab === 'books' ? 'block' : 'hidden')}>
+          <Container>
+            {/* 筛选器 */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-8">
+              <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                <Select value={hormoneFilter} onValueChange={setHormoneFilter}>
+                  <SelectTrigger className="w-full md:w-[200px]">
+                    <SelectValue placeholder={text.page.filters.hormone.all} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">{text.page.filters.hormone.all}</SelectItem>
+                    <SelectItem value="dopamine">{text.page.filters.hormone.dopamine}</SelectItem>
+                    <SelectItem value="endorphin">{text.page.filters.hormone.endorphin}</SelectItem>
+                    <SelectItem value="serotonin">{text.page.filters.hormone.serotonin}</SelectItem>
+                    <SelectItem value="oxytocin">{text.page.filters.hormone.oxytocin}</SelectItem>
+                    <SelectItem value="cortisol">{text.page.filters.hormone.cortisol}</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Input
+                type="text"
+                placeholder={text.page.search.books}
+                className="w-full md:w-[300px]"
+              />
+            </div>
+
+            {/* 空状态 */}
+            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.books.icon}</div>
+              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                {text.page.emptyState.books.title}
+              </h3>
+              <p className="text-muted-foreground max-w-lg mx-auto">
+                {text.page.emptyState.books.description}
               </p>
             </div>
           </Container>

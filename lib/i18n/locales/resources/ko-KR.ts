@@ -3,29 +3,15 @@ export const koKR = {
     header: {
       title: "리소스 라이브러리",
       description: "호르몬 과학의 엄선된 리소스",
-      subtitle: "건강, 감정, 행동에 영향을 미치는 호르몬에 대한 이해를 돕기 위해 엄선된 기사, 동영상, 참고 자료를 탐색해보세요."
+      subtitle: "건강, 감정, 행동에 영향을 미치는 호르몬에 대한 이해를 돕기 위해 엄선된 기사, 동영상, 연구논문, 도서를 탐색해보세요."
     },
     tabs: {
       articles: "기사",
-      videos: "동영상"
+      videos: "동영상",
+      research: "연구논문",
+      books: "도서"
     },
     filters: {
-      category: {
-        label: "카테고리",
-        all: "모든 카테고리",
-        articles: {
-          science: "과학 연구",
-          health: "건강 가이드",
-          lifestyle: "라이프스타일",
-          psychology: "심리학"
-        },
-        videos: {
-          explainer: "설명",
-          lecture: "전문가 강의",
-          interview: "전문가 인터뷰",
-          documentary: "다큐멘터리"
-        }
-      },
       hormone: {
         label: "호르몬",
         all: "모든 호르몬",
@@ -45,7 +31,9 @@ export const koKR = {
     },
     search: {
       articles: "기사 검색...",
-      videos: "동영상 검색..."
+      videos: "동영상 검색...",
+      research: "연구논문 검색...",
+      books: "도서 검색..."
     },
     emptyState: {
       articles: {
@@ -57,6 +45,16 @@ export const koKR = {
         icon: "🎬",
         title: "동영상 준비 중",
         description: "양질의 호르몬 과학 동영상 콘텐츠를 제작하고 수집하고 있습니다. 나중에 다시 확인해주시거나 소셜 미디어를 팔로우하여 업데이트 소식을 받아보세요."
+      },
+      research: {
+        icon: "🔬",
+        title: "연구논문 준비 중",
+        description: "권위 있는 과학논문을 수집하고 정리하고 있습니다. 곧 공개 예정이니 기다려 주세요."
+      },
+      books: {
+        icon: "📖",
+        title: "도서 준비 중",
+        description: "양질의 호르몬 과학 도서를 엄선하고 있습니다. 곧 공개 예정이니 기다려 주세요."
       }
     },
     comingSoon: {

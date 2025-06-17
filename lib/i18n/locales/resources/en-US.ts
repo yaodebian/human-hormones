@@ -2,28 +2,15 @@ export const enUS = {
   page: {
     header: {
       title: 'Resources',
-      subtitle: 'Explore in-depth articles and videos about human hormones'
+      subtitle: 'Explore in-depth articles, videos, research papers and books about human hormones'
     },
     tabs: {
       articles: 'Articles',
-      videos: 'Videos'
+      videos: 'Videos',
+      research: 'Research',
+      books: 'Books'
     },
     filters: {
-      category: {
-        all: 'All Categories',
-        articles: {
-          science: 'Scientific Research',
-          health: 'Health & Wellness',
-          lifestyle: 'Lifestyle',
-          psychology: 'Psychology'
-        },
-        videos: {
-          explainer: 'Explainers',
-          lecture: 'Lectures',
-          interview: 'Interviews',
-          documentary: 'Documentaries'
-        }
-      },
       hormone: {
         all: 'All Hormones',
         dopamine: 'Dopamine',
@@ -41,7 +28,9 @@ export const enUS = {
     },
     search: {
       articles: 'Search articles...',
-      videos: 'Search videos...'
+      videos: 'Search videos...',
+      research: 'Search research...',
+      books: 'Search books...'
     },
     emptyState: {
       articles: {
@@ -53,6 +42,16 @@ export const enUS = {
         icon: '🎥',
         title: 'No Videos Found',
         description: 'We are producing more exciting videos. Stay tuned!'
+      },
+      research: {
+        icon: '🔬',
+        title: 'No Research Papers Found',
+        description: 'We are collecting and organizing authoritative research papers. Stay tuned!'
+      },
+      books: {
+        icon: '📖',
+        title: 'No Books Found',
+        description: 'We are curating quality hormone science books. Stay tuned!'
       }
     },
     comingSoon: {
