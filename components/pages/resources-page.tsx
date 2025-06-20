@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import { Container } from '@/components/ui/container';
 import { ResourceList } from '@/components/ui/resource-list';
 import { researchResources, articleResources, videoResources, bookResources } from '@/lib/data/resources';
+import { HormoneType } from '@/lib/types/resources';
 
 export function ResourcesPage() {
   const { locale } = useLanguage();
@@ -128,7 +129,7 @@ export function ResourcesPage() {
             {(!articleResources.length || 
               !articleResources.filter(resource => {
                 const hormoneMatch = hormoneFilter === 'all' || 
-                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                  (resource.tags && resource.tags.includes(hormoneFilter as HormoneType));
                 const searchMatch = !searchQuery || 
                   Object.values(resource.title).some(title => 
                     title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -203,7 +204,7 @@ export function ResourcesPage() {
             {(!videoResources.length || 
               !videoResources.filter(resource => {
                 const hormoneMatch = hormoneFilter === 'all' || 
-                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                  (resource.tags && resource.tags.includes(hormoneFilter as HormoneType));
                 const searchMatch = !searchQuery || 
                   Object.values(resource.title).some(title => 
                     title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -267,7 +268,7 @@ export function ResourcesPage() {
             {(!researchResources.length || 
               !researchResources.filter(resource => {
                 const hormoneMatch = hormoneFilter === 'all' || 
-                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                  (resource.tags && resource.tags.includes(hormoneFilter as HormoneType));
                 const searchMatch = !searchQuery || 
                   Object.values(resource.title).some(title => 
                     title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -331,7 +332,7 @@ export function ResourcesPage() {
             {(!bookResources.length || 
               !bookResources.filter(resource => {
                 const hormoneMatch = hormoneFilter === 'all' || 
-                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                  (resource.tags && resource.tags.includes(hormoneFilter as HormoneType));
                 const searchMatch = !searchQuery || 
                   Object.values(resource.title).some(title => 
                     title.toLowerCase().includes(searchQuery.toLowerCase())

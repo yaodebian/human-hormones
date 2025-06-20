@@ -14,7 +14,7 @@ interface ResourceCardProps {
 }
 
 export function ResourceCard({ resource, className }: ResourceCardProps) {
-  const { locale, text } = useLanguage();
+  const { locale } = useLanguage();
   
   // 获取当前语言的内容，如果不存在则回退到中文
   const getLocalizedContent = (content: Record<string, string>) => {
