@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss"
 
-const config = {
+const config: Config = {
   darkMode: "class",
   future: {
     // 关闭即将默认开启的现代特性
@@ -92,6 +92,6 @@ const config = {
       }
     }
   }
-} satisfies Config
+}
 
 export default config 

@@ -10,13 +10,16 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 import { Container } from '@/components/ui/container';
+import { ResourceList } from '@/components/ui/resource-list';
+import { researchResources, articleResources, videoResources, bookResources } from '@/lib/data/resources';
 
 export function ResourcesPage() {
   const { locale } = useLanguage();
   const text = locales[locale as keyof typeof locales] || locales['zh-CN'];
-  const [activeTab, setActiveTab] = useState<'articles' | 'videos' | 'research' | 'books'>('articles');
+  const [activeTab, setActiveTab] = useState<'articles' | 'videos' | 'research' | 'books'>('research');
   const [hormoneFilter, setHormoneFilter] = useState('all');
   const [durationFilter, setDurationFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -107,20 +110,44 @@ export function ResourcesPage() {
               <Input
                 type="text"
                 placeholder={text.page.search.articles}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full md:w-[300px]"
               />
             </div>
 
-            {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
-              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.articles.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
-                {text.page.emptyState.articles.title}
-              </h3>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                {text.page.emptyState.articles.description}
-              </p>
-            </div>
+            {/* 资源列表 */}
+            <ResourceList 
+              resources={articleResources}
+              hormoneFilter={hormoneFilter}
+              searchQuery={searchQuery}
+              className="mb-6 md:mb-8"
+            />
+            
+            {/* 空状态 - 仅在没有匹配结果时显示 */}
+            {(!articleResources.length || 
+              !articleResources.filter(resource => {
+                const hormoneMatch = hormoneFilter === 'all' || 
+                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                const searchMatch = !searchQuery || 
+                  Object.values(resource.title).some(title => 
+                    title.toLowerCase().includes(searchQuery.toLowerCase())
+                  ) ||
+                  Object.values(resource.description).some(desc => 
+                    desc.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                return hormoneMatch && searchMatch;
+              }).length) && (
+              <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+                <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.articles.icon}</div>
+                <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                  {text.page.emptyState.articles.title}
+                </h3>
+                <p className="text-muted-foreground max-w-lg mx-auto">
+                  {text.page.emptyState.articles.description}
+                </p>
+              </div>
+            )}
           </Container>
         </section>
 
@@ -158,20 +185,44 @@ export function ResourcesPage() {
               <Input
                 type="text"
                 placeholder={text.page.search.videos}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full md:w-[300px]"
               />
             </div>
 
-            {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
-              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.videos.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
-                {text.page.emptyState.videos.title}
-              </h3>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                {text.page.emptyState.videos.description}
-              </p>
-            </div>
+            {/* 资源列表 */}
+            <ResourceList 
+              resources={videoResources}
+              hormoneFilter={hormoneFilter}
+              searchQuery={searchQuery}
+              className="mb-6 md:mb-8"
+            />
+            
+            {/* 空状态 - 仅在没有匹配结果时显示 */}
+            {(!videoResources.length || 
+              !videoResources.filter(resource => {
+                const hormoneMatch = hormoneFilter === 'all' || 
+                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                const searchMatch = !searchQuery || 
+                  Object.values(resource.title).some(title => 
+                    title.toLowerCase().includes(searchQuery.toLowerCase())
+                  ) ||
+                  Object.values(resource.description).some(desc => 
+                    desc.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                return hormoneMatch && searchMatch;
+              }).length) && (
+              <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+                <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.videos.icon}</div>
+                <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                  {text.page.emptyState.videos.title}
+                </h3>
+                <p className="text-muted-foreground max-w-lg mx-auto">
+                  {text.page.emptyState.videos.description}
+                </p>
+              </div>
+            )}
           </Container>
         </section>
 
@@ -198,20 +249,44 @@ export function ResourcesPage() {
               <Input
                 type="text"
                 placeholder={text.page.search.research}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full md:w-[300px]"
               />
             </div>
 
-            {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
-              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.research.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
-                {text.page.emptyState.research.title}
-              </h3>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                {text.page.emptyState.research.description}
-              </p>
-            </div>
+            {/* 资源列表 */}
+            <ResourceList 
+              resources={researchResources}
+              hormoneFilter={hormoneFilter}
+              searchQuery={searchQuery}
+              className="mb-6 md:mb-8"
+            />
+            
+            {/* 空状态 - 仅在没有匹配结果时显示 */}
+            {(!researchResources.length || 
+              !researchResources.filter(resource => {
+                const hormoneMatch = hormoneFilter === 'all' || 
+                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                const searchMatch = !searchQuery || 
+                  Object.values(resource.title).some(title => 
+                    title.toLowerCase().includes(searchQuery.toLowerCase())
+                  ) ||
+                  Object.values(resource.description).some(desc => 
+                    desc.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                return hormoneMatch && searchMatch;
+              }).length) && (
+              <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+                <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.research.icon}</div>
+                <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                  {text.page.emptyState.research.title}
+                </h3>
+                <p className="text-muted-foreground max-w-lg mx-auto">
+                  {text.page.emptyState.research.description}
+                </p>
+              </div>
+            )}
           </Container>
         </section>
 
@@ -238,20 +313,44 @@ export function ResourcesPage() {
               <Input
                 type="text"
                 placeholder={text.page.search.books}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full md:w-[300px]"
               />
             </div>
 
-            {/* 空状态 */}
-            <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
-              <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.books.icon}</div>
-              <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
-                {text.page.emptyState.books.title}
-              </h3>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                {text.page.emptyState.books.description}
-              </p>
-            </div>
+            {/* 资源列表 */}
+            <ResourceList 
+              resources={bookResources}
+              hormoneFilter={hormoneFilter}
+              searchQuery={searchQuery}
+              className="mb-6 md:mb-8"
+            />
+            
+            {/* 空状态 - 仅在没有匹配结果时显示 */}
+            {(!bookResources.length || 
+              !bookResources.filter(resource => {
+                const hormoneMatch = hormoneFilter === 'all' || 
+                  (resource.tags && resource.tags.includes(hormoneFilter as any));
+                const searchMatch = !searchQuery || 
+                  Object.values(resource.title).some(title => 
+                    title.toLowerCase().includes(searchQuery.toLowerCase())
+                  ) ||
+                  Object.values(resource.description).some(desc => 
+                    desc.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                return hormoneMatch && searchMatch;
+              }).length) && (
+              <div className="text-center py-8 md:py-12 bg-card border border-border rounded-lg mb-6 md:mb-8 px-4">
+                <div className="text-4xl md:text-5xl mb-4">{text.page.emptyState.books.icon}</div>
+                <h3 className="text-xl md:text-2xl font-semibold text-card-foreground mb-4">
+                  {text.page.emptyState.books.title}
+                </h3>
+                <p className="text-muted-foreground max-w-lg mx-auto">
+                  {text.page.emptyState.books.description}
+                </p>
+              </div>
+            )}
           </Container>
         </section>
 
